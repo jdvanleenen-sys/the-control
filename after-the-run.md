@@ -41,7 +41,7 @@ Not tried: another machine, another account, another day, another version of the
 
 Each of the two full passes was split over four sessions of the model under test, started together by `runs/sealed/marking/mark.mjs`. Each session had a quarter of the sheet, `MARKING.md` and the documents, and wrote its own marks. The record of each session and the marks it wrote are in `runs/sealed/marking/`. The eight sessions took about two minutes. The marking sheets replace the path of the folder a session ran in with `[working folder]`, so a marker cannot read a set-up's code off an answer; nothing else in an answer is changed.
 
-The outside marker was Gemini in the browser. The key check used Gemini 3.8 Flash; the version used for the two marking sheets was not recorded, and the chats were not saved.
+The outside marker was Gemini in the browser. The key check and the held-out marking used Gemini 3.8 Flash. The version used for the exam's two sheets was not written down at the time. The chats were not saved.
 
 The marking is the weakest part of this entry. The two passes by the same model disagree on 55 of 574 answers. The key asks for more than the question does on some questions, and whether leaving that out makes an answer wrong is what the markers split on.
 
@@ -58,14 +58,23 @@ The design said each file's size would be printed beside its effect. It is here 
 
 ## The held-out questions
 
-The ten questions the draw did not pick, asked three times each in the full folder, the documents alone and nothing: 90 sessions. `runs/heldout/report.md` has every answer beside the expected one. They were not marked.
+The ten questions the draw did not pick, asked three times each in the full folder, the documents alone and nothing: 90 sessions. `runs/heldout/report.md` has every answer beside the expected one. They were marked the same way as the exam: twice by the model under test and once by Gemini 3.8 Flash, from shuffled sheets with the set-up hidden. The sheets, the marks and the key are in `runs/heldout/`.
 
 | | Full folder | Documents only | Empty |
 |---|---|---|---|
 | Steps per session | 2.37 | 5.20 | 2.00 |
 | Answer words | 78 | 160 | 148 |
+| Marked right, first pass | 30 of 30 | 30 of 30 | 0 of 30 |
+| Marked right, second pass | 30 of 30 | 30 of 30 | 0 of 30 |
+| Marked right, Gemini | 30 of 30 | 30 of 30 | not marked |
 
-The folder took fewer steps on 10 of 10 held-out questions. Four of the ten turn on a rule that an exam question also turns on; `generator/key-check.md` lists the pairs.
+The folder took fewer steps on 10 of 10 held-out questions, and lost no marks on any of them. The two passes by the model under test agree on all 90 answers.
+
+So the loss on right answers did not repeat. On the exam it came from three questions, Q3, Q4 and Q7, whose keys ask for a detail the question does not. The ten held-out questions came from the same pool by the same draw, and none of them cost the folder a mark. The fewer steps held on all twenty questions. The fewer right answers held on three of the twenty.
+
+Two cautions. These marks were made after the exam's result was known, though the markers were not told it. And the markers could still tell the set-ups apart: Gemini's guesses were right on 5 of 60, which is as telling as 55 of 60 with the labels the other way round.
+
+Four of the ten held-out questions turn on a rule that an exam question also turns on; `generator/key-check.md` lists the pairs.
 
 ## A question nobody had written down
 
