@@ -4,13 +4,15 @@ This repo is a folder and a test of whether the folder earns its place.
 
 `README.md` at the top of the repo is part of the folder under test: it is the map the model loads. It is not a guide to the repo. This page is.
 
-## What happened, in five lines
+## What happened, in seven lines
 
 - With the folder's instruction files loaded, the model took fewer steps on 10 of 10 questions: 2.37 per session against 5.03 with the same documents and no instruction files.
 - It was marked right less often: 28, 23 and 23 of 30 on three marking passes, against 30 of 30 for the documents alone on all three.
 - It was given more text, not less: 9,689 characters per session against 7,191.
 - By a rule fixed before any document existed, the instruction files did not earn their place over the documents alone.
 - Against the brief's own control, no folder at all, the folder wins as it must: 28 of 30 against 0 of 30. The documents do that work.
+- Every answer the folder lost a mark on gives the same yes or no and the same figure as the expected answer. Each left out a detail the answer key asks for and the question does not. The folder's rules tell the model to answer what was asked and stop.
+- On ten more questions it had never been tested on, the folder took fewer steps on 10 of 10 and both set-ups were marked right on 30 of 30. The loss of marks did not repeat.
 
 The folder is a small library of made-up rules for two organisations (`reference/`), a map of the documents (`README.md`), and instructions on how to look things up and how to answer (`identity.md`, `rules.md`, `examples.md`). `results.md` has every figure, tie and loss. `after-the-run.md` has what was checked afterwards. `summary.html` is the same story on one page.
 
@@ -72,7 +74,7 @@ The history shows the order of the commits. It cannot show when they were made: 
 
 ## A script, and the Claude project as well
 
-The brief describes dropping the folder into a Claude project. That was done too: all ten questions in a project holding the folder, and again in a plain chat with no project. The prompts were sent through the browser by the build session, not typed by hand; `DEVIATIONS.md` says how. `claude-project.md` says what happened, the saved chats are in `claude-project/`, and `results.md` carries the page word for word.
+The brief describes dropping the folder into a Claude project. That was done too: all ten questions in a project holding the folder, and again in a plain chat with no project. The prompts were sent through the browser by the build session (the Claude Code session that built this entry), not typed by hand; `DEVIATIONS.md` says how. `claude-project.md` says what happened, the saved chats are in `claude-project/`, and `results.md` carries the page word for word.
 
 A project keeps no log of what the model opened, so it can show whether answers were right and nothing about how the model got there. That is why the steps come from a script: one command, a pinned model, and every session's raw log. The two are never mixed. If you re-run in a project you should expect to match the project page, not the step counts.
 

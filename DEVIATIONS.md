@@ -1,5 +1,7 @@
 # Deviations
 
+What was done differently from the plan, and what was corrected after the run, newest first where it concerns the results page.
+
 ## Monday 2026-10-12, after the reveal: four faults in how results are presented, found by two outside reads
 
 Two fresh sessions were given the competition rules and a clone of this repo and asked to break it. They found the faults below. The fixing commit is this one. The page and the code as they stood are in the history at the commit before it. No count of steps, no grade and no headline sentence changed, and the verdict on the folder is the same.
@@ -7,7 +9,7 @@ Two fresh sessions were given the competition rules and a clone of this repo and
 1. **The wrong-map check claimed more than the marks support.** The page said "The test caught the bad folder" on the strength of right answers, 25 against 28. That was the first marking pass alone. The second pass has it the other way round, 27 against 23. On steps the wrong map was higher on 8 of 10 questions, which is below the 9-or-10 rule. The check now needs fewer right answers by both passes, and the sentence prints both. On this run it now reads that the run did not show the test can catch a folder that misleads. Files: `verify/results.mjs`.
 2. **A sentence left over from the rehearsals.** The line listing faults by arm ended "In the empty arm the model sometimes looks outside its folder and is refused." In this run no session was refused anything. The sentence is removed. Files: `verify/results.mjs`.
 3. **Usage-warning sessions were counted and not shown.** The pre-registration says they are counted and shown. All 570 sessions ran while the account was past a usage-warning mark; `runs/sealed/scan.md` said so and the results page did not. It now does. Files: `verify/results.mjs`.
-4. **The readable transcripts hid what a search looked for.** When the model gave a search both a pattern and a folder, the readable page printed only the folder, as `Grep .`. It now prints both. This touched 37 of the 90 readable transcripts. The raw logs beside them were always complete and are unchanged. Files: `lib/session.mjs`, `lib/transcript.mjs`.
+4. **The readable transcripts hid what a search looked for.** When the model gave a search both a pattern and a folder, the readable page printed only the folder, as `Grep .`. It now prints both. This changed 56 of the 90 readable transcripts: 20 under `control/documents-only/`, 25 under `control/empty/` and 11 under `treatment/`. An earlier wording of this note said 37, which was the number of files where the folder was printed as a bare `.`; the count of files changed is 56. No raw log changed: the 90 `.jsonl` files beside them were always complete and are byte for byte what the run wrote. Files: `lib/session.mjs`, `lib/transcript.mjs`.
 
 `verify/selftest-proof.mjs` gained a case for the first fault.
 
@@ -21,7 +23,7 @@ One batch of four plain chats timed out on the way back. The chats had been sent
 
 ## Statements in the pages written before the run that are wrong or were not carried out
 
-Those pages are left as they were written. The corrections are here.
+Those pages are left as they were written, with one exception: `RUN.md` gained two notes under "What you need" after the run, on starting Claude Code on Windows and on what a session inherits, and one under the re-run step on what to do if every session is listed as a fault. They help a visitor run it and change nothing about how the sealed run was made. The corrections to everything else are here.
 
 - **"No document or question from any rehearsal is in this repo"** (`PREREGISTRATION.md`, `PILOTS.md`). None is in the exam, the pool or `reference/`. But `pilots/size-probe/` was copied in whole from the last rehearsal's repo, and its logs and manifests carry that rehearsal's documents, questions and expected answers (a boat club and a lending library).
 - **`pilots/size-probe/NOTES.md` says "this repo's 18 documents".** It was written in the rehearsal's repo and means that repo. Its small library is the rehearsal's 18 documents, not Fenwray and Quillbrook, and its sessions are dated Sunday 2026-10-11, before this entry's documents existed.

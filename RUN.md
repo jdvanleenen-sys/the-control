@@ -1,7 +1,8 @@
 # How to run it
 
 Written before the runs it describes. Follow it top to bottom; you should not need anything
-that is not on this page.
+that is not on this page. Three notes for visitors were added after the run; `DEVIATIONS.md`
+says which.
 
 ## What you need
 
@@ -69,6 +70,12 @@ folder with the documents alone, question by question, on mean steps. Fewer on 9
 is "fewer"; more on 9 or 10 is "more"; anything else is "no clear difference". Your re-run
 reproduces if the same rule gives the same one of those three. Single questions do move by a
 step or two between runs, so the cells will not all match.
+
+**If every session is listed as a fault.** The line names the fault. The two most likely on
+another machine are a model name your tool reports differently from `claude-sonnet-5-5`, and a
+second, smaller model running beside it. Both stop the comparison on purpose, because the run
+would not be the run this repo made. Your raw logs and readable transcripts are still written,
+so the steps and answers can be read by eye.
 
 **What it does not tell you.** Steps show how the model got to an answer, not whether the
 answer is right. An arm that holds documents and takes no step is called out with a notice.

@@ -69,7 +69,8 @@
   footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--hairline); color: var(--muted); font-size: 14px; }
   footer strong { color: var(--text); } code { font-family: ui-monospace, "JetBrains Mono", monospace; font-size: .92em; }
   @media (max-width: 760px) { .grid3, .grid2 { grid-template-columns: 1fr; } .flow { grid-template-columns: 1fr 1fr; } }
-  @media print { body { background: #fff; } main { padding: 0; max-width: none; } .card, .flow li, .answer { break-inside: avoid; } h2 { break-after: avoid; } }
+  @page { size: 1000px 2750px; margin: 30px; }
+  @media print { body { background: #fff; } main { padding: 0; max-width: none; } .grid3 { grid-template-columns: repeat(3, 1fr); } .grid2 { grid-template-columns: 1fr 1fr; } .flow { grid-template-columns: repeat(4, 1fr); } }
 </style>
 </head>
 <body>
@@ -112,12 +113,12 @@
   </div>
 
   <h2>How it was run</h2>
-  <p class="sub">Each step was committed before the next one began, so nothing could be shaped to fit the result.</p>
+  <p class="sub">Each step was committed in this order. The rule, the questions and the folder were all fixed before the run.</p>
   <ol class="flow">
     <li><b>Rule fixed</b>How the folder would be judged, written before anything else.</li>
     <li><b>Documents</b>ChatGPT wrote 18 documents for two made-up organisations.</li>
     <li><b>Questions</b>ChatGPT wrote 20, with answers. It never saw the folder.</li>
-    <li><b>Answers checked</b>Gemini answered all 20 with no answer key. All agreed.</li>
+    <li><b>Answers checked</b>Gemini answered all 20 with no answer key. No figure differed.</li>
     <li><b>Random draw</b>A script picked the 10 exam questions. Nobody chose.</li>
     <li><b>570 sessions</b>Claude answered in 19 set-ups, from one command.</li>
     <li><b>Graded 3 times</b>Twice by Claude, once by Gemini, set-up hidden.</li>
@@ -167,7 +168,7 @@
       <ul class="plain" style="margin-top:8px">
         <li>The map does the work on steps: 2.50 with the map alone, 6.07 with nothing loaded.</li>
         <li>A re-run from a fresh copy gave the same result: 2.50 against 5.10.</li>
-        <li>On 10 questions kept aside, the folder took fewer steps on all 10.</li>
+        <li>On 10 questions kept aside: fewer steps on all 10, and 30 of 30 marked right in both set-ups. The loss of marks did not repeat.</li>
       </ul>
     </div>
     <div class="card"><strong>What this does not show</strong>

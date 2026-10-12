@@ -27,6 +27,6 @@ Where the folder was marked wrong. On Q3, Q4, Q5 and Q7 the answer gives the sam
 
 Where no folder went wrong. On Q7 the plain chat said the band may play until 21:45, reasoning from the question's own wording. The documents say 21:30.
 
-What this can and cannot show. A project loads the files for you and keeps no record of what the model read, so there are no steps to count here. It shows whether the answers were right. It was done once. Without the documents the model cannot know the answers, so the gap between the two columns is mostly the documents, not the instruction files; the run that separates those two is the one above. The saved chats are in `claude-project/`, with the marking sheet, the marks and the key that says which number was which.
+What this can and cannot show. A project loads the files for you and keeps no record of what the model read, so there are no steps to count here. It shows whether the answers were right. It was done once. Without the documents the model cannot know the answers, so the gap between the two columns is mostly the documents, not the instruction files; the run that separates those two is the scripted one this repo is built around. The saved chats are in `claude-project/`, with the marking sheet, the marks and the key that says which number was which.
 
 One batch of four plain chats timed out on the way back. The chats had been sent and answered; their answers were read from the chat history and not asked again.

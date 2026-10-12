@@ -20,6 +20,16 @@ His seven marks are in `after-the-run/person-marks.csv`. He marked only answers 
 
 What the seven have in common. Each gives the same yes or no and the same figure as the expected answer. Each leaves out something the "Correct requires" line asks for: on Q3 the ordinary procedure the exception departs from, on Q4 the £4 member price, on Q7 that 21:45 is 15 minutes over. The markers split on whether leaving that out makes an answer wrong. The person passed Q3 and Q4 and failed Q7.
 
+## What the pre-registration expected, and what happened
+
+It expected fewer steps, more text and so the verdict "did not earn its place". All three happened. It also named three questions, Q4, Q7 and Q10, where the folder might lose marks for being brief. The losses came on Q3, Q4 and Q7. Q10 was marked right on every pass; Q3 was not foreseen.
+
+## A result the design flagged
+
+The design said that if steps fell through a file other than the map, it would mean the model had been told to read less. Steps did fall with every one of the four files, on 10 of 10 questions each. With nothing loaded the model took 6.07 steps; with only the map, 2.50; with only the rules, 3.70; with only `identity.md`, which is 50 words and says nothing about looking things up, 4.60; with only `examples.md`, 4.60. So part of the saving is not the map pointing the way. Being handed any instructions first made the model look around less. Only the map and the rules had predictions; the other two are shown and were not claimed.
+
+`examples.md` also shortened answers more than `rules.md` did: 68 words against 127 with and without the examples, and 85 against 110 for the rules.
+
 ## What this run says to change in the folder, which has not been changed
 
 `rules.md` says: "Answer every part asked. Then stop." It worked: answers with the rules loaded were shorter on 10 of 10 questions. It also cost marks, because a short answer says what applies and not what the asker wrongly expected.
