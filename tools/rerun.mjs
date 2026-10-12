@@ -17,7 +17,7 @@ import { compareByQuestion, fixed, headlineSentence, mean, outcome } from '../li
 import { headlineTally, loadRows } from '../verify/analyse.mjs';
 
 const OUTCOME_WORDS = { fewer: 'fewer steps with the folder', more: 'more steps with the folder', unclear: 'no clear difference' };
-const MEANING = 'Reproduces means the same rule lands on the same one of three outcomes. Single questions can differ by a step or two between runs.';
+const MEANING = 'Reproduces means the same rule lands on the same one of three outcomes. Single questions can differ by a step or two between runs. This compares steps only. Right answers are not re-marked: to check them, read your answers in the folder named below, and ours under control/ and treatment/, against questions.md.';
 
 export function report(committed, mine, emptyCommitted, emptyMine, extra = []) {
   const lines = ['| Question | Committed: full | Committed: documents | Re-run: full | Re-run: documents |', '|---|---|---|---|---|'];

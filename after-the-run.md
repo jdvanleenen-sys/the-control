@@ -36,9 +36,9 @@ The design said that if steps fell through a file other than the map, it would m
 
 The change it points to is one line: when a figure or a rule the asker is relying on does not apply, say which one and by how much. The pre-registration allows one labelled change with its own re-run.
 
-Before changing anything, the loss was checked on questions the folder had never been tested on. That is the held-out section below: on ten more questions from the same pool, marked the same way, the folder lost no marks at all. So the control did not show a fault in the folder that repeats. It showed three answer keys that ask for more than their questions do, and a folder that answers the question.
+Before changing anything, the loss was checked on questions the folder had never been tested on. That is the held-out section below: on ten more questions from the same pool, marked the same way, the folder lost no marks at all. So the control did not show a fault in the folder that repeats. Our reading is that it showed answer keys that ask for more than their questions do, and a folder that answers the question asked. That reading is not proved: two of the held-out keys also ask for something extra, and the folder lost nothing on them, so strict keys are not the whole story.
 
-The folder was therefore not changed. Adding the line would have fitted the folder to three keys on the day they were seen, and the held-out questions say there was nothing general to fix. What the control changed is what we would claim for the folder: it halves the steps, it does not make answers more right, and it costs more text than it saves.
+The folder was therefore not changed. Adding the line would have fitted the folder to three keys on the day they were seen, and on the held-out questions there was nothing to fix. What the control changed is what we would claim for the folder: it halves the steps, it does not make answers more right, and it costs more text than it saves.
 
 ## The re-run a visitor is invited to do
 
@@ -89,6 +89,10 @@ So the loss on right answers did not repeat. On the exam it came from three ques
 Two cautions. These marks were made after the exam's result was known, though the markers were not told it. And the markers could still tell the set-ups apart: Gemini's guesses were right on 5 of 60, which is as telling as 55 of 60 with the labels the other way round.
 
 Four of the ten held-out questions turn on a rule that an exam question also turns on; `generator/key-check.md` lists the pairs.
+
+## The draw took the second question of nine pairs
+
+The pool has two questions of each type for each organisation. The draw picked the second of the pair in nine of the ten slots and the first in one. That looks like a pattern, so it was tested. The generator is fair: over 20,000 draws between two items it kept the first 9,906 times. And about 2 in 100 seeds give nine or ten slots the same way round. So this is a 1-in-50 outcome of a fair draw, not a bias in it. The seed is the fingerprint of the pool, and running `tools/draw.mjs`'s logic again on the committed pool gives the same ten.
 
 ## A question nobody had written down
 

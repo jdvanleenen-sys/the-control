@@ -16,7 +16,8 @@ says which.
   Set `TC_STAGE_ROOT` to change it. No folder above it may hold a `CLAUDE.md` or `AGENTS.md`;
   the tools stop and say so if one does.
 
-Every command is run from the repo's top folder. Nothing here installs anything.
+Every command is run from the repo's top folder. Nothing here installs anything. Clone the
+repo in full, not shallow: the history check reads every commit.
 
 Sessions use the model `claude-sonnet-5-5` at effort `medium` unless you set `TC_MODEL`. Every
 command that starts sessions prints the model it used. The committed run records the Claude
@@ -61,8 +62,8 @@ Each ends with a line containing `passed`, or lists what is wrong and exits with
 node tools/rerun.mjs --name NAME
 ```
 
-This runs the ten questions once in three arms, named the same way everywhere: Full package
-(the folder loaded first), Documents only, and Empty. It prints your steps beside the committed ones and ends with `Reproduces: YES`
+This runs the ten questions once in three arms: Full package (the folder loaded first),
+Documents only, and Empty. It prints your steps beside the committed ones and ends with `Reproduces: YES`
 or `Reproduces: NO`.
 
 **What "reproduces" means.** The committed run's sentence was chosen by a rule: compare the full
@@ -76,6 +77,11 @@ another machine are a model name your tool reports differently from `claude-sonn
 second, smaller model running beside it. Both stop the comparison on purpose, because the run
 would not be the run this repo made. Your raw logs and readable transcripts are still written,
 so the steps and answers can be read by eye.
+
+**It compares steps, not marks.** "Reproduces: YES" confirms how the model got to its answers.
+The verdict also rests on right answers, and a re-run does not mark them. To check that half,
+read your answers and ours against `questions.md`; `after-the-run.md` says what the markers
+split on.
 
 **What it does not tell you.** Steps show how the model got to an answer, not whether the
 answer is right. An arm that holds documents and takes no step is called out with a notice.

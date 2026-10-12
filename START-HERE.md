@@ -10,7 +10,7 @@ This repo is a folder and a test of whether the folder earns its place.
 - It was marked right less often: 28, 23 and 23 of 30 on three marking passes, against 30 of 30 for the documents alone on all three.
 - It was given more text, not less: 9,689 characters per session against 7,191.
 - By a rule fixed before any document existed, the instruction files did not earn their place over the documents alone.
-- Against the brief's own control, no folder at all, the folder wins as it must: 28 of 30 against 0 of 30. The documents do that work.
+- Against the brief's own control, no folder at all, the folder wins as it must: 23 to 28 of 30 against 0 of 30. The documents do that work.
 - Every answer the folder lost a mark on gives the same yes or no and the same figure as the expected answer. Each left out a detail the answer key asks for and the question does not. The folder's rules tell the model to answer what was asked and stop.
 - On ten more questions it had never been tested on, the folder took fewer steps on 10 of 10 and both set-ups were marked right on 30 of 30. The loss of marks did not repeat.
 

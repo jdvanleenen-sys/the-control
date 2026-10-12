@@ -12,7 +12,7 @@ An entry for Weekly Comp #14.
 - Its answers were marked right less often: 28, 23 and 23 of 30 on three gradings, against 30 of 30 for the documents alone on all three.
 - It put more text in front of the model, not less: 9,689 characters against 7,191.
 - So, by the rule fixed in advance, the folder's instructions **did not earn their place** over the documents alone.
-- Against no folder at all the folder wins, 28 of 30 against 0 of 30. The documents do that work, which is why the documents alone are the control that matters.
+- Against no folder at all the folder wins, 23 to 28 of 30 against 0 of 30. The documents do that work, which is why the documents alone are the control that matters.
 
 Every answer that lost a mark gives the right yes or no and the right figure. Each left out a detail the answer key wanted, because the folder tells the model to answer what was asked and stop. On ten more questions held back from the test, both set-ups scored 30 of 30 and the folder still took fewer steps on all ten.
 
