@@ -29,7 +29,7 @@ Three sessions, about half a minute. It prints what each of the three runs did a
 **2. Run it all again.**
 
 ```
-node tools/rerun.mjs --name NAME
+node tools/rerun.mjs --name sealed
 ```
 
 Thirty sessions for one pass of every question in the three runs above, about four minutes. It prints your numbers beside ours and says whether the headline came out the same way. `RUN.md` has the set-up and what a re-run should and should not match.
