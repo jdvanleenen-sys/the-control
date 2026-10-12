@@ -34,7 +34,11 @@ The design said that if steps fell through a file other than the map, it would m
 
 `rules.md` says: "Answer every part asked. Then stop." It worked: answers with the rules loaded were shorter on 10 of 10 questions. It also cost marks, because a short answer says what applies and not what the asker wrongly expected.
 
-The change it points to is one line: when a figure or a rule the asker is relying on does not apply, say which one and by how much. That has not been made. The pre-registration allows one labelled change with its own re-run; making it would tune the folder to this key on the day it was seen, and the result above is the one that was measured.
+The change it points to is one line: when a figure or a rule the asker is relying on does not apply, say which one and by how much. The pre-registration allows one labelled change with its own re-run.
+
+Before changing anything, the loss was checked on questions the folder had never been tested on. That is the held-out section below: on ten more questions from the same pool, marked the same way, the folder lost no marks at all. So the control did not show a fault in the folder that repeats. It showed three answer keys that ask for more than their questions do, and a folder that answers the question.
+
+The folder was therefore not changed. Adding the line would have fitted the folder to three keys on the day they were seen, and the held-out questions say there was nothing general to fix. What the control changed is what we would claim for the folder: it halves the steps, it does not make answers more right, and it costs more text than it saves.
 
 ## The re-run a visitor is invited to do
 
