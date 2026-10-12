@@ -8,7 +8,7 @@
 
 1. Grep Quillbrook
 2. Glob **/*{rules,hall,Quillbrook}*
-3. Grep reference/hall
+3. Grep "amplif|music|22:00|21:45|curfew|noise" in reference/hall
 
 ## Answer
 

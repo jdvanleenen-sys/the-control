@@ -10,7 +10,7 @@
 2. Glob **/*
 3. Read reference/hall/hall-fees.md
 4. Read reference/hall/hall-changes.md
-5. Grep reference/hall
+5. Grep "speaker|display board|equipment" in reference/hall
 
 ## Answer
 

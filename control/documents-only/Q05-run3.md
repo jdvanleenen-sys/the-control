@@ -11,7 +11,7 @@
 3. Read reference/film/film-fees.md
 4. Read reference/film/film-changes.md
 5. Read reference/film/film-fees-archive.md
-6. Grep reference/film
+6. Grep "child|under 12|accompan" in reference/film
 
 ## Answer
 

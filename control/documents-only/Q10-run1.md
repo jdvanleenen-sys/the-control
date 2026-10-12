@@ -9,7 +9,7 @@
 1. Grep Quillbrook
 2. Glob **/*{quillbrook,Quillbrook,rules,constitution,governing}*
 3. Read reference/hall/hall-trustees.md
-4. Grep reference/hall
+4. Grep "quorum|remote|video|virtual" in reference/hall
 
 ## Answer
 

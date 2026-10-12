@@ -6,7 +6,7 @@
 
 ## Steps (4)
 
-1. Grep reference/hall
+1. Grep "Meeting Room|supervis|children|under 1[0-9]|capacity|occupancy" in reference/hall
 2. Read reference/hall/hall-safety.md
 3. Read reference/hall/hall-changes.md
 4. Read reference/hall/hall-bookings.md

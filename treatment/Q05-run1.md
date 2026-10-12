@@ -6,7 +6,7 @@
 
 ## Steps (2)
 
-1. Grep reference/film
+1. Grep "child|under 1|ticket" in reference/film
 2. Read reference/film/film-changes.md
 
 ## Answer

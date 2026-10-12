@@ -279,7 +279,8 @@ function testTrust(record, scratch) {
   record('arm', 'the known-bad arm is scheduled with the other eighteen', allArms().length === 19 && allArms().includes(ARM_WRONG_MAP));
   const steps = (higher, lower) => ({ lower, higher, equal: 10 - higher - lower, missing: 0 });
   record('rule', 'a wrong map is caught only at more steps on 9 or 10 questions', wrongMapCaught(steps(9, 1)) && !wrongMapCaught(steps(7, 2)));
-  record('rule', 'a wrong map that reaches fewer right answers is caught whatever the steps', wrongMapCaught(steps(5, 5), { one: 8 }, { one: 10 }) && !wrongMapCaught(steps(5, 5), { one: 10 }, { one: 10 }));
+  record('rule', 'a wrong map that reaches fewer right answers is caught whatever the steps', wrongMapCaught(steps(5, 5), { one: 8, two: 9 }, { one: 10, two: 10 }) && !wrongMapCaught(steps(5, 5), { one: 10, two: 10 }, { one: 10, two: 10 }));
+  record('rule', 'one marking pass alone counting fewer right answers does not catch a wrong map', !wrongMapCaught(steps(8, 1), { one: 25, two: 27 }, { one: 28, two: 23 }));
 }
 
 export function proofCases(record, scratch) {

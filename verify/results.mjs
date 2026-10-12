@@ -163,9 +163,10 @@ function costSentence(rows, key) {
 }
 
 // The known-bad arm is judged by the counting rule the headline uses: more steps on 9 or 10
-// questions, or fewer right answers. Anything less and the test did not clearly catch it.
+// questions, or fewer right answers by both marking passes. One pass alone is not enough: the
+// passes can disagree on which folder did better. Anything less and the test did not catch it.
 export function wrongMapCaught(tally, wrong = null, right = null) {
-  return outcome(tally) === 'more' || Boolean(wrong && right && wrong.one < right.one);
+  return outcome(tally) === 'more' || Boolean(wrong && right && wrong.one < right.one && wrong.two < right.two);
 }
 
 // The known-bad arm. If a map that points to the wrong documents changes nothing, the test
@@ -176,8 +177,8 @@ function wrongMapSentence(rows, key, marks) {
   if (bad.length === 0 || good.length === 0) return 'The known-bad arm, a folder whose map points to the wrong documents, has no clean session to compare.';
   const tally = compareByQuestion(questionsOf(rows), bad, good, 'steps');
   const [wrong, right] = marks ? [correctCounts(key, marks, ARM_WRONG_MAP), correctCounts(key, marks, ARM_FULL)] : [null, null];
-  const answers = marks ? ` Right answers: ${wrong.one} of ${wrong.total} with the wrong map, ${right.one} of ${right.total} with the true one.` : '';
-  const closing = wrongMapCaught(tally, wrong, right) ? 'The test caught the bad folder.' : 'By the counting rule that is not a clear difference. This run did not show that the test can catch a folder that misleads.';
+  const answers = marks ? ` Right answers of ${wrong.total}, by the two marking passes: ${wrong.one} and ${wrong.two} with the wrong map, ${right.one} and ${right.two} with the true one.` : '';
+  const closing = wrongMapCaught(tally, wrong, right) ? 'The test caught the bad folder.' : 'Neither the steps nor the right answers show a clear difference by the rule fixed in advance. This run did not show that the test can catch a folder that misleads.';
   return `A folder made wrong on purpose, its map pointing to the wrong documents, took ${fixed(tally.meanA)} steps per session against ${fixed(tally.meanB)} for the true folder: more on ${tally.higher} of ${tally.perQuestion.length} questions, fewer on ${tally.lower}.${answers} ${closing}`;
 }
 
@@ -214,7 +215,7 @@ function faultsByArm(rows, key) {
     const all = rows.filter((r) => key.arms[r.code] === arm);
     return `${label} ${all.filter((r) => r.faults.length > 0).length} left out and ${all.filter((r) => flagsOf(r).length > 0).length} flagged of ${all.length}`;
   });
-  return `By arm: ${lines.join('; ')}. A session is left out only for a fault in the set-up: a wrong model or tool version, an add-on, a second model, or a broken log. A session is flagged and kept in every average when the model itself did something: a refused call, a tool error, a limit reached, an empty answer. In the empty arm the model sometimes looks outside its folder and is refused.`;
+  return `By arm: ${lines.join('; ')}. A session is left out only for a fault in the set-up: a wrong model or tool version, an add-on, a second model, or a broken log. A session is flagged and kept in every average when the model itself did something: a refused call, a tool error, a limit reached, an empty answer.`;
 }
 
 // The files each arm held were fingerprinted when staged and again after the last session.
@@ -274,7 +275,7 @@ export function buildResults(dir) {
   return [
     '# Results', '',
     ...voidLines(rows, key), headlineSentence(tally), '', loadedSentence(rows, key), '', ...correctness, '', coldSentence(rows, key, marks), '', verdict, '', ...costSentence(rows, key),
-    `Sessions: ${rows.length}. Left out for a fault in the set-up: ${rows.filter((r) => r.faults.length > 0).length}. Kept and flagged for something the model did: ${rows.filter((r) => flagsOf(r).length > 0).length}.`, '', faultsByArm(rows, key), '',
+    `Sessions: ${rows.length}. Left out for a fault in the set-up: ${rows.filter((r) => r.faults.length > 0).length}. Kept and flagged for something the model did: ${rows.filter((r) => flagsOf(r).length > 0).length}. Ran while the account was past a usage-warning mark, which is not a fault: ${rows.filter((r) => r.usageWarning).length}.`, '', faultsByArm(rows, key), '',
     '## The headline pair', '', ...pairSection(rows, key),
     '## Where the folder tied or lost, full package against documents only', '', tiesAndLosses(rows, key, marks), '',
     '## What we changed in the folder because of a control run', '', included(FOLDER_CHANGES, 'No change is on record.'), '',

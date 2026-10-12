@@ -7,7 +7,7 @@
 ## Steps (2)
 
 1. Read reference/film/film-conduct.md
-2. Grep reference/film/film-changes.md
+2. Grep "conduct|warning|threat|leave" in reference/film/film-changes.md
 
 ## Answer
 

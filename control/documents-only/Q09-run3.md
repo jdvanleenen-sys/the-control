@@ -6,8 +6,8 @@
 
 ## Steps (7)
 
-1. Grep .
-2. Glob .
+1. Grep "Quillbrook" in .
+2. Glob "**/*{ull,ules,illbrook}*" in .
 3. Read reference/hall/hall-safety.md
 4. Read reference/hall/hall-conduct.md
 5. Read reference/hall/hall-changes.md

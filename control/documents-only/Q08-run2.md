@@ -6,8 +6,8 @@
 
 ## Steps (5)
 
-1. Grep .
-2. Glob .
+1. Grep "Quillbrook" in .
+2. Glob "**/*" in .
 3. Read reference/hall/hall-fees.md
 4. Read reference/hall/hall-changes.md
 5. Read reference/hall/hall-bookings.md

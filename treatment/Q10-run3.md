@@ -7,7 +7,7 @@
 ## Steps (2)
 
 1. Read reference/hall/hall-trustees.md
-2. Grep reference/hall/hall-changes.md
+2. Grep "quorum|remote|video|trustee" in reference/hall/hall-changes.md
 
 ## Answer
 

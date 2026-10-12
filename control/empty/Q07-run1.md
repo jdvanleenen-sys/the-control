@@ -6,8 +6,8 @@
 
 ## Steps (2)
 
-1. Grep .
-2. Glob .
+1. Grep "Quillbrook|amplified" in .
+2. Glob "**/*" in .
 
 ## Answer
 

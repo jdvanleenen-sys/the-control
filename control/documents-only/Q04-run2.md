@@ -6,8 +6,8 @@
 
 ## Steps (6)
 
-1. Grep .
-2. Glob .
+1. Grep "Fenwray" in .
+2. Glob "**/*{rule,Rule,fenwray,Fenwray,member}*" in .
 3. Read reference/film/film-membership.md
 4. Read reference/film/film-fees.md
 5. Read reference/film/film-screenings.md
