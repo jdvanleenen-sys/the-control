@@ -2,6 +2,15 @@
 
 What was done differently from the plan, and what was corrected after the run, newest first where it concerns the results page.
 
+## Monday 2026-10-12, after the verdict: a follow-up on a separate copy, two stopped runs, and a second machine
+
+None of this touches the sealed run, its marks or the verdict.
+
+- **The one labelled change.** One line was added to `rules.md` on a separate copy of this repo, and the full folder, the documents alone and nothing were run again on the ten exam questions and the ten held-out questions. `folder-change/README.md` has it. The folder in this repo is unchanged.
+- **Two runs were stopped and started again.** The first wording of the added line took `rules.md` over the folder's own 220-word limit. Both follow-up runs were stopped at 19:09 UTC after six sessions each, before any answer was read. The line was shortened and both were started again at 19:10 UTC. The twelve logs of the stopped runs are in `folder-change/false-start/`, and the first wording is quoted in `folder-change/README.md`.
+- **The follow-up's documents-only arm is its own.** It was run again beside the changed folder and is not the sealed run's.
+- **A second machine.** The re-run command, a made-up question and the offline checks were run on a second laptop. What they printed was pasted back and is in `after-the-run/second-machine/`. The raw logs stayed on that machine.
+
 ## Monday 2026-10-12, after the reveal: four faults in how results are presented, found by two outside reads
 
 Two fresh sessions were given the competition rules and a clone of this repo and asked to break it. They found the faults below. The fixing commit is this one. The page and the code as they stood are in the history at the commit before it. No count of steps, no grade and no headline sentence changed, and the verdict on the folder is the same.
@@ -23,7 +32,7 @@ One batch of four plain chats timed out on the way back. The chats had been sent
 
 ## Statements in the pages written before the run that are wrong or were not carried out
 
-Those pages are left as they were written, with one exception: `RUN.md` gained two notes under "What you need" after the run, on starting Claude Code on Windows and on what a session inherits, and one under the re-run step on what to do if every session is listed as a fault. They help a visitor run it and change nothing about how the sealed run was made. The corrections to everything else are here.
+Those pages are left as they were written, with one exception: `RUN.md` was edited after the run in six places. A sentence at the top says so. Two notes under "What you need", on starting Claude Code on Windows and on what a session inherits. One line saying to clone the repo in full, because the history check reads every commit. Two paragraphs under the re-run step: what to do if every session is listed as a fault, and that a re-run compares steps and does not mark answers. And the words "named the same way everywhere" were taken out of the re-run step, because they were not true. An earlier wording of this note listed three of the six. They help a visitor run it and change nothing about how the sealed run was made. The corrections to everything else are here.
 
 - **"No document or question from any rehearsal is in this repo"** (`PREREGISTRATION.md`, `PILOTS.md`). None is in the exam, the pool or `reference/`. But `pilots/size-probe/` was copied in whole from the last rehearsal's repo, and its logs and manifests carry that rehearsal's documents, questions and expected answers (a boat club and a lending library).
 - **`pilots/size-probe/NOTES.md` says "this repo's 18 documents".** It was written in the rehearsal's repo and means that repo. Its small library is the rehearsal's 18 documents, not Fenwray and Quillbrook, and its sessions are dated Sunday 2026-10-11, before this entry's documents existed.
@@ -32,7 +41,7 @@ Those pages are left as they were written, with one exception: `RUN.md` gained t
 - **"Each file's word and token count is printed beside its effect"** (`EXPERIMENT.md`). It is not on the results page. The sizes are in `after-the-run.md`.
 - **Held-out questions "reported beside the headline"** (`PREREGISTRATION.md`). They are in `after-the-run.md` and `runs/heldout/report.md`, not on the results page.
 - **"A library four times the size"** (`limits.md`, `PILOTS.md`). 52 documents against 18 is 2.9 times the documents and 3.9 times the text.
-- **`RUN.md` says the three arms are named the same way everywhere.** They are not: the results page says "full package", "folder loaded first" and "the full folder" for the same arm.
+- **`RUN.md` said the three arms are named the same way everywhere.** They are not, and the words have been taken out of it: the results page says "full package", "folder loaded first" and "the full folder" for the same arm.
 - **`RUN.md` on starting Claude Code.** On Windows, `CLAUDE_BIN` has to point at `claude.exe`; a `.cmd` launcher will not start. And a session inherits only a short list of variables, so sign-in by API key, Bedrock, Vertex or a proxy set in the shell is dropped. `RUN.md` now says both.
 - **"Three of the ten expected answers ask for a figure the question does not"** (`limits.md`, `PREREGISTRATION.md`). That counted too few. At least five of the ten keys ask for something the question does not: Q3 the ordinary procedure the exception departs from, Q4 the member price, Q5 that the child is under 12 and accompanied, Q7 the minutes over, Q10 the quorum. The folder lost marks on Q3, Q4 and Q7 in the scripted run, and on Q3, Q4, Q5 and Q7 in the Claude project run. Q3 and Q5 were not foreseen.
 - **The key check's reading of "differ"** was made after seeing the checker's answers; `generator/key-check.md` says so. Two of the three questions the folder lost on, Q4 and Q7, are among the five that the stricter reading would have sent to a dispute round.

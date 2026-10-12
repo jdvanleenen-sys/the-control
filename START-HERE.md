@@ -11,7 +11,7 @@ This repo is a folder and a test of whether the folder earns its place.
 - It was given more text, not less: 9,689 characters per session against 7,191.
 - By a rule fixed before any document existed, the instruction files did not earn their place over the documents alone.
 - Against the brief's own control, no folder at all, the folder wins as it must: 23 to 28 of 30 against 0 of 30. The documents do that work.
-- Every answer the folder lost a mark on gives the same yes or no and the same figure as the expected answer. Each left out a detail the answer key asks for and the question does not. The folder's rules tell the model to answer what was asked and stop.
+- Every answer the folder lost a mark on gives the same yes or no and the same figure as the expected answer. Each left out a detail the answer key asks for and the question does not. Our reading, which is not proved: the folder's rules and examples push for short answers, and a short answer leaves that detail out.
 - On ten more questions it had never been tested on, the folder took fewer steps on 10 of 10 and both set-ups were marked right on 30 of 30. The loss of marks did not repeat.
 - As a follow-up, one line was added to the folder's rules on a separate copy and the test was run again. The lost marks came back: 30 of 30 on all three gradings, with the steps unchanged. The folder still put more text in front of the model, so by the same rule it still did not earn its place. The first verdict stands. `folder-change/README.md` has it.
 - A re-run on a second machine, set up from nothing and cloned from GitHub, came out the same way: 2.30 steps against 5.20, fewer on 10 of 10.
@@ -72,7 +72,7 @@ node verify/history.mjs
 
 The first rebuilds every table and transcript from the raw logs and fails on any difference. The second reads the commit history and fails if anything is out of order.
 
-The history shows the order of the commits. It cannot show when they were made: this repo was built locally and pushed once, after the run.
+The history shows the order of the commits. It cannot show when they were made: this repo was built locally and pushed only after the run.
 
 ## A script, and the Claude project as well
 

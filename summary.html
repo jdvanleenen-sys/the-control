@@ -100,7 +100,7 @@
   footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--hairline); color: var(--muted); font-size: 14px; }
   footer strong { color: var(--text); } code { font-family: ui-monospace, "JetBrains Mono", monospace; font-size: .92em; }
   @media (max-width: 760px) { .grid3, .grid2, .design { grid-template-columns: 1fr; } .design div { grid-template-columns: 1fr; gap: 2px; border-right: 0 !important; border-bottom: 1px solid var(--hairline) !important; } .flow { grid-template-columns: 1fr 1fr; } }
-  @page { size: 1000px 4350px; margin: 30px; }
+  @page { size: 1000px 4550px; margin: 30px; }
   @media print { body { background: #fff; } main { padding: 0; max-width: none; } .grid3 { grid-template-columns: repeat(3, 1fr); } .grid2, .design { grid-template-columns: 1fr 1fr; } .design div { grid-template-columns: 150px 1fr; } .flow { grid-template-columns: repeat(4, 1fr); } }
 </style>
 </head>
@@ -143,14 +143,80 @@
     </div>
   </div>
 
+  <p style="margin-top:14px">The brief asks for the first comparison: the folder against nothing. The folder wins that one, because the documents do the work. The middle set-up is the control that matters. It shows what the 4 instruction files add on top of the documents.</p>
+
+  <h2>The results</h2>
+  <div class="key"><span><i class="sw" style="background:var(--folder)"></i>Documents with the folder</span><span><i class="sw" style="background:var(--docs)"></i>Documents alone</span></div>
+  <div class="grid2">
+    <div class="card chart">
+      <h3>Steps to reach an answer</h3>
+      <div class="cap">Searches and files opened, per question. Fewer with the folder on 10 of 10.</div>
+      <div id="steps"></div>
+    </div>
+    <div>
+      <div class="card chart" style="margin-bottom:14px">
+        <h3>Answers marked right, of 30</h3>
+        <div class="cap">Each of the three gradings.</div>
+        <div id="right" style="--lab:120px"></div>
+      </div>
+      <div class="card chart" style="margin-bottom:14px">
+        <h3>Text put in front of the AI</h3>
+        <div class="cap">Characters per question. The lighter part is the folder's own files, read every time.</div>
+        <div id="text" style="--lab:120px"></div>
+      </div>
+      <div class="card chart">
+        <h3>Cost per question</h3>
+        <div class="cap">Tokens are the units an AI is billed in. The whole conversation is sent again at every step, so fewer steps means fewer tokens in, even with more text.</div>
+        <div id="cost" style="--lab:120px"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>The rule, fixed before the run</h2>
+  <p class="sub">The folder earns its place only if all three hold.</p>
+  <div class="grid3">
+    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M10 17.5l5 5 9-10"/></svg><div><b>Steps clearly fall</b><span>Met. Fewer on 10 of 10 questions.</span></div></div>
+    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="#C67A3C" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M11 11l12 12M23 11L11 23"/></svg><div><b>Right answers do not fall</b><span>Not met. 23 to 28 against 30.</span></div></div>
+    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="#C67A3C" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M11 11l12 12M23 11L11 23"/></svg><div><b>Text does not rise</b><span>Not met. 9,689 against 7,191.</span></div></div>
+  </div>
+
+  <h2>Why the folder lost marks</h2>
+  <p>Our reading, which is not proved. The folder's rules and examples push for short answers. Its answers were right on the main point and less than half the length. The answer key also wanted the detail a longer answer includes, such as how far over a limit something was.</p>
+
+  <h2>The follow-up: one line, tested on a copy</h2>
+  <p class="sub">After the verdict, one line was added to a copy of the folder's rules: "Say what would otherwise apply, and the difference." Then the three set-ups were run again, on the 10 exam questions and on the 10 kept aside.</p>
+  <div class="grid3">
+    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M10 17.5l5 5 9-10"/></svg><div><b>The lost marks came back</b><span>30 of 30 on all three gradings. It was 23 to 28 on the exam. The 10 kept aside were already 30 of 30, and stayed there.</span></div></div>
+    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M10 17.5l5 5 9-10"/></svg><div><b>The steps did not move</b><span>2.33 against 5.20. Fewer on 10 of 10.</span></div></div>
+    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="#C67A3C" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M11 11l12 12M23 11L11 23"/></svg><div><b>The text is still more</b><span>9,579 against 7,665. By the same rule, still not earned.</span></div></div>
+  </div>
+  <p style="margin-top:12px">The line was written after seeing which answers lost marks, so it is fitted to those questions. The first verdict stands.</p>
+
+  <div class="grid2" style="margin-top:28px">
+    <div class="card"><strong>What held up</strong>
+      <ul class="plain" style="margin-top:8px">
+        <li>Most of the saving on steps comes from the map: 2.50 with the map alone, 6.07 with nothing loaded.</li>
+        <li>A re-run on a second computer, set up from nothing, gave the same result on steps: 2.30 against 5.20.</li>
+        <li>On 10 questions kept aside: fewer steps on all 10, and 30 of 30 marked right in both set-ups. The loss of marks did not repeat.</li>
+      </ul>
+    </div>
+    <div class="card"><strong>What this does not show</strong>
+      <ul class="plain" style="margin-top:8px">
+        <li>One AI model, made-up documents, ten questions, one day.</li>
+        <li>The graders could tell the two set-ups apart from the writing.</li>
+        <li>The second computer used the same account. Nobody outside has run it yet.</li>
+      </ul>
+    </div>
+  </div>
+
   <h2>The design</h2>
-  <p class="sub">What makes it an experiment and not a demonstration.</p>
+  <p class="sub">How the test was built. What makes it an experiment and not a demonstration.</p>
   <div class="design">
     <div><b>The one thing changed</b><span>Whether the folder's 4 instruction files are loaded before the question.</span></div>
     <div><b>Kept the same</b><span>The AI model and its settings, the 18 documents, the 10 questions, the tools (search, list, open), and a fresh session for every question.</span></div>
     <div><b>What was measured</b><span>Steps taken, answers marked right, text put in front of the AI, tokens and seconds.</span></div>
     <div><b>The controls</b><span>Nothing at all. The documents alone. The folder present but not loaded. A folder with its map made wrong on purpose.</span></div>
-    <div><b>The sample</b><span>10 questions, asked 3 times each, in 19 set-ups: 570 sessions. Then 10 more questions held back as a check.</span></div>
+    <div><b>The sample</b><span>10 questions, asked 3 times each, in 19 set-ups: 570 sessions. The 19 are every mix of the 4 instruction files loaded or not (16), the documents alone, nothing, and a folder with a wrong map. Then 10 more questions held back as a check.</span></div>
     <div><b>The decision rule</b><span>A difference counts only if it shows on 9 or 10 of the 10 questions. Written down before any document existed.</span></div>
   </div>
   <h2>How bias was kept out</h2>
@@ -178,7 +244,7 @@
     <div class="keep" style="grid-row:6">Questions written to suit the folder.</div>
     <div class="con r" style="grid-row:7;grid-column:2 / span 2;--n:2"><i></i></div>
 
-    <div class="node" style="grid-row:8;grid-column:3"><i>4</i><em>Gemini</em><b>Answers checked</b>All 20 answered with no key. No figure differed.</div>
+    <div class="node" style="grid-row:8;grid-column:3"><i>4</i><em>Gemini</em><b>Answers checked</b>All 20 answered with no key. No stated figure differed.</div>
     <div class="lead" style="grid-row:8;grid-column:4 / 5"></div>
     <div class="keep" style="grid-row:8">A wrong answer key.</div>
     <div class="con l" style="grid-row:9;grid-column:1 / span 3;--n:3"><i></i></div>
@@ -207,69 +273,6 @@
   </div>
   <p class="sub" style="margin-top:10px">Where it fell short: the set-up was hidden from the graders, but they could often tell the two apart from how the answers were written.</p>
 
-  <h2>The results</h2>
-  <div class="key"><span><i class="sw" style="background:var(--folder)"></i>Documents with the folder</span><span><i class="sw" style="background:var(--docs)"></i>Documents alone</span></div>
-  <div class="grid2">
-    <div class="card chart">
-      <h3>Steps to reach an answer</h3>
-      <div class="cap">Searches and files opened, per question. Fewer with the folder on 10 of 10.</div>
-      <div id="steps"></div>
-    </div>
-    <div>
-      <div class="card chart" style="margin-bottom:14px">
-        <h3>Answers marked right, of 30</h3>
-        <div class="cap">Each of the three gradings.</div>
-        <div id="right" style="--lab:120px"></div>
-      </div>
-      <div class="card chart" style="margin-bottom:14px">
-        <h3>Text put in front of the AI</h3>
-        <div class="cap">Characters per question. The lighter part is the folder's own files, read every time.</div>
-        <div id="text" style="--lab:120px"></div>
-      </div>
-      <div class="card chart">
-        <h3>Cost per question</h3>
-        <div class="cap">Tokens are the units an AI is billed in.</div>
-        <div id="cost" style="--lab:120px"></div>
-      </div>
-    </div>
-  </div>
-
-  <h2>The rule, fixed before the run</h2>
-  <p class="sub">The folder earns its place only if all three hold.</p>
-  <div class="grid3">
-    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M10 17.5l5 5 9-10"/></svg><div><b>Steps clearly fall</b><span>Met. Fewer on 10 of 10 questions.</span></div></div>
-    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="#C67A3C" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M11 11l12 12M23 11L11 23"/></svg><div><b>Right answers do not fall</b><span>Not met. 23 to 28 against 30.</span></div></div>
-    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="#C67A3C" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M11 11l12 12M23 11L11 23"/></svg><div><b>Text does not rise</b><span>Not met. 9,689 against 7,191.</span></div></div>
-  </div>
-
-  <h2>Why the folder lost marks</h2>
-  <p>The folder tells the AI to answer what was asked and then stop. Its answers were right on the main point and less than half the length. The answer key also wanted the detail a longer answer includes, such as how far over a limit something was.</p>
-
-  <h2>What the control changed</h2>
-  <p class="sub">A follow-up, after the verdict. One line was added to the folder's rules: "Say what would otherwise apply, and the difference." Then the three set-ups were run again, on the 10 exam questions and on the 10 kept aside.</p>
-  <div class="grid3">
-    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M10 17.5l5 5 9-10"/></svg><div><b>The lost marks came back</b><span>30 of 30 on all three gradings, on both sets of questions. It was 23 to 28.</span></div></div>
-    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M10 17.5l5 5 9-10"/></svg><div><b>The steps did not move</b><span>2.33 against 5.20. Fewer on 10 of 10.</span></div></div>
-    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="#C67A3C" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M11 11l12 12M23 11L11 23"/></svg><div><b>The text is still more</b><span>9,579 against 7,665. By the same rule, still not earned.</span></div></div>
-  </div>
-  <p style="margin-top:12px">The line was written after seeing which answers lost marks, so it is fitted to those questions. The first verdict stands.</p>
-
-  <div class="grid2" style="margin-top:28px">
-    <div class="card"><strong>What held up</strong>
-      <ul class="plain" style="margin-top:8px">
-        <li>The map does the work on steps: 2.50 with the map alone, 6.07 with nothing loaded.</li>
-        <li>A re-run on a second computer, set up from nothing, gave the same result: 2.30 against 5.20.</li>
-        <li>On 10 questions kept aside: fewer steps on all 10, and 30 of 30 marked right in both set-ups. The loss of marks did not repeat.</li>
-      </ul>
-    </div>
-    <div class="card"><strong>What this does not show</strong>
-      <ul class="plain" style="margin-top:8px">
-        <li>One AI model, made-up documents, ten questions, one day.</li>
-        <li>The graders could tell the two set-ups apart from the writing.</li>
-        <li>The second computer used the same account. Nobody outside has run it yet.</li>
-      </ul>
-    </div>
-  </div>
 
   <footer>
     <p><strong>Where to look.</strong> <code>START-HERE.md</code> is the guide. <code>results.md</code> has every figure, tie and loss. <code>folder-change/</code> has the follow-up.</p>

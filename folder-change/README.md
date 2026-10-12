@@ -1,4 +1,4 @@
-# What the control changed in the folder
+# The follow-up: one line, tested on a copy
 
 This is a follow-up, done after the sealed run and its verdict. It does not replace them. `results.md` and the verdict in it stand exactly as they were.
 
@@ -58,11 +58,15 @@ Full folder with the changed rules, documents alone, and nothing: the ten exam q
 - **The line was written after seeing which answers lost marks,** and it is tested on those same ten questions. It is fitted to them. The held-out questions are the only check that it did no harm elsewhere, and the original folder had already scored 30 of 30 on those.
 - **It is one re-run on one day.** The original folder's marks moved between gradings; these did not, but that is three gradings of one set of answers.
 - **The markers could tell the set-ups apart.** Gemini's guesses were right on 6 of 60 and 0 of 60, which separates the two as surely as 54 and 60 would. The two passes by the model under test guessed right on 39 of 60 and 36 of 57 for the exam, and 35 and 31 of 60 for the held-out questions.
-- **The documents-only figures here are from this re-run,** not the sealed run. They differ a little: 5.20 steps against 5.03, and 7,665 characters against 7,191.
+- **The documents-only figures here are from this re-run,** not the sealed run. And on the held-out questions the line had nothing to recover: the original folder had already scored 30 of 30 there. They differ a little: 5.20 steps against 5.03, and 7,665 characters against 7,191.
 
 ## A false start
 
-The first wording of the added line was 28 words, which took `rules.md` to 239 words, over the folder's own limit of 220. Both runs were stopped after six sessions each, the line was cut to nine words, and the runs were started again. The twelve logs from the stopped runs are in `folder-change/false-start/` and are not in any figure above.
+The first wording of the added line was:
+
+> When a figure or a rule the question relies on does not apply, say which one and by how much. That is part of the answer, not an extra.
+
+That is 29 words, and it took `rules.md` to 239 words by the folder check's count, over the folder's own limit of 220. The check failed, and both runs were stopped after six sessions each. No answer from them had been read. The line was cut to the eight words above, and the runs were started again within a minute. The twelve logs from the stopped runs are in `folder-change/false-start/` and are not in any figure above.
 
 ## Where it is
 
