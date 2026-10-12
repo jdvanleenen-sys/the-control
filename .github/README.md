@@ -2,7 +2,7 @@
 
 An entry for Weekly Comp #14. A folder of instructions for answering questions about a small library of made-up rules, and a test of whether the folder helps.
 
-**Read [`START-HERE.md`](../START-HERE.md) first.** The `README.md` at the top of the repo is not a guide. It is the folder's map, one of the files under test, and it is loaded by the model.
+**Read [`START-HERE.md`](/START-HERE.md) first.** The `README.md` at the top of the repo is not a guide. It is the folder's map, one of the files under test, and it is loaded by the model.
 
 ## What happened
 
@@ -16,9 +16,9 @@ An entry for Weekly Comp #14. A folder of instructions for answering questions a
 
 | If you want | Open |
 |---|---|
-| The guide to this repo, and three commands to test it yourself | [`START-HERE.md`](../START-HERE.md) |
-| Every figure, tie and loss | [`results.md`](../results.md) |
-| The result on one page | [`summary.pdf`](../summary.pdf) |
-| The questions and expected answers | [`questions.md`](../questions.md) |
-| The raw transcripts | [`control/`](../control) and [`treatment/`](../treatment) |
-| What was done differently from the plan, and what was corrected | [`DEVIATIONS.md`](../DEVIATIONS.md) |
+| The guide to this repo, and three commands to test it yourself | [`START-HERE.md`](/START-HERE.md) |
+| Every figure, tie and loss | [`results.md`](/results.md) |
+| The result on one page | [`summary.pdf`](/summary.pdf) |
+| The questions and expected answers | [`questions.md`](/questions.md) |
+| The raw transcripts | [`control/`](/control) and [`treatment/`](/treatment) |
+| What was done differently from the plan, and what was corrected | [`DEVIATIONS.md`](/DEVIATIONS.md) |
