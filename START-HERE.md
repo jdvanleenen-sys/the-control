@@ -69,7 +69,7 @@ Claude Code loads the four files it names before the question. The control folde
 
 The brief describes dropping the folder into a Claude project. That was done too, and `claude-project.md` has it: 6 of 10 with the folder against 0 of 10 in a plain chat. The prompts were sent through the browser by the Claude Code session that built this entry, not typed by hand; `DEVIATIONS.md` says how.
 
-A project keeps no log of what the model opened, so the steps come from a script instead. If you re-run in a project, expect to match the project page, not the step counts.
+A project keeps no log of what the model opened, so the steps come from a script instead. If you re-run in a project, expect to match the project page, not the step counts. Load only the folder itself: the four instruction files and the documents in `reference/`. `questions.md` holds the expected answers and must stay out.
 
 ## Can the test itself be trusted
 
@@ -87,7 +87,7 @@ A project keeps no log of what the model opened, so the steps come from a script
 | `control/`, `treatment/`, `results.md` | The runs and what changed |
 | `summary.html`, `summary.pdf` | The result on one page |
 | `after-the-run.md`, `after-the-run/` | What was checked after the reveal, with its logs |
-| `folder-change/` | The follow-up. Start with its `README.md` |
+| `folder-change/` | The follow-up. Start with its `README.md`. Its `rules-changed.md` is a copy made for the follow-up; the `rules.md` at the top is the one that was tested |
 | `EXPERIMENT.md`, `PREREGISTRATION.md` | The design and the rule, written first |
 | `MARKING.md`, `RUN.md` | How it was marked and how to re-run it |
 | `DEVIATIONS.md`, `folder-changes.md`, `limits.md` | What was done differently, what changed in the folder, what this cannot show |

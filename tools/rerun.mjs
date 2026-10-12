@@ -1,6 +1,6 @@
 // Re-run the committed questions in three arms and compare with a committed, revealed run.
 //
-//   node tools/rerun.mjs --name pass3 [--runs 1]
+//   node tools/rerun.mjs [--name sealed] [--runs 1]
 //
 // "Reproduces" has one meaning here: the rule that chose the committed run's sentence, applied
 // to the re-run, lands on the same one of three outcomes (fewer steps, more steps, no clear
@@ -9,7 +9,7 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { option, runCli, sealedRunDir } from '../lib/cli.mjs';
+import { option, runCli, sealedRunOrDefault } from '../lib/cli.mjs';
 import { ARM_DOCS_ONLY, ARM_EMPTY, ARM_FULL, EFFORT, MODEL, QUESTIONS_FILE, runDir } from '../lib/config.mjs';
 import { faultSummary, notices, runOpenArms, STEPS_CAUTION } from '../lib/mini.mjs';
 import { loadQuestions } from '../lib/questions.mjs';
@@ -33,7 +33,7 @@ export function report(committed, mine, emptyCommitted, emptyMine, extra = []) {
 }
 
 function main() {
-  const dir = sealedRunDir('Example: node tools/rerun.mjs --name pass3');
+  const dir = sealedRunOrDefault('Example: node tools/rerun.mjs --name sealed');
   if (!existsSync(join(dir, 'key.json'))) throw new Error('That run has no key here. A re-run can only be compared with a run whose key has been revealed.');
   const key = JSON.parse(readFileSync(join(dir, 'key.json'), 'utf8'));
   const committedRows = loadRows(dir);

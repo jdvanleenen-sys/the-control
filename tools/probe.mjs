@@ -17,7 +17,7 @@ const PROBE_PROMPT = 'Do not use any tool. Some text you were given before this 
 const MARKER_PATTERN = /\bMK[A-Z2-9]{6}\b/g;
 
 function main() {
-  const dir = sealedRunDir('Example: node tools/probe.mjs --name pass3');
+  const dir = sealedRunDir('Example: node tools/probe.mjs --name sealed');
   const key = JSON.parse(readFileSync(join(dir, 'key.json'), 'utf8'));
   const words = uniqueCodes(INSTRUCTION_FILES.length, 6);
   const markers = Object.fromEntries(INSTRUCTION_FILES.map((name, i) => [name, `MK${words[i]}`]));

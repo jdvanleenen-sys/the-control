@@ -88,6 +88,11 @@ function runFailures(repo, order, at, run) {
 // `run` names one run. With no run named, every sealed run in the repo is checked, so the
 // check can never pass by checking nothing.
 export function checkHistory(repo, run = null) {
+  // A shallow clone holds only the newest commits, so every file looks as if it arrived at once
+  // and the order cannot be read. Say that, instead of reporting an order that is not there.
+  if (git(repo, ['rev-parse', '--is-shallow-repository'])[0] === 'true') {
+    throw new Error('This is a shallow clone, so the order of the commits cannot be read. Fetch the full history with "git fetch --unshallow", or clone again without --depth.');
+  }
   const order = git(repo, ['rev-list', '--reverse', 'HEAD']);
   const at = (path) => firstAdded(repo, order, path);
   const runs = run ? [run] : sealedRuns(repo);
