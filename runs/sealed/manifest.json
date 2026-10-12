@@ -1,0 +1,132 @@
+{
+  "started": "2026-10-12T16:09:14.086Z",
+  "model": "claude-sonnet-5-5",
+  "effort": "medium",
+  "version": "2.1.296",
+  "limit": 0,
+  "stageRoot": "C:/tc",
+  "flags": [
+    "--setting-sources",
+    "project",
+    "-p",
+    "<question>",
+    "--model",
+    "claude-sonnet-5-5",
+    "--effort",
+    "medium",
+    "--tools",
+    "Read,Glob,Grep",
+    "--disallowedTools",
+    "Bash,PowerShell,Edit,Write,NotebookEdit,WebFetch,WebSearch,Agent,mcp__*",
+    "--permission-mode",
+    "dontAsk",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--output-format",
+    "stream-json",
+    "--verbose"
+  ],
+  "environment": [
+    "APPDATA",
+    "CLAUDE_CODE_DISABLE_AUTO_MEMORY",
+    "COMSPEC",
+    "DISABLE_AUTOUPDATER",
+    "DISABLE_UPDATES",
+    "HOMEDRIVE",
+    "HOMEPATH",
+    "LOCALAPPDATA",
+    "OS",
+    "PATH",
+    "PATHEXT",
+    "ProgramData",
+    "ProgramFiles",
+    "ProgramFiles(x86)",
+    "SYSTEMROOT",
+    "SystemRoot",
+    "TEMP",
+    "TMP",
+    "USERNAME",
+    "USERPROFILE",
+    "windir"
+  ],
+  "questionsSha256": "94edd747e8a947ff2b72d51cc3a5739b77261990236dde53ff737ebf1fb4ad59",
+  "probeSha256": "d2dd60f46dbf6bb1ac89ee7a62fc2ae23b5df072a11ba2ef3d9f047408baca69",
+  "staged": {
+    "DEFW": {
+      "dir": "C:/tc/DEFW",
+      "digest": "07017253cc0d10c96716907c84b17abe99e2252c019b84c99ec4bd66c43b0eb7"
+    },
+    "DU4J": {
+      "dir": "C:/tc/DU4J",
+      "digest": "2e9da2242c087e4e5673f221d178fe06660e37e1ad1ab68263a49a32be1d2e0a"
+    },
+    "M4QS": {
+      "dir": "C:/tc/M4QS",
+      "digest": "5b9e5b5077e78ca51f32e312c06e9ba604b9221272283bb6d4c427bf3a7529c9"
+    },
+    "3VJB": {
+      "dir": "C:/tc/3VJB",
+      "digest": "55ca1f9d3e6339afff6ae60bb5e5ff835d2953f0a5f144e7cc371195b20f023d"
+    },
+    "96FU": {
+      "dir": "C:/tc/96FU",
+      "digest": "e052149d37f7d2612903fc51e27743777682a7b1d8886b081e5fb8b56c3e8a37"
+    },
+    "87JA": {
+      "dir": "C:/tc/87JA",
+      "digest": "2285a92b4ed2b349f78ecbef2e97e2609d02269f997dc0ed7778d866ec419510"
+    },
+    "JRKH": {
+      "dir": "C:/tc/JRKH",
+      "digest": "d817448c43e951a74adab6792ff0d7c664f239a35704bbd65ff03f604396cb61"
+    },
+    "S3EM": {
+      "dir": "C:/tc/S3EM",
+      "digest": "e3023dd43194fa30041d419f7b3d68d3df80ff1892b76b6c78575bf99871fcef"
+    },
+    "UTRB": {
+      "dir": "C:/tc/UTRB",
+      "digest": "1aa66d6f2788ba974e16eaac81c05fbfc7746caa80c6d777f83747d960f7e397"
+    },
+    "ZUZN": {
+      "dir": "C:/tc/ZUZN",
+      "digest": "af71a223bd018cb30a526bbc34b3cfb2b60068727de19c94947adb83905fee2d"
+    },
+    "YTZX": {
+      "dir": "C:/tc/YTZX",
+      "digest": "95b57018df81a1572c55bd09c3d5d12adff97c3c33afe46d397591c5d00bbfa9"
+    },
+    "M9YD": {
+      "dir": "C:/tc/M9YD",
+      "digest": "3cc16e008b0b4ff430eb66b743b8671f464c20b8078c5d18f2d9f0f5801ae7a9"
+    },
+    "CY43": {
+      "dir": "C:/tc/CY43",
+      "digest": "57b3c383d3128e33647d49db24e33f51c30752379375dd6bfe2f7f4bbbd94985"
+    },
+    "N4CG": {
+      "dir": "C:/tc/N4CG",
+      "digest": "0f3118e082ab1293b0258a44684878d264d04d54f9e940de4f8f38bbb9e12187"
+    },
+    "5NFH": {
+      "dir": "C:/tc/5NFH",
+      "digest": "e16c34a60500832fd534621a8d12c177a5b025055d528990d1a597f1ecf9d55c"
+    },
+    "C84R": {
+      "dir": "C:/tc/C84R",
+      "digest": "d6d94997b2516205958c5243587d4627debc5a39ecc4f4ef851cc563a7b0d4a0"
+    },
+    "HC9C": {
+      "dir": "C:/tc/HC9C",
+      "digest": "ad8c4f89c7b0f660e53cbf44bd8943b7016fe44db48ada15c0677707eee516ce"
+    },
+    "5MAH": {
+      "dir": "C:/tc/5MAH",
+      "digest": "6406f96e6936b3772a807e7e35959e8331d7fb0d267690ce9f83624c3badf289"
+    },
+    "HG6S": {
+      "dir": "C:/tc/HG6S",
+      "digest": "fb61706a8aca3456911bf9c0bd7205a7399099daf79cd30c9102c2af15e3b29b"
+    }
+  }
+}
