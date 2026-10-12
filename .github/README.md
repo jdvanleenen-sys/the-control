@@ -16,6 +16,8 @@ An entry for Weekly Comp #14.
 
 Every answer that lost a mark gives the right yes or no and the right figure. Each left out a detail the answer key wanted. Our reading, which is not proved: the folder's rules and examples push for short answers, and a short answer leaves that detail out. On ten more questions held back from the test, both set-ups scored 30 of 30 and the folder still took fewer steps on all ten.
 
+**Which part did what.** The folder does two jobs: the map helps the model find the answer, and the rules and examples shape how it writes the answer. Sixteen more set-ups loaded the four instruction files in every mix to tell the two apart. The map alone got nearly all the saving in steps, 2.50 per session. The 4 set-ups with neither the rules nor the examples loaded lost at most 1 answer of 30; all 12 with either one loaded lost 2 or more on at least one marking pass. Apart from the full folder, they were marked twice by the model under test and not by Gemini, and the two passes differ, so this is a pointer and not a proof. The table is in the appendix of [`results.md`](/results.md).
+
 **The follow-up.** One line was added to the folder's rules on a separate copy and the test was run again. The folder in this repo is the one that was tested. The lost marks came back, 30 of 30 on all three gradings, with the steps unchanged. The folder still put more text in front of the model, so by the same rule it still did not earn its place. The first verdict stands.
 
 The most surprising line in [`results.md`](/results.md): "The folder reached fewer right answers. Fewer steps did not come with equal answers."

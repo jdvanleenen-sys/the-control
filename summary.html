@@ -85,6 +85,12 @@
     .swim { display: block; padding: 4px 12px 12px; } .swim .lh, .swim .rail, .swim .lead, .swim .con { display: none; }
     .swim .node { margin: 12px 0 0; } .swim .node em { display: block; } .swim .keep { margin: 6px 0 0 12px; }
   }
+  table.parts { width: 100%; border-collapse: collapse; font-size: 14px; }
+  table.parts th { text-align: left; font-weight: 500; color: var(--muted); font-size: 13px; padding: 0 10px 8px 0; border-bottom: 1px solid var(--hairline); }
+  table.parts td { padding: 9px 10px 9px 0; border-bottom: 1px solid var(--hairline); vertical-align: middle; }
+  table.parts tr:last-child td { border-bottom: 0; }
+  table.parts td:first-child { width: 42%; } table.parts td:nth-child(2) { width: 36%; }
+  table.parts b { font-weight: 700; margin-right: 8px; } table.parts .chips { display: inline-flex; min-height: 0; vertical-align: middle; }
   /* charts */
   .chart h3 { font-size: 16px; margin: 0 0 2px; font-weight: 700; } .chart .cap { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
   .row { display: grid; grid-template-columns: var(--lab, 44px) 1fr; gap: 10px; align-items: center; margin-bottom: 8px; font-size: 13px; }
@@ -100,7 +106,7 @@
   footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--hairline); color: var(--muted); font-size: 14px; }
   footer strong { color: var(--text); } code { font-family: ui-monospace, "JetBrains Mono", monospace; font-size: .92em; }
   @media (max-width: 760px) { .grid3, .grid2, .design { grid-template-columns: 1fr; } .design div { grid-template-columns: 1fr; gap: 2px; border-right: 0 !important; border-bottom: 1px solid var(--hairline) !important; } .flow { grid-template-columns: 1fr 1fr; } }
-  @page { size: 1000px 4620px; margin: 30px; }
+  @page { size: 1000px 5350px; margin: 30px; }
   @media print { body { background: #fff; } main { padding: 0; max-width: none; } .grid3 { grid-template-columns: repeat(3, 1fr); } .grid2, .design { grid-template-columns: 1fr 1fr; } .design div { grid-template-columns: 190px 1fr; } .flow { grid-template-columns: repeat(4, 1fr); } }
 </style>
 </head>
@@ -180,6 +186,23 @@
   <h2>Why the folder lost marks</h2>
   <p>Our reading, which is not proved. The folder's rules and examples push for short answers. Its answers were right on the main point and less than half the length. The answer key also wanted the detail a longer answer includes, such as how far over a limit something was.</p>
 
+  <h2>Which part of the folder did what</h2>
+  <p class="sub">The folder does two jobs: the map helps the AI find the answer, and the rules and examples shape how it writes the answer. The other 16 set-ups loaded the four instruction files in every mix, so the two jobs can be told apart. Here is each file loaded alone.</p>
+  <div class="card">
+    <table class="parts">
+      <thead><tr><th>Loaded before the question</th><th>Steps per question</th><th>Marked right, of 30</th></tr></thead>
+      <tbody>
+      <tr><td><b>Nothing loaded</b></td><td><div class="line"><div class="bar n" style="width:70.0%"></div><span class="val">6.07</span></div></td><td class="val">29 and 29</td></tr>
+      <tr><td><b>The map alone</b><span class="chips"><span>map</span></span></td><td><div class="line"><div class="bar f" style="width:28.8%"></div><span class="val">2.50</span></div></td><td class="val">30 and 29</td></tr>
+      <tr><td><b>The role alone</b><span class="chips"><span>role</span></span></td><td><div class="line"><div class="bar f" style="width:53.0%"></div><span class="val">4.60</span></div></td><td class="val">30 and 30</td></tr>
+      <tr><td><b>The rules alone</b><span class="chips"><span>rules</span></span></td><td><div class="line"><div class="bar f" style="width:42.7%"></div><span class="val">3.70</span></div></td><td class="val">30 and 27</td></tr>
+      <tr><td><b>The examples alone</b><span class="chips"><span>examples</span></span></td><td><div class="line"><div class="bar f" style="width:53.0%"></div><span class="val">4.60</span></div></td><td class="val">28 and 28</td></tr>
+      <tr><td><b>All four</b><span class="chips"><span>map</span><span>role</span><span>rules</span><span>examples</span></span></td><td><div class="line"><div class="bar f" style="width:27.3%"></div><span class="val">2.37</span></div></td><td class="val">28 and 23</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:12px">The map does the finding: alone it gets nearly all of the saving in steps. The marks went with the other job. The 4 set-ups with neither the rules nor the examples loaded lost at most 1 answer of 30. All 12 with either one loaded lost 2 or more on at least one grading.</p>
+  <p class="sub">A pointer, not a proof. Apart from the full folder, these set-ups were graded twice by Claude and not by Gemini, and the two gradings differ, which is why each row shows two numbers. In these rows the four instruction files sat in the folder even when they were not loaded, so "nothing loaded" is 6.07 steps and not the 5.03 of the documents alone.</p>
   <h2>The follow-up: one line, tested on a copy</h2>
   <p class="sub">After the verdict, one line was added to a copy of the folder's rules: "Say what would otherwise apply, and the difference." Then the three set-ups were run again, on the 10 exam questions and on the 10 kept aside.</p>
   <div class="grid3">
