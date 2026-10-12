@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Control: summary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cognac: #C67A3C; --page: #F7F3EE; --card: #FFFFFF; --text: #14314F; --muted: #6B6560;
+    --hairline: rgba(107, 101, 96, .3); --track: #EDE7DF; --soft: #F5E6D5;
+    --folder: #C67A3C; --folder-light: #EBC9A8; --docs: #14314F; --none: #A6A29C;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page: #0E2740; --card: #12304C; --text: #EDE7DF; --muted: #A6A29C;
+      --hairline: rgba(237, 231, 223, .22); --track: #0B1F35; --soft: rgba(198, 122, 60, .16);
+      --folder: #E09A5F; --folder-light: #8B5628; --docs: #9DB7D5; --none: #6B6560;
+    }
+  }
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; background: var(--page); color: var(--text); font-family: "DM Sans", "Nunito Sans", system-ui, sans-serif; font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  main { max-width: 940px; margin: 0 auto; padding: 36px 20px 48px; }
+  header { display: flex; align-items: center; gap: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--hairline); }
+  header svg { width: 42px; height: 42px; flex: none; }
+  .brand { font-weight: 500; } .brand span { display: block; color: var(--muted); font-size: 14px; font-weight: 400; }
+  h1 { font-size: clamp(28px, 5vw, 42px); line-height: 1.12; letter-spacing: -.01em; margin: 30px 0 10px; font-weight: 700; }
+  h2 { font-size: 21px; line-height: 1.25; margin: 40px 0 6px; font-weight: 700; }
+  p { margin: 0 0 12px; max-width: 70ch; } .sub { color: var(--muted); margin-bottom: 16px; }
+  strong { font-weight: 500; }
+  .answer { background: var(--soft); border-left: 4px solid var(--cognac); border-radius: 6px; padding: 16px 18px; margin: 18px 0 0; font-size: 19px; font-weight: 500; }
+  .card { background: var(--card); border: 1px solid var(--hairline); border-radius: 10px; padding: 16px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .key { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; color: var(--muted); margin: 0 0 12px; }
+  .sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+  /* the three set-ups */
+  .setup h3 { font-size: 16px; margin: 0 0 2px; font-weight: 700; display: flex; align-items: center; }
+  .setup .what { color: var(--muted); font-size: 14px; min-height: 42px; }
+  .shelf { display: grid; grid-template-columns: repeat(9, 1fr); gap: 4px; margin: 10px 0 8px; }
+  .shelf i { display: block; height: 20px; border-radius: 2px; background: var(--text); opacity: .55; }
+  .shelf.empty i { background: none; border: 1px dashed var(--hairline); opacity: 1; }
+  .chips { display: flex; gap: 5px; flex-wrap: wrap; min-height: 28px; }
+  .chips span { font-size: 12px; padding: 3px 8px; border-radius: 999px; border: 1px solid var(--folder); color: var(--text); background: var(--soft); }
+  .chips em { font-style: normal; font-size: 12px; color: var(--muted); padding: 3px 0; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--hairline); }
+  .stats div { font-size: 13px; color: var(--muted); } .stats b { display: block; font-size: 26px; font-weight: 700; color: var(--text); line-height: 1.15; font-variant-numeric: tabular-nums; }
+  /* the steps of the experiment */
+  .flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; counter-reset: s; }
+  .flow li { counter-increment: s; background: var(--card); border: 1px solid var(--hairline); border-radius: 10px; padding: 12px 12px 12px 40px; position: relative; font-size: 14px; }
+  .flow li::before { content: counter(s); position: absolute; left: 10px; top: 11px; width: 22px; height: 22px; border-radius: 50%; background: var(--text); color: var(--page); font-size: 13px; font-weight: 700; display: grid; place-items: center; }
+  .flow b { display: block; font-size: 15px; font-weight: 700; }
+  /* charts */
+  .chart h3 { font-size: 16px; margin: 0 0 2px; font-weight: 700; } .chart .cap { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+  .row { display: grid; grid-template-columns: var(--lab, 44px) 1fr; gap: 10px; align-items: center; margin-bottom: 8px; font-size: 13px; }
+  .row .rl { color: var(--muted); }
+  .line { display: flex; align-items: center; gap: 6px; height: 12px; margin: 2px 0; }
+  .bar { height: 10px; border-radius: 0 4px 4px 0; min-width: 2px; }
+  .bar.f { background: var(--folder); } .bar.d { background: var(--docs); } .bar.n { background: var(--none); } .bar.fl { background: var(--folder-light); border-radius: 0; margin-right: -4px; }
+  .val { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .rule .mark { width: 34px; height: 34px; flex: none; }
+  .rule { display: flex; gap: 12px; align-items: center; }
+  .rule b { display: block; font-weight: 700; } .rule span { font-size: 14px; color: var(--muted); }
+  ul.plain { margin: 0; padding-left: 20px; } ul.plain li { margin-bottom: 6px; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--hairline); color: var(--muted); font-size: 14px; }
+  footer strong { color: var(--text); } code { font-family: ui-monospace, "JetBrains Mono", monospace; font-size: .92em; }
+  @media (max-width: 760px) { .grid3, .grid2 { grid-template-columns: 1fr; } .flow { grid-template-columns: 1fr 1fr; } }
+  @media print { body { background: #fff; } main { padding: 0; max-width: none; } .card, .flow li, .answer { break-inside: avoid; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <svg viewBox="0 0 120 120" fill="none" stroke="#C67A3C" stroke-width="9" stroke-linejoin="miter" stroke-linecap="butt" role="img" aria-label="vL mark">
+      <rect x="12" y="12" width="96" height="96"/><path d="M27 52 L42 86 L57 52"/><path d="M69 34 L69 86 L92 86"/>
+    </svg>
+    <div class="brand">AI the vL Way<span>Less hype. More help.</span></div>
+  </header>
+
+  <h1>Does the folder earn its place?</h1>
+  <p class="sub">A folder of instructions is meant to help an AI answer questions about a set of documents. This test checked whether it does.</p>
+  <div class="answer">No. The folder got the AI to its answers in half the steps, but its answers were marked right less often than with the documents alone.</div>
+
+  <h2>The experiment</h2>
+  <p class="sub">The same 10 questions, asked of the same AI, in three set-ups. Each set-up was asked every question 3 times.</p>
+  <div class="grid3">
+    <div class="card setup">
+      <h3><i class="sw" style="background:var(--none)"></i>Nothing</h3>
+      <div class="what">No documents, no folder. The AI only has the question.</div>
+      <div class="shelf empty" aria-hidden="true"></div>
+      <div class="chips"><em>No instructions</em></div>
+      <div class="stats"><div><b>0</b>marked right, of 30</div><div><b>2.00</b>steps per question</div></div>
+    </div>
+    <div class="card setup">
+      <h3><i class="sw" style="background:var(--docs)"></i>Documents alone</h3>
+      <div class="what">18 documents to search. No instructions.</div>
+      <div class="shelf" aria-hidden="true"></div>
+      <div class="chips"><em>No instructions</em></div>
+      <div class="stats"><div><b>30</b>marked right, of 30</div><div><b>5.03</b>steps per question</div></div>
+    </div>
+    <div class="card setup">
+      <h3><i class="sw" style="background:var(--folder)"></i>Documents with the folder</h3>
+      <div class="what">The same 18 documents, plus 4 instruction files read first.</div>
+      <div class="shelf" aria-hidden="true"></div>
+      <div class="chips"><span>map</span><span>role</span><span>rules</span><span>examples</span></div>
+      <div class="stats"><div><b>23 to 28</b>marked right, of 30</div><div><b>2.37</b>steps per question</div></div>
+    </div>
+  </div>
+
+  <h2>How it was run</h2>
+  <p class="sub">Each step was committed before the next one began, so nothing could be shaped to fit the result.</p>
+  <ol class="flow">
+    <li><b>Rule fixed</b>How the folder would be judged, written before anything else.</li>
+    <li><b>Documents</b>ChatGPT wrote 18 documents for two made-up organisations.</li>
+    <li><b>Questions</b>ChatGPT wrote 20, with answers. It never saw the folder.</li>
+    <li><b>Answers checked</b>Gemini answered all 20 with no answer key. All agreed.</li>
+    <li><b>Random draw</b>A script picked the 10 exam questions. Nobody chose.</li>
+    <li><b>570 sessions</b>Claude answered in 19 set-ups, from one command.</li>
+    <li><b>Graded 3 times</b>Twice by Claude, once by Gemini, set-up hidden.</li>
+    <li><b>Results built</b>By script, from the raw logs. All of it is in the repo.</li>
+  </ol>
+
+  <h2>The results</h2>
+  <div class="key"><span><i class="sw" style="background:var(--folder)"></i>Documents with the folder</span><span><i class="sw" style="background:var(--docs)"></i>Documents alone</span></div>
+  <div class="grid2">
+    <div class="card chart">
+      <h3>Steps to reach an answer</h3>
+      <div class="cap">Searches and files opened, per question. Fewer with the folder on 10 of 10.</div>
+      <div id="steps"></div>
+    </div>
+    <div>
+      <div class="card chart" style="margin-bottom:14px">
+        <h3>Answers marked right, of 30</h3>
+        <div class="cap">Each of the three gradings.</div>
+        <div id="right" style="--lab:120px"></div>
+      </div>
+      <div class="card chart" style="margin-bottom:14px">
+        <h3>Text put in front of the AI</h3>
+        <div class="cap">Characters per question. The lighter part is the folder's own files, read every time.</div>
+        <div id="text" style="--lab:120px"></div>
+      </div>
+      <div class="card chart">
+        <h3>Cost per question</h3>
+        <div class="cap">Tokens are the units an AI is billed in.</div>
+        <div id="cost" style="--lab:120px"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>The rule, fixed before the run</h2>
+  <p class="sub">The folder earns its place only if all three hold.</p>
+  <div class="grid3">
+    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M10 17.5l5 5 9-10"/></svg><div><b>Steps clearly fall</b><span>Met. Fewer on 10 of 10 questions.</span></div></div>
+    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="#C67A3C" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M11 11l12 12M23 11L11 23"/></svg><div><b>Right answers do not fall</b><span>Not met. 23 to 28 against 30.</span></div></div>
+    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="#C67A3C" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M11 11l12 12M23 11L11 23"/></svg><div><b>Text does not rise</b><span>Not met. 9,689 against 7,191.</span></div></div>
+  </div>
+
+  <h2>Why the folder lost marks</h2>
+  <p>The folder tells the AI to answer what was asked and then stop. Its answers were right on the main point and less than half the length. The answer key also wanted the detail a longer answer includes, such as how far over a limit something was.</p>
+
+  <div class="grid2" style="margin-top:28px">
+    <div class="card"><strong>What held up</strong>
+      <ul class="plain" style="margin-top:8px">
+        <li>The map does the work on steps: 2.50 with the map alone, 6.07 with nothing loaded.</li>
+        <li>A re-run from a fresh copy gave the same result: 2.50 against 5.10.</li>
+        <li>On 10 questions kept aside, the folder took fewer steps on all 10.</li>
+      </ul>
+    </div>
+    <div class="card"><strong>What this does not show</strong>
+      <ul class="plain" style="margin-top:8px">
+        <li>One AI model, made-up documents, ten questions, one day.</li>
+        <li>The graders could tell the two set-ups apart from the writing.</li>
+        <li>Nobody else has run it on another machine yet.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <p><strong>Where to look.</strong> <code>START-HERE.md</code> is the guide. <code>results.md</code> has every figure, tie and loss.</p>
+    <p>Weekly Comp #14, The Control. Run on 12 October 2026. AI the vL Way. Less hype. More help.</p>
+  </footer>
+</main>
+<script>
+  // Every figure below is copied from results.md.
+  const steps = [[2.00, 5.00], [2.00, 5.33], [2.00, 4.00], [4.00, 6.00], [2.33, 6.00], [2.00, 4.33], [2.00, 3.67], [2.00, 5.00], [3.33, 7.00], [2.00, 4.00]];
+  const right = [['Claude, first pass', 28, 30], ['Claude, second pass', 23, 30], ['Gemini', 23, 30]];
+  const cost = [['Tokens in', 18156, 19818, 0], ['Tokens out', 387, 893, 0], ['Seconds', 4.2, 8.6, 1]];
+  const fmt = (n, places = 0) => n.toLocaleString('en-US', { minimumFractionDigits: places, maximumFractionDigits: places });
+  const line = (kind, share, text, tip) => `<div class="line" title="${tip}"><div class="bar ${kind}" style="width:${(share * 78).toFixed(2)}%"></div><span class="val">${text}</span></div>`;
+  const row = (label, lines) => `<div class="row"><div class="rl">${label}</div><div>${lines}</div></div>`;
+  document.querySelectorAll('.shelf').forEach((shelf) => { shelf.innerHTML = '<i></i>'.repeat(18); });
+  document.getElementById('steps').innerHTML = steps.map(([f, d], i) => row(`Q${i + 1}`,
+    line('f', f / 7, fmt(f, 2), `Question ${i + 1}, with the folder: ${fmt(f, 2)} steps`) + line('d', d / 7, fmt(d, 2), `Question ${i + 1}, documents alone: ${fmt(d, 2)} steps`))).join('')
+    + row('<strong>All</strong>', line('f', 2.37 / 7, '<strong>2.37</strong>', 'All questions, with the folder: 2.37 steps') + line('d', 5.03 / 7, '<strong>5.03</strong>', 'All questions, documents alone: 5.03 steps'));
+  document.getElementById('right').innerHTML = right.map(([who, f, d]) => row(who,
+    line('f', f / 30, f, `${who}, with the folder: ${f} of 30`) + line('d', d / 30, d, `${who}, documents alone: ${d} of 30`))).join('');
+  document.getElementById('text').innerHTML = row('With the folder',
+    `<div class="line" title="With the folder: 5,261 characters loaded first and 4,428 fetched, 9,689 in all"><div class="bar fl" style="width:${(5261 / 9689 * 78).toFixed(2)}%"></div><div class="bar f" style="width:${(4428 / 9689 * 78).toFixed(2)}%"></div><span class="val">9,689</span></div>`)
+    + row('Documents alone', line('d', 7191 / 9689, '7,191', 'Documents alone: 7,191 characters fetched'));
+  document.getElementById('cost').innerHTML = cost.map(([what, f, d, places]) => row(what,
+    line('f', f / Math.max(f, d), fmt(f, places), `${what}, with the folder: ${fmt(f, places)}`) + line('d', d / Math.max(f, d), fmt(d, places), `${what}, documents alone: ${fmt(d, places)}`))).join('');
+</script>
+</body>
+</html>
