@@ -70,6 +70,8 @@ The command printed "Reproduces: YES", with no session left out. What it printed
 
 `node tools/ask.mjs` was run there too, with a question made up on the spot: the cost of the Meeting Room for two hours on 5 March 2026. The full folder and the documents alone both answered £24, which is what the documents give. The folder took 2 steps and the documents alone 4. What it printed is in `after-the-run/second-machine/ask-printed.txt`.
 
+The offline checks were run there as well, at commit 93195b0: `verify/check.mjs`, `verify/history.mjs` and `verify/folder.mjs` passed, and 172 of 172 self-test cases passed. What they printed is in `after-the-run/second-machine/checks-printed.txt`.
+
 It was the same Claude account, the same day and the same version of the tool, run by the person who built this entry. Not tried: another account, another day, another version of the tool, a person with no part in the build.
 
 ## How the marking was run

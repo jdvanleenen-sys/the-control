@@ -1,0 +1,52 @@
+What the offline checks printed on the second machine, Monday 2026-10-12, as reported by the Claude Code session that ran them there and pasted back by the person at that machine. The repo there was at commit 93195b0. Three things are shortened or left out: the 854 per-file lines of `git pull`, all but the last 15 lines of the self-test, and one failed attempt at the version command that printed a local user path. Nothing else was changed.
+
+1. git pull (first lines and the totals line)
+From https://github.com/jdvanleenen-sys/the-control
+   7bda0fa..93195b0  main       -> origin/main
+Updating 7bda0fa..93195b0
+Fast-forward
+ 430 files changed, 14752 insertions(+), 10 deletions(-)
+
+2. node verify/check.mjs
+No run named; using "sealed".
+Check passed: key, questions, logs, scan, tables, transcripts and staged files all agree.
+
+3. node verify/history.mjs
+History check passed for: sealed.
+
+4. node verify/folder.mjs
+Folder check passed.
+
+5. node verify/selftest.mjs (last 15 lines)
+pass  [reveal] named tables report each document set
+pass  [folder] the folder under test passes the folder check
+pass  [folder] catches a file over its word limit
+pass  [folder] catches a file that names another instruction file
+pass  [folder] catches a digit in the examples
+pass  [folder] catches a library name in a general file
+pass  [folder] catches a sixth file left in the folder
+pass  [leaks] catches a user name
+pass  [leaks] catches a home path as a log writes it
+pass  [leaks] catches an email address
+pass  [leaks] catches a cloud-drive folder
+pass  [leaks] catches a machine name
+pass  [leaks] plain text and the tooling address are not flagged
+
+172 of 172 self-test cases passed.
+
+6. git log -1 --format="%h %s"
+93195b0 follow-up: one labelled change to the folder and its re-run, and the re-run on a second machine
+
+7. node --version
+v24.20.0
+
+8. git --version
+git version 2.55.0.windows.5
+
+9. git status --short
+(It printed nothing.)
+
+10. claude --version
+2.1.296 (Claude Code)
+
+Commands 1 to 9 all exited with code 0.
