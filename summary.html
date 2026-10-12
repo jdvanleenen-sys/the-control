@@ -59,6 +59,32 @@
   .flow li { counter-increment: s; background: var(--card); border: 1px solid var(--hairline); border-radius: 10px; padding: 12px 12px 12px 40px; position: relative; font-size: 14px; }
   .flow li::before { content: counter(s); position: absolute; left: 10px; top: 11px; width: 22px; height: 22px; border-radius: 50%; background: var(--text); color: var(--page); font-size: 13px; font-weight: 700; display: grid; place-items: center; }
   .flow b { display: block; font-size: 15px; font-weight: 700; }
+  /* how bias was kept out: one lane for each hand, read downwards */
+  .swim { display: grid; grid-template-columns: repeat(4, 1fr) 1.25fr; background: var(--card); border: 1px solid var(--hairline); border-radius: 10px; padding: 0 14px 16px 0; overflow: hidden; }
+  .swim .lh { grid-row: 1; padding: 12px 8px 10px; text-align: center; font-size: 13px; font-weight: 700; border-bottom: 1px solid var(--hairline); margin-bottom: 14px; }
+  .swim .lh span { display: block; font-weight: 400; font-size: 12px; color: var(--muted); }
+  .swim .lh.kh { text-align: left; padding-left: 26px; align-self: stretch; display: flex; align-items: center; }
+  .swim .rail { grid-row: 2 / span 17; border-right: 1px dashed var(--hairline); margin-top: -14px; }
+  .swim .rail.alt { background: var(--page); }
+  .swim .node { z-index: 1; align-self: center; margin: 0 6px; background: var(--card); border: 1.5px solid var(--text); border-radius: 8px; padding: 8px 10px; position: relative; font-size: 13px; line-height: 1.35; }
+  .swim .node b { display: block; font-size: 14px; font-weight: 700; padding-left: 28px; min-height: 24px; line-height: 1.25; display: flex; align-items: center; margin-bottom: 3px; }
+  .swim .node em { display: none; font-style: normal; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+  .swim .node > i { position: absolute; left: 8px; top: 9px; width: 22px; height: 22px; border-radius: 50%; background: var(--text); color: var(--card); font-size: 13px; font-weight: 700; font-style: normal; display: grid; place-items: center; }
+  .swim .lead { z-index: 0; align-self: center; border-top: 2px dotted var(--cognac); margin-right: -14px; }
+  .swim .keep { grid-column: 5; z-index: 1; align-self: center; margin-left: 14px; border-left: 3px solid var(--cognac); padding: 4px 0 4px 10px; font-size: 13px; line-height: 1.35; background: var(--card); }
+  .swim .con { z-index: 1; height: 24px; position: relative; }
+  .swim .con::before, .swim .con::after { content: ''; position: absolute; border: 0 solid var(--text); }
+  .swim .con.v::before { left: calc(50% - .75px); top: 0; bottom: 0; border-left-width: 1.5px; }
+  .swim .con.r::before, .swim .con.l::before { left: calc(50% / var(--n)); right: calc(50% / var(--n)); top: 0; height: 50%; border-bottom-width: 1.5px; }
+  .swim .con.r::before { border-left-width: 1.5px; } .swim .con.l::before { border-right-width: 1.5px; }
+  .swim .con.r::after { right: calc(50% / var(--n)); top: 50%; bottom: 0; border-right-width: 1.5px; }
+  .swim .con.l::after { left: calc(50% / var(--n)); top: 50%; bottom: 0; border-left-width: 1.5px; }
+  .swim .con > i { position: absolute; bottom: 0; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid var(--text); }
+  .swim .con.v > i { left: calc(50% - 5px); } .swim .con.r > i { right: calc(50% / var(--n) - 4.25px); } .swim .con.l > i { left: calc(50% / var(--n) - 4.25px); }
+  @media screen and (max-width: 760px) {
+    .swim { display: block; padding: 4px 12px 12px; } .swim .lh, .swim .rail, .swim .lead, .swim .con { display: none; }
+    .swim .node { margin: 12px 0 0; } .swim .node em { display: block; } .swim .keep { margin: 6px 0 0 12px; }
+  }
   /* charts */
   .chart h3 { font-size: 16px; margin: 0 0 2px; font-weight: 700; } .chart .cap { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
   .row { display: grid; grid-template-columns: var(--lab, 44px) 1fr; gap: 10px; align-items: center; margin-bottom: 8px; font-size: 13px; }
@@ -74,7 +100,7 @@
   footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--hairline); color: var(--muted); font-size: 14px; }
   footer strong { color: var(--text); } code { font-family: ui-monospace, "JetBrains Mono", monospace; font-size: .92em; }
   @media (max-width: 760px) { .grid3, .grid2, .design { grid-template-columns: 1fr; } .design div { grid-template-columns: 1fr; gap: 2px; border-right: 0 !important; border-bottom: 1px solid var(--hairline) !important; } .flow { grid-template-columns: 1fr 1fr; } }
-  @page { size: 1000px 3640px; margin: 30px; }
+  @page { size: 1000px 4350px; margin: 30px; }
   @media print { body { background: #fff; } main { padding: 0; max-width: none; } .grid3 { grid-template-columns: repeat(3, 1fr); } .grid2, .design { grid-template-columns: 1fr 1fr; } .design div { grid-template-columns: 150px 1fr; } .flow { grid-template-columns: repeat(4, 1fr); } }
 </style>
 </head>
@@ -126,21 +152,60 @@
     <div><b>The controls</b><span>Nothing at all. The documents alone. The folder present but not loaded. A folder with its map made wrong on purpose.</span></div>
     <div><b>The sample</b><span>10 questions, asked 3 times each, in 19 set-ups: 570 sessions. Then 10 more questions held back as a check.</span></div>
     <div><b>The decision rule</b><span>A difference counts only if it shows on 9 or 10 of the 10 questions. Written down before any document existed.</span></div>
-    <div><b>Keeping bias out</b><span>Another AI wrote the questions and never saw the folder. A third AI checked the answers. The exam was drawn at random. The order of sessions was random. Graders were not told which set-up wrote an answer.</span></div>
-    <div><b>Keeping it honest</b><span>The sentences that could be published were written first. Every session is kept. The results are built from the raw logs by a script that anyone can run again.</span></div>
   </div>
-  <h2>How it was run</h2>
-  <p class="sub">Each step was committed in this order. The rule, the questions and the folder were all fixed before the run.</p>
-  <ol class="flow">
-    <li><b>Rule fixed</b>How the folder would be judged, written before anything else.</li>
-    <li><b>Documents</b>ChatGPT wrote 18 documents for two made-up organisations.</li>
-    <li><b>Questions</b>ChatGPT wrote 20, with answers. It never saw the folder.</li>
-    <li><b>Answers checked</b>Gemini answered all 20 with no answer key. No figure differed.</li>
-    <li><b>Random draw</b>A script picked the 10 exam questions. Nobody chose.</li>
-    <li><b>570 sessions</b>Claude answered in 19 set-ups, from one command.</li>
-    <li><b>Graded 3 times</b>Twice by Claude, once by Gemini, set-up hidden.</li>
-    <li><b>Results built</b>By script, from the raw logs. All of it is in the repo.</li>
-  </ol>
+  <h2>How bias was kept out</h2>
+  <p class="sub">Read down and follow the arrows. Each step sits under whoever did it, so no one hand touches two jobs that should be apart. On the right is what that step shuts out.</p>
+  <div class="swim">
+    <div class="lh" style="grid-column:1">Scripts and commits<span>nobody choosing</span></div>
+    <div class="lh" style="grid-column:2">ChatGPT<span>writes the test</span></div>
+    <div class="lh" style="grid-column:3">Gemini<span>checks and grades</span></div>
+    <div class="lh" style="grid-column:4">Claude<span>the AI under test</span></div>
+    <div class="lh kh" style="grid-column:5">What this keeps out</div>
+    <div class="rail" style="grid-column:1"></div><div class="rail alt" style="grid-column:2"></div><div class="rail" style="grid-column:3"></div><div class="rail alt" style="grid-column:4"></div>
+
+    <div class="node" style="grid-row:2;grid-column:1"><i>1</i><em>Scripts and commits</em><b>Rule fixed</b>How the folder is judged. Committed first.</div>
+    <div class="lead" style="grid-row:2;grid-column:2 / 5"></div>
+    <div class="keep" style="grid-row:2">Choosing the rule after seeing the result.</div>
+    <div class="con r" style="grid-row:3;grid-column:1 / span 2;--n:2"><i></i></div>
+
+    <div class="node" style="grid-row:4;grid-column:2"><i>2</i><em>ChatGPT</em><b>18 documents written</b>For two made-up organisations.</div>
+    <div class="lead" style="grid-row:4;grid-column:3 / 5"></div>
+    <div class="keep" style="grid-row:4">Answers the AI already knows from its training.</div>
+    <div class="con v" style="grid-row:5;grid-column:2"><i></i></div>
+
+    <div class="node" style="grid-row:6;grid-column:2"><i>3</i><em>ChatGPT</em><b>20 questions and answers</b>It never saw the folder.</div>
+    <div class="lead" style="grid-row:6;grid-column:3 / 5"></div>
+    <div class="keep" style="grid-row:6">Questions written to suit the folder.</div>
+    <div class="con r" style="grid-row:7;grid-column:2 / span 2;--n:2"><i></i></div>
+
+    <div class="node" style="grid-row:8;grid-column:3"><i>4</i><em>Gemini</em><b>Answers checked</b>All 20 answered with no key. No figure differed.</div>
+    <div class="lead" style="grid-row:8;grid-column:4 / 5"></div>
+    <div class="keep" style="grid-row:8">A wrong answer key.</div>
+    <div class="con l" style="grid-row:9;grid-column:1 / span 3;--n:3"><i></i></div>
+
+    <div class="node" style="grid-row:10;grid-column:1"><i>5</i><em>Scripts and commits</em><b>Random draw</b>A script picked 10 of the 20.</div>
+    <div class="lead" style="grid-row:10;grid-column:2 / 5"></div>
+    <div class="keep" style="grid-row:10">Picking the questions the folder does well on.</div>
+    <div class="con v" style="grid-row:11;grid-column:1"><i></i></div>
+
+    <div class="node" style="grid-row:12;grid-column:1"><i>6</i><em>Scripts and commits</em><b>Folder added last</b>After the questions were locked.</div>
+    <div class="lead" style="grid-row:12;grid-column:2 / 5"></div>
+    <div class="keep" style="grid-row:12">Changing the questions once the folder is in view.</div>
+    <div class="con r" style="grid-row:13;grid-column:1 / span 4;--n:4"><i></i></div>
+
+    <div class="node" style="grid-row:14;grid-column:4"><i>7</i><em>Claude</em><b>570 sessions</b>A fresh one per question, in random order.</div>
+    <div class="keep" style="grid-row:14">One answer leaking into the next. The order of the runs.</div>
+    <div class="con v" style="grid-row:15;grid-column:4"><i></i></div>
+
+    <div class="node" style="grid-row:16;grid-column:3 / span 2"><i>8</i><em>Gemini and Claude</em><b>Graded 3 times</b>Once by Gemini, twice by Claude. Answers shuffled, set-up hidden.</div>
+    <div class="keep" style="grid-row:16">A grader favouring the folder.</div>
+    <div class="con l" style="grid-row:17;grid-column:1 / span 3;--n:3"><i></i></div>
+
+    <div class="node" style="grid-row:18;grid-column:1"><i>9</i><em>Scripts and commits</em><b>Results built</b>By script, from the raw logs. Every session kept.</div>
+    <div class="lead" style="grid-row:18;grid-column:2 / 5"></div>
+    <div class="keep" style="grid-row:18">Dropping bad runs. Hand-picked numbers.</div>
+  </div>
+  <p class="sub" style="margin-top:10px">Where it fell short: the set-up was hidden from the graders, but they could often tell the two apart from how the answers were written.</p>
 
   <h2>The results</h2>
   <div class="key"><span><i class="sw" style="background:var(--folder)"></i>Documents with the folder</span><span><i class="sw" style="background:var(--docs)"></i>Documents alone</span></div>
