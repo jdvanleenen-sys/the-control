@@ -7,7 +7,10 @@ that is not on this page.
 
 - Node 20 or later, and git.
 - Claude Code, signed in. If `claude` is not on your path, set `CLAUDE_BIN` to the program's
-  full path.
+  full path. On Windows that has to be `claude.exe`; a `.cmd` launcher will not start.
+- A session inherits only a short list of variables from your shell (`ENV_ALLOWED` in
+  `lib/config.mjs`). An API key, Bedrock or Vertex settings, a proxy or a custom config
+  folder set in the shell are dropped, so sign in to Claude Code itself.
 - A short folder to stage arms in. The default is `C:/tc` on Windows and `/tmp/tc` elsewhere.
   Set `TC_STAGE_ROOT` to change it. No folder above it may hold a `CLAUDE.md` or `AGENTS.md`;
   the tools stop and say so if one does.

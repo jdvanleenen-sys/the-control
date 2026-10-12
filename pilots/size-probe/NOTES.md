@@ -1,5 +1,7 @@
 # Size probe: the same test on a library four times the size
 
+This page and the logs beside it were copied from the last rehearsal's repo. Where it says "this repo" or "the sealed runs" it means that rehearsal. Its 18 documents are that rehearsal's, a boat club and a lending library, not this entry's. Its small-library leg is the fresh-clone re-run that `PILOTS.md` also lists.
+
 Run on Sunday 2026-10-11. One pass. Not marked. Not part of any sealed run.
 
 ## The question
