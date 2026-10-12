@@ -1,0 +1,13 @@
+- One model, one day, one tool. Step counts can shift between versions of the tool.
+- Made-up documents, written by one outside AI product in two answers to our prompt, not reviewed. Two of them refer to a document that was never written. The question writer reported two contradictions in them and wrote no question on either.
+- Ten questions. They are too few to rank the arms on right answers, and they speak for themselves, not for other questions.
+- The questions came from one writer. Although asked not to, it wrote four pairs of questions that rest on the same rule. The draw put one of each pair in the exam and the other among the held-out questions, so four held-out questions turn on a rule an exam question also turns on. `generator/key-check.md` lists the pairs.
+- Three of the ten expected answers, and two of the held-out ones, carry a figure the question does not ask for. A marker may grade an answer wrong for leaving it out. The folder's rules tell the model to answer what was asked and stop, so this can count against the folder.
+- Three of the folder's four files were tuned on rehearsals that used documents of this kind. New documents of the same kind test the folder on that kind only.
+- The verdict rule does not credit a folder that reaches more right answers; it asks only that right answers do not fall. It counts text in characters and not cost; tokens and seconds are printed beside it.
+- 9 of 10 is our own threshold, not a statistical test. Its stated error rate assumes the ten questions move independently of each other.
+- The two full marking passes are sessions of the model under test reading the same rules, so their agreement is not two independent opinions. A model from another maker marks the two headline arms only.
+- It tests loading a folder's files first in a read-only question task. It says nothing about staged workspaces or human review.
+- Fewer steps is not better in itself. It says the path to the answer changed.
+- The steps exist only in this tool's logs. In a Claude project the files are loaded for you and nothing records what the model read, so that run can show right answers and nothing else.
+- A library four times the size was tried once (`pilots/size-probe/NOTES.md`). The folder's cost grew and the control's did not. Nothing here says what happens where searching is hard: file names that say nothing, questions worded differently from the documents, or very long documents.
