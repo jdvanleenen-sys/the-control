@@ -1,7 +1,6 @@
-What the offline checks printed on the second machine, Monday 2026-10-12, as reported by the Claude Code session that ran them there and pasted back by the person at that machine. The repo there was at commit 93195b0. Three things are shortened or left out: the 854 per-file lines of `git pull`, all but the last 15 lines of the self-test, and one failed attempt at the version command that printed a local user path. Nothing else was changed.
+What the offline checks printed on the second machine, Monday 2026-10-12, as reported by the Claude Code session that ran them there and pasted back by the person at that machine. The repo there was at commit 93195b0. Four things are shortened or left out: the 854 per-file lines of `git pull`, all but the last 15 lines of the self-test, and the first line of `git pull`, which names the account the repo is under, and one failed attempt at the version command that printed a local user path. Nothing else was changed.
 
 1. git pull (first lines and the totals line)
-From https://github.com/jdvanleenen-sys/the-control
    7bda0fa..93195b0  main       -> origin/main
 Updating 7bda0fa..93195b0
 Fast-forward
