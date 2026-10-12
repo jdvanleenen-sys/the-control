@@ -74,7 +74,7 @@
   footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--hairline); color: var(--muted); font-size: 14px; }
   footer strong { color: var(--text); } code { font-family: ui-monospace, "JetBrains Mono", monospace; font-size: .92em; }
   @media (max-width: 760px) { .grid3, .grid2, .design { grid-template-columns: 1fr; } .design div { grid-template-columns: 1fr; gap: 2px; border-right: 0 !important; border-bottom: 1px solid var(--hairline) !important; } .flow { grid-template-columns: 1fr 1fr; } }
-  @page { size: 1000px 3250px; margin: 30px; }
+  @page { size: 1000px 3640px; margin: 30px; }
   @media print { body { background: #fff; } main { padding: 0; max-width: none; } .grid3 { grid-template-columns: repeat(3, 1fr); } .grid2, .design { grid-template-columns: 1fr 1fr; } .design div { grid-template-columns: 150px 1fr; } .flow { grid-template-columns: repeat(4, 1fr); } }
 </style>
 </head>
@@ -180,11 +180,20 @@
   <h2>Why the folder lost marks</h2>
   <p>The folder tells the AI to answer what was asked and then stop. Its answers were right on the main point and less than half the length. The answer key also wanted the detail a longer answer includes, such as how far over a limit something was.</p>
 
+  <h2>What the control changed</h2>
+  <p class="sub">A follow-up, after the verdict. One line was added to the folder's rules: "Say what would otherwise apply, and the difference." Then the three set-ups were run again, on the 10 exam questions and on the 10 kept aside.</p>
+  <div class="grid3">
+    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M10 17.5l5 5 9-10"/></svg><div><b>The lost marks came back</b><span>30 of 30 on all three gradings, on both sets of questions. It was 23 to 28.</span></div></div>
+    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M10 17.5l5 5 9-10"/></svg><div><b>The steps did not move</b><span>2.33 against 5.20. Fewer on 10 of 10.</span></div></div>
+    <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="#C67A3C" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M11 11l12 12M23 11L11 23"/></svg><div><b>The text is still more</b><span>9,579 against 7,665. By the same rule, still not earned.</span></div></div>
+  </div>
+  <p style="margin-top:12px">The line was written after seeing which answers lost marks, so it is fitted to those questions. The first verdict stands.</p>
+
   <div class="grid2" style="margin-top:28px">
     <div class="card"><strong>What held up</strong>
       <ul class="plain" style="margin-top:8px">
         <li>The map does the work on steps: 2.50 with the map alone, 6.07 with nothing loaded.</li>
-        <li>A re-run from a fresh copy gave the same result: 2.50 against 5.10.</li>
+        <li>A re-run on a second computer, set up from nothing, gave the same result: 2.30 against 5.20.</li>
         <li>On 10 questions kept aside: fewer steps on all 10, and 30 of 30 marked right in both set-ups. The loss of marks did not repeat.</li>
       </ul>
     </div>
@@ -192,13 +201,13 @@
       <ul class="plain" style="margin-top:8px">
         <li>One AI model, made-up documents, ten questions, one day.</li>
         <li>The graders could tell the two set-ups apart from the writing.</li>
-        <li>Nobody else has run it on another machine yet.</li>
+        <li>The second computer used the same account. Nobody outside has run it yet.</li>
       </ul>
     </div>
   </div>
 
   <footer>
-    <p><strong>Where to look.</strong> <code>START-HERE.md</code> is the guide. <code>results.md</code> has every figure, tie and loss.</p>
+    <p><strong>Where to look.</strong> <code>START-HERE.md</code> is the guide. <code>results.md</code> has every figure, tie and loss. <code>folder-change/</code> has the follow-up.</p>
     <p>Weekly Comp #14, The Control. Run on 12 October 2026. AI the vL Way. Less hype. More help.</p>
   </footer>
 </main>

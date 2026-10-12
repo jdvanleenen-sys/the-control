@@ -1,0 +1,54 @@
+What `node tools/ask.mjs` printed on the second machine, Monday 2026-10-12, as pasted back by the person who ran it. The copy out of the other machine's window put each cell of the table on its own line and dropped the headings' marks. Nothing else was changed. The raw logs of these three sessions stayed on that machine.
+
+Question: Under the Quillbrook Village Hall rules: what does the Meeting Room cost for two hours on 5 March 2026?
+Model: claude-sonnet-5-5, effort medium
+
+
+Arm
+Steps
+Documents opened
+Searches
+Tokens in
+Seconds
+Answer words
+Faults
+Full package
+2
+2
+0
+15871
+3.5
+97
+none
+Documents only
+4
+2
+1
+17498
+6.1
+145
+none
+Empty
+2
+0
+1
+9624
+4.1
+111
+none
+Steps show how the model got to an answer, not whether the answer is right. Read the answers.
+Full package
+The Meeting Room costs £24 for two hours. The rate is £12 per hour (hall-fees.md, section 2.2), and two hours is also the minimum paid booking (section 2.4). No changes entry replaces section 2.2.
+The total could differ in two ways, and the question doesn't say which applies:
+Registered village group: The room hire would be 25% off, which is £18. The 5 March 2026 date is after the 1 February 2026 effective date, so the 25% rate applies (hall-changes.md, section 3; hall-fees.md, section 3.2).
+Extras: A kitchen adds £8 per booking (hall-fees.md, section 2.3).
+Documents only
+The Meeting Room costs £24 for two hours on 5 March 2026. That is £12 per hour × 2 hours (`hall-fees.md` §2.2). Two hours is also the minimum paid booking (§2.4).
+Registered village groups: a group with at least ten local members gets 25% off room hire for an event on 5 March 2026. That brings the cost to £18. The 25% comes from the committee change effective 1 February 2026 (`hall-changes.md` §3), which replaced the original 20%.
+Extras: the kitchen is £8 per booking, and equipment is charged separately. Neither is discounted.
+Deposit: every booking needs a £30 booking deposit, which counts towards the hire charge (§5.1, §5.4).
+None of the committee changes affect the Meeting Room rate. The Monday–Thursday opening hours change from 1 March 2026 only affects when the room can be used. 5 March 2026 is a Thursday.
+Empty
+I can't answer this one. The working directory (`C:\tc\open-5U8B\w3`) is empty, and a search for "Quillbrook" or "Meeting Room" found nothing. I don't have the Quillbrook Village Hall rules or fee schedule, so I won't guess at a price.
+If you give me the file, for example a PDF or a Word or text document, or tell me where it is, I'll work out the cost for two hours on 5 March 2026. You can also paste the relevant section here. I'll need the hourly rate and any minimum booking length. I'll also need to know whether rates vary by day, time or hirer type, such as resident, commercial or charity.
+Raw logs and the question as sent: runs/ask-2026-10-12T21-32-24-619Z/ (not tracked by git; delete when done)

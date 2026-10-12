@@ -30,7 +30,7 @@ The design said that if steps fell through a file other than the map, it would m
 
 `examples.md` also shortened answers more than `rules.md` did: 68 words against 127 with and without the examples, and 85 against 110 for the rules.
 
-## What this run says to change in the folder, which has not been changed
+## What this run says to change in the folder
 
 `rules.md` says: "Answer every part asked. Then stop." It worked: answers with the rules loaded were shorter on 10 of 10 questions. It also cost marks, because a short answer says what applies and not what the asker wrongly expected.
 
@@ -38,7 +38,18 @@ The change it points to is one line: when a figure or a rule the asker is relyin
 
 Before changing anything, the loss was checked on questions the folder had never been tested on. That is the held-out section below: on ten more questions from the same pool, marked the same way, the folder lost no marks at all. So the control did not show a fault in the folder that repeats. Our reading is that it showed answer keys that ask for more than their questions do, and a folder that answers the question asked. That reading is not proved: two of the held-out keys also ask for something extra, and the folder lost nothing on them, so strict keys are not the whole story.
 
-The folder was therefore not changed. Adding the line would have fitted the folder to three keys on the day they were seen, and on the held-out questions there was nothing to fix. What the control changed is what we would claim for the folder: it halves the steps, it does not make answers more right, and it costs more text than it saves.
+The folder at the top of this repo was therefore left as tested. Adding the line there would have fitted the folder to three keys on the day they were seen, and on the held-out questions there was nothing to fix. What the control changed is what we would claim for the folder: it halves the steps, it does not make answers more right, and it costs more text than it saves.
+
+## The one labelled change, made on a separate copy
+
+Leaving the folder alone left a question open: would the line do what this page says it would? So the one change the pre-registration allows was made on a separate copy of the repo and re-run, on the exam questions and on the held-out questions. `folder-change/README.md` has all of it. In short:
+
+- The line added to `rules.md`: "Say what would otherwise apply, and the difference."
+- Marked right, changed folder: 30 of 30 on all three gradings, on both sets of questions. Documents alone: the same.
+- Steps: 2.33 against 5.20 on the exam questions and 2.43 against 5.13 on the held-out ones, fewer on 10 of 10 both times.
+- Text: 9,579 characters against 7,665. Still more with the folder.
+
+By the rule fixed before the first run the changed folder still does not earn its place, because the text still rises. The line is fitted to the questions it was tested on, so this is a follow-up and not a second verdict. `results.md` is unchanged.
 
 ## The re-run a visitor is invited to do
 
@@ -49,7 +60,17 @@ Done once from a fresh clone of this repo, on the same day and machine, with `no
 
 The command printed "Reproduces: YES". Its 30 raw logs, readable transcripts and what it printed are in `after-the-run/rerun/`. From the same clone, every self-test passed, `verify/check.mjs` and `verify/history.mjs` passed, and running the draw again on the committed pool gave the same ten exam questions.
 
-Not tried: another machine, another account, another day, another version of the tool.
+## The same re-run on a second machine
+
+A second laptop that had never held this repo. Git, Node 24.20.0 and Claude Code 2.1.296 were installed on it that afternoon, the repo was cloned from GitHub, and the same command was run: 30 sessions.
+
+- Re-run: fewer steps with the folder on 10 of 10 questions, 2.30 per session against 5.20.
+
+The command printed "Reproduces: YES", with no session left out. What it printed is in `after-the-run/second-machine/rerun-printed.txt`, as pasted back from that machine. The raw logs stayed there.
+
+`node tools/ask.mjs` was run there too, with a question made up on the spot: the cost of the Meeting Room for two hours on 5 March 2026. The full folder and the documents alone both answered £24, which is what the documents give. The folder took 2 steps and the documents alone 4. What it printed is in `after-the-run/second-machine/ask-printed.txt`.
+
+It was the same Claude account, the same day and the same version of the tool, run by the person who built this entry. Not tried: another account, another day, another version of the tool, a person with no part in the build.
 
 ## How the marking was run
 

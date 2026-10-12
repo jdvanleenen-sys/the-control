@@ -16,6 +16,8 @@ An entry for Weekly Comp #14.
 
 Every answer that lost a mark gives the right yes or no and the right figure. Each left out a detail the answer key wanted, because the folder tells the model to answer what was asked and stop. On ten more questions held back from the test, both set-ups scored 30 of 30 and the folder still took fewer steps on all ten.
 
+**What the control changed.** As a follow-up, one line was added to the folder's rules and the test was run again. The lost marks came back, 30 of 30 on all three gradings, with the steps unchanged. The folder still put more text in front of the model, so by the same rule it still did not earn its place. The first verdict stands.
+
 The most surprising line in [`results.md`](/results.md): "The folder reached fewer right answers. Fewer steps did not come with equal answers."
 
 ## Where to go
@@ -29,5 +31,6 @@ The `README.md` at the top of the repo is not a guide. It is the folder's map, o
 | Every figure, tie and loss | [`results.md`](/results.md) |
 | The questions and expected answers | [`questions.md`](/questions.md) |
 | The raw transcripts | [`control/`](/control) and [`treatment/`](/treatment) |
-| What was checked after the result | [`after-the-run.md`](/after-the-run.md) |
+| What was checked after the result, including a re-run on a second machine | [`after-the-run.md`](/after-the-run.md) |
+| The follow-up: one change to the folder, and its re-run | [`folder-change/`](/folder-change) |
 | What was done differently from the plan, and what was corrected | [`DEVIATIONS.md`](/DEVIATIONS.md) |

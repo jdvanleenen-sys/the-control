@@ -4,7 +4,7 @@ This repo is a folder and a test of whether the folder earns its place.
 
 `README.md` at the top of the repo is part of the folder under test: it is the map the model loads. It is not a guide to the repo. This page is.
 
-## What happened, in seven lines
+## What happened, in nine lines
 
 - With the folder's instruction files loaded, the model took fewer steps on 10 of 10 questions: 2.37 per session against 5.03 with the same documents and no instruction files.
 - It was marked right less often: 28, 23 and 23 of 30 on three marking passes, against 30 of 30 for the documents alone on all three.
@@ -13,6 +13,8 @@ This repo is a folder and a test of whether the folder earns its place.
 - Against the brief's own control, no folder at all, the folder wins as it must: 23 to 28 of 30 against 0 of 30. The documents do that work.
 - Every answer the folder lost a mark on gives the same yes or no and the same figure as the expected answer. Each left out a detail the answer key asks for and the question does not. The folder's rules tell the model to answer what was asked and stop.
 - On ten more questions it had never been tested on, the folder took fewer steps on 10 of 10 and both set-ups were marked right on 30 of 30. The loss of marks did not repeat.
+- As a follow-up, one line was added to the folder's rules on a separate copy and the test was run again. The lost marks came back: 30 of 30 on all three gradings, with the steps unchanged. The folder still put more text in front of the model, so by the same rule it still did not earn its place. The first verdict stands. `folder-change/README.md` has it.
+- A re-run on a second machine, set up from nothing and cloned from GitHub, came out the same way: 2.30 steps against 5.20, fewer on 10 of 10.
 
 The folder is a small library of made-up rules for two organisations (`reference/`), a map of the documents (`README.md`), and instructions on how to look things up and how to answer (`identity.md`, `rules.md`, `examples.md`). `results.md` has every figure, tie and loss. `after-the-run.md` has what was checked afterwards. `summary.html` is the same story on one page.
 
@@ -93,7 +95,8 @@ A project keeps no log of what the model opened, so it can show whether answers 
 | `questions.md`, `questions-heldout.md` | The ten questions and expected answers, and the ten the draw did not pick |
 | `control/`, `treatment/`, `results.md` | The runs and what changed |
 | `summary.html`, `summary.pdf` | The result on one page |
-| `after-the-run.md`, `after-the-run/` | What was checked after the reveal, with its logs: a person's marks on seven answers, a re-run from a fresh clone, the held-out questions, a question made up on the spot |
+| `after-the-run.md`, `after-the-run/` | What was checked after the reveal, with its logs: a person's marks on seven answers, a re-run from a fresh clone and one on a second machine, the held-out questions, a question made up on the spot |
+| `folder-change/` | The follow-up: one line added to the rules on a separate copy, and the re-run. Start with its `README.md` |
 | `EXPERIMENT.md` | The design, written first: what is compared, what is counted, the sentences that may be published |
 | `PREREGISTRATION.md`, `MARKING.md`, `RUN.md` | How it was run, marked and can be re-run |
 | `DEVIATIONS.md`, `folder-changes.md`, `limits.md` | What was done differently and what was corrected, what changed in the folder, what this cannot show |
