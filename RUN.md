@@ -1,7 +1,7 @@
 # How to run it
 
 Written before the runs it describes. Follow it top to bottom; you should not need anything
-that is not on this page. It was edited in six places after the run, to help a visitor; `DEVIATIONS.md`
+that is not on this page. It was edited in seven places after the run, to help a visitor; `DEVIATIONS.md`
 says which.
 
 ## What you need

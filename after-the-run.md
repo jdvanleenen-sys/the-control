@@ -32,7 +32,7 @@ The design said that if steps fell through a file other than the map, it would m
 
 ## What this run says to change in the folder
 
-`rules.md` says: "Answer every part asked. Then stop." It worked: answers with the rules loaded were shorter on 10 of 10 questions. It also cost marks, because a short answer says what applies and not what the asker wrongly expected.
+`rules.md` says: "Answer every part asked. Then stop." It worked: answers with the rules loaded were shorter on 10 of 10 questions. Our reading is that it also cost marks, because a short answer says what applies and not what the asker wrongly expected.
 
 The change it points to is one line: when a figure or a rule the asker is relying on does not apply, say which one and by how much. The pre-registration allows one labelled change with its own re-run.
 

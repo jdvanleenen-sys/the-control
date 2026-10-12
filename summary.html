@@ -50,7 +50,7 @@
   .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--hairline); }
   .stats div { font-size: 13px; color: var(--muted); } .stats b { display: block; font-size: 26px; font-weight: 700; color: var(--text); line-height: 1.15; font-variant-numeric: tabular-nums; }
   .design { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--card); border: 1px solid var(--hairline); border-radius: 10px; overflow: hidden; }
-  .design div { padding: 13px 16px; border-bottom: 1px solid var(--hairline); display: grid; grid-template-columns: 150px 1fr; gap: 12px; font-size: 14px; align-items: start; }
+  .design div { padding: 13px 16px; border-bottom: 1px solid var(--hairline); display: grid; grid-template-columns: 190px 1fr; gap: 12px; font-size: 14px; align-items: start; }
   .design div:nth-child(odd) { border-right: 1px solid var(--hairline); }
   .design div:nth-last-child(-n+2) { border-bottom: 0; }
   .design b { font-weight: 700; font-size: 15px; }
@@ -100,8 +100,8 @@
   footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--hairline); color: var(--muted); font-size: 14px; }
   footer strong { color: var(--text); } code { font-family: ui-monospace, "JetBrains Mono", monospace; font-size: .92em; }
   @media (max-width: 760px) { .grid3, .grid2, .design { grid-template-columns: 1fr; } .design div { grid-template-columns: 1fr; gap: 2px; border-right: 0 !important; border-bottom: 1px solid var(--hairline) !important; } .flow { grid-template-columns: 1fr 1fr; } }
-  @page { size: 1000px 4550px; margin: 30px; }
-  @media print { body { background: #fff; } main { padding: 0; max-width: none; } .grid3 { grid-template-columns: repeat(3, 1fr); } .grid2, .design { grid-template-columns: 1fr 1fr; } .design div { grid-template-columns: 150px 1fr; } .flow { grid-template-columns: repeat(4, 1fr); } }
+  @page { size: 1000px 4620px; margin: 30px; }
+  @media print { body { background: #fff; } main { padding: 0; max-width: none; } .grid3 { grid-template-columns: repeat(3, 1fr); } .grid2, .design { grid-template-columns: 1fr 1fr; } .design div { grid-template-columns: 190px 1fr; } .flow { grid-template-columns: repeat(4, 1fr); } }
 </style>
 </head>
 <body>
@@ -163,7 +163,7 @@
       </div>
       <div class="card chart">
         <h3>Cost per question</h3>
-        <div class="cap">Tokens are the units an AI is billed in. The whole conversation is sent again at every step, so fewer steps means fewer tokens in, even with more text.</div>
+        <div class="cap">Tokens are the units an AI is billed in. The whole conversation is sent again at every step, so fewer steps usually means fewer tokens in, even with more text. It did on 8 of the 10 questions.</div>
         <div id="cost" style="--lab:120px"></div>
       </div>
     </div>
@@ -214,12 +214,12 @@
     <div><b>What was measured</b><span>Steps taken, answers marked right, text put in front of the AI, tokens and seconds.</span></div>
     <div><b>The controls</b><span>Nothing at all. The documents alone. The folder present but not loaded. A folder with its map made wrong on purpose.</span></div>
     <div><b>The sample</b><span>10 questions, asked 3 times each, in 19 set-ups: 570 sessions. The 19 are every mix of the 4 instruction files loaded or not (16), the documents alone, nothing, and a folder with a wrong map. Then 10 more questions held back as a check.</span></div>
-    <div><b>The decision rule</b><span>A difference counts only if it shows on 9 or 10 of the 10 questions. Written down before any document existed.</span></div>
+    <div><b>The decision rule</b><span>On steps, a difference counts only if it shows on 9 or 10 of the 10 questions. Any fall in right answers, or any rise in text, fails the folder. Written down before any document existed.</span></div>
   </div>
   <h2>How bias was kept out</h2>
-  <p class="sub">Read down and follow the arrows. Each step sits under whoever did it, so no one hand touches two jobs that should be apart. On the right is what that step shuts out.</p>
+  <p class="sub">Read down and follow the arrows. Each step sits under whoever did it. On the right is what that step is there to shut out.</p>
   <div class="swim">
-    <div class="lh" style="grid-column:1">Scripts and commits<span>nobody choosing</span></div>
+    <div class="lh" style="grid-column:1">Scripts and commits<span>fixed on the record</span></div>
     <div class="lh" style="grid-column:2">ChatGPT<span>writes the test</span></div>
     <div class="lh" style="grid-column:3">Gemini<span>checks and grades</span></div>
     <div class="lh" style="grid-column:4">Claude<span>the AI under test</span></div>
@@ -236,7 +236,7 @@
     <div class="keep" style="grid-row:4">Answers the AI already knows from its training.</div>
     <div class="con v" style="grid-row:5;grid-column:2"><i></i></div>
 
-    <div class="node" style="grid-row:6;grid-column:2"><i>3</i><em>ChatGPT</em><b>20 questions and answers</b>It never saw the folder.</div>
+    <div class="node" style="grid-row:6;grid-column:2"><i>3</i><em>ChatGPT</em><b>20 questions and answers</b>It never saw the instruction files.</div>
     <div class="lead" style="grid-row:6;grid-column:3 / 5"></div>
     <div class="keep" style="grid-row:6">Questions written to suit the folder.</div>
     <div class="con r" style="grid-row:7;grid-column:2 / span 2;--n:2"><i></i></div>
@@ -251,16 +251,16 @@
     <div class="keep" style="grid-row:10">Picking the questions the folder does well on.</div>
     <div class="con v" style="grid-row:11;grid-column:1"><i></i></div>
 
-    <div class="node" style="grid-row:12;grid-column:1"><i>6</i><em>Scripts and commits</em><b>Folder added last</b>After the questions were locked.</div>
+    <div class="node" style="grid-row:12;grid-column:1"><i>6</i><em>Scripts and commits</em><b>Instructions added last</b>After the questions were locked.</div>
     <div class="lead" style="grid-row:12;grid-column:2 / 5"></div>
-    <div class="keep" style="grid-row:12">Changing the questions once the folder is in view.</div>
+    <div class="keep" style="grid-row:12">Changing the questions once the instructions are in view.</div>
     <div class="con r" style="grid-row:13;grid-column:1 / span 4;--n:4"><i></i></div>
 
     <div class="node" style="grid-row:14;grid-column:4"><i>7</i><em>Claude</em><b>570 sessions</b>A fresh one per question, in random order.</div>
     <div class="keep" style="grid-row:14">One answer leaking into the next. The order of the runs.</div>
     <div class="con v" style="grid-row:15;grid-column:4"><i></i></div>
 
-    <div class="node" style="grid-row:16;grid-column:3 / span 2"><i>8</i><em>Gemini and Claude</em><b>Graded 3 times</b>Once by Gemini, twice by Claude. Answers shuffled, set-up hidden.</div>
+    <div class="node" style="grid-row:16;grid-column:3 / span 2"><i>8</i><em>Gemini and Claude</em><b>Graded 3 times</b>The two main set-ups: once by Gemini, twice by Claude. Answers shuffled, set-up hidden.</div>
     <div class="keep" style="grid-row:16">A grader favouring the folder.</div>
     <div class="con l" style="grid-row:17;grid-column:1 / span 3;--n:3"><i></i></div>
 
@@ -268,7 +268,7 @@
     <div class="lead" style="grid-row:18;grid-column:2 / 5"></div>
     <div class="keep" style="grid-row:18">Dropping bad runs. Hand-picked numbers.</div>
   </div>
-  <p class="sub" style="margin-top:10px">Where it fell short: the set-up was hidden from the graders, but they could often tell the two apart from how the answers were written.</p>
+  <p class="sub" style="margin-top:10px">Where it fell short: the set-up was hidden from the graders, but they could often tell the two apart from how the answers were written. Claude both answered and graded. The builder wrote the prompts for the other AIs and the folder itself.</p>
 
 
   <footer>
