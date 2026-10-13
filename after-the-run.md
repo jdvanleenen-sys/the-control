@@ -112,6 +112,12 @@ In every re-run the folder took fewer steps on 10 of 10 questions and put more t
 
 The re-run command now prints the text line itself, beside the steps, so a visitor sees both. It is not part of "Reproduces", which keeps the meaning the pre-registration gave it. The last row is the run that tested that change: 30 sessions, none left out, and one session with nothing loaded kept and flagged because the model tried a tool call that was refused.
 
+## The checks on Linux and macOS
+
+Every run described above was made on Windows. To see whether the checks at least work elsewhere, GitHub's own machines were set to run them: `verify/check.mjs`, `verify/history.mjs`, `verify/folder.mjs` and `verify/selftest.mjs`, on Linux, macOS and Windows, from a full clone. All four passed on all three on the first attempt, with 172 of 172 self-test cases on each. The set-up is `.github/workflows/checks.yml` and the runs are under the repo's Actions tab.
+
+This does not start a model session, so it says nothing about the re-run or about asking a question on those systems. Nobody has run those on Linux or macOS.
+
 ## How the marking was run
 
 Each of the two full passes was split over four sessions of the model under test, started together by `runs/sealed/marking/mark.mjs`. Each session had a quarter of the sheet, `MARKING.md` and the documents, and wrote its own marks. The record of each session and the marks it wrote are in `runs/sealed/marking/`. The eight sessions took about two minutes. The marking sheets replace the path of the folder a session ran in with `[working folder]`, so a marker cannot read a set-up's code off an answer; nothing else in an answer is changed.
