@@ -7,8 +7,9 @@ What was done differently from the plan, and what was corrected after the run, n
 None of this touches the sealed run, its marks or the verdict.
 
 - **The offline checks on Linux and macOS.** GitHub's machines now run the four checks on Linux, macOS and Windows each time the repo changes. `after-the-run.md` has it.
-- **The re-runs were marked.** The answers of three re-runs were marked blind, against expectations committed first. `after-the-run/rerun-marks/` has it.
+- **The re-runs were marked.** The answers of three re-runs were marked with the set-up hidden, against expectations committed first. `after-the-run/rerun-marks/` has it.
 - **The unchanged folder was run beside the changed one,** against expectations committed first. Two of the six did not hold: the changed folder was not marked right more often. `folder-change/side-by-side/` has it.
+- **One more rule in the history check, after a last outside read.** It did not stop the key, its fingerprint, the record of what was staged or the coded tables being changed after they were committed. None of them ever was, and it now fails if one is.
 - **A correction that follows from that.** `folder-change/README.md`, the landing page, the guide and the summary had said the one added line brought the lost marks back. They now say it is not shown to help. The figures of the first follow-up are unchanged; the reading of them is withdrawn.
 
 ## Monday 2026-10-12, after the verdict: a follow-up on a separate copy, two stopped runs, and a second machine

@@ -85,6 +85,10 @@ function runFailures(repo, order, at, run) {
   if (key !== null && (at(`${base}/tables-coded.md`) === null || at(`${base}/tables-coded.md`) >= key)) failures.push('the coded tables were not committed before the key');
   if (key !== null && logs !== null && key <= logs) failures.push('the key was committed with or before the logs');
   if (changedLater(repo, `${base}/logs`)) failures.push('a raw log was changed or removed after it was first committed');
+  // The key, its fingerprint, the record of what was staged and the coded tables are each written once.
+  for (const once of ['key.json', 'key.sha256', 'manifest.json', 'tables-coded.md']) {
+    if (at(`${base}/${once}`) !== null && changedLater(repo, `${base}/${once}`)) failures.push(`${base}/${once} was changed or removed after it was first committed`);
+  }
   // Marks are made with the arm hidden, so they come before the key and are never touched again.
   const everAdded = [...new Set(git(repo, ['log', '--diff-filter=A', '--name-only', '--format=', '--', base]))];
   for (const marks of everAdded.filter((path) => /\/marks-[a-z]+\.csv$/.test(path))) {

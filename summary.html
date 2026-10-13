@@ -106,7 +106,7 @@
   footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--hairline); color: var(--muted); font-size: 14px; }
   footer strong { color: var(--text); } code { font-family: ui-monospace, "JetBrains Mono", monospace; font-size: .92em; }
   @media (max-width: 760px) { .grid3, .grid2, .design { grid-template-columns: 1fr; } .design div { grid-template-columns: 1fr; gap: 2px; border-right: 0 !important; border-bottom: 1px solid var(--hairline) !important; } .flow { grid-template-columns: 1fr 1fr; } }
-  @page { size: 1000px 5460px; margin: 30px; }
+  @page { size: 1000px 5520px; margin: 30px; }
   @media print { body { background: #fff; } main { padding: 0; max-width: none; } .grid3 { grid-template-columns: repeat(3, 1fr); } .grid2, .design { grid-template-columns: 1fr 1fr; } .design div { grid-template-columns: 190px 1fr; } .flow { grid-template-columns: repeat(4, 1fr); } }
 </style>
 </head>
@@ -210,20 +210,20 @@
     <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="#C67A3C" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M11 11l12 12M23 11L11 23"/></svg><div><b>Side by side, it did no better</b><span>Unchanged folder 30, 30 and 30 of 30. Changed folder 29, 29 and 30. Steps the same: 2.40 each.</span></div></div>
     <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="#C67A3C" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M11 11l12 12M23 11L11 23"/></svg><div><b>The text is still more</b><span>9,643 against 7,395 side by side. By the same rule, still not earned.</span></div></div>
   </div>
-  <p style="margin-top:12px">So the line is not shown to help: it made answers about 19 words longer and did not raise the marks. In that last run the unchanged folder lost none, though its answers left out the same details as before and the graders passed them. Across three batches the same folder has been graded 23 to 28, then 24 to 30, then 30 of 30, with the documents alone at 30 each time. The first verdict stands.</p>
+  <p style="margin-top:12px">So the line is not shown to help: it made answers about 19 words longer and did not raise the marks. In that last run the unchanged folder lost none: it left out the wanted detail less often than in the first run, and the graders passed the answers that still did. Across three batches the same folder has been graded 23 to 28, then 24 to 30, then 30 of 30, with the documents alone at 30 each time. The first verdict stands.</p>
 
   <div class="grid2" style="margin-top:28px">
     <div class="card"><strong>What held up</strong>
       <ul class="plain" style="margin-top:8px">
         <li>Most of the saving on steps comes from the map: 2.50 with the map alone, 6.07 with nothing loaded.</li>
         <li>A person with no part in the build re-ran it on their own machine and got the same result on steps: 2.40 against 5.60. On a question they wrote themselves, the folder gave the right figure and the documents alone gave an out-of-date one (asked once).</li>
-        <li>Three re-runs, graded blind afterwards: the documents alone were right every time. By 2 of 3 gradings the folder lost marks, only on the same 3 questions.</li>
+        <li>Three re-runs, graded afterwards with the set-up hidden: the documents alone were right every time. By 2 of 3 gradings the folder lost marks, only on the same 3 questions.</li>
         <li>On 10 questions kept aside: fewer steps on all 10, and 30 of 30 marked right in both set-ups. The loss of marks did not repeat.</li>
       </ul>
     </div>
     <div class="card"><strong>What this does not show</strong>
       <ul class="plain" style="margin-top:8px">
-        <li>One AI model, made-up documents, ten questions, one day.</li>
+        <li>One AI model, made-up documents, ten questions, one main run.</li>
         <li>The graders could tell the two set-ups apart from the writing.</li>
         <li>How many marks the folder loses depends on who grades: 1, 0 and 6 of 30 across three gradings of the re-runs.</li>
       </ul>
@@ -297,7 +297,7 @@
 
   <footer>
     <p><strong>Where to look.</strong> <code>START-HERE.md</code> is the guide. <code>results.md</code> has every figure, tie and loss. <code>folder-change/</code> has the follow-up.</p>
-    <p>Weekly Comp #14, The Control. Run on 12 October 2026.</p>
+    <p>Weekly Comp #14, The Control. Run on 12 October 2026, with follow-ups on the 13th.</p>
   </footer>
 </main>
 <script>

@@ -18,11 +18,11 @@ The most surprising line in [`results.md`](/results.md): "The folder reached few
 
 ## What we checked afterwards
 
-- **The lost marks.** Each answer that lost a mark had the right yes or no and the right figure, and left out a detail the answer key wanted. On ten held-back questions the loss did not repeat: 30 of 30 both ways. Three re-runs graded blind afterwards lost marks again by two of three gradings, on the same three questions.
+- **The lost marks.** Each answer that lost a mark had the right yes or no and the right figure, and left out a detail the answer key wanted. On ten held-back questions the loss did not repeat: 30 of 30 both ways. Three re-runs graded afterwards with the set-up hidden lost marks again by two of three gradings, on the same three questions.
 - **Someone else ran it.** Jordan Shaw, a community member with no part in the build, re-ran it on their own machine: 2.40 steps against 5.60. On one question of their own, asked once, the folder gave the right figure and the documents alone gave an out-of-date one.
 - **Which part did what.** The map alone got nearly all the saving in steps. In the sealed run, nearly all the lost marks were in set-ups with the rules or the examples loaded. That is a pointer and not a proof: all but the full folder were marked by the model under test only.
 - **The follow-up.** One line was added to the rules on a separate copy. Alone, the changed folder scored 30 of 30. Run beside the unchanged folder the next day, it did no better: 29, 29 and 30 against 30, 30 and 30. So the line is not shown to help, and the folder in this repo is the one that was tested.
-- **How steady the loss is.** Not very. The same folder on the same questions was marked right on 28, 23 and 23 of 30 in the sealed run, 29, 30 and 24 in three re-runs, and 30, 30 and 30 in that last run. The documents alone were at 30 every time. The answers left out the same detail in the last run too; the markers mostly passed them.
+- **How steady the loss is.** Not very. The same folder on the same questions was marked right on 28, 23 and 23 of 30 in the sealed run, 29, 30 and 24 in three re-runs, and 30, 30 and 30 in that last run. The documents alone were at 30 every time. Two things varied: how often the folder left out the detail the key wants, and whether a marker failed it for that.
 
 ## Where to go
 
