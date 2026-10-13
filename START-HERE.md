@@ -43,12 +43,14 @@ The other organisation is the Fenwray Film Society.
 node tools/rerun.mjs --name sealed
 ```
 
-**3. Check that nothing was changed after the fact.** The first command rebuilds every table and transcript from the raw logs and fails on any difference. The second reads the commit history and fails if anything is out of order.
+**3. Check that the sealed run was not changed after the fact.** The first command rebuilds `results.md` and every transcript under `control/` and `treatment/` from the raw logs of the sealed run, and fails on any difference. The second reads the commit history and fails if anything is out of order, or if a raw log, a mark, the questions or the design was changed after it was committed.
 
 ```
 node verify/check.mjs
 node verify/history.mjs
 ```
+
+These two cover the sealed run: `runs/sealed/`, `control/`, `treatment/`, `results.md`, `questions.md` and the folder. They do not cover what came after it: `after-the-run/`, `folder-change/`, `runs/heldout/`, `claude-project/`, the summary and the pages that describe the run. For those, the raw logs are there to read and recount.
 
 The history shows the order of the commits. It cannot show when they were made: this repo was built locally and pushed only after the run.
 

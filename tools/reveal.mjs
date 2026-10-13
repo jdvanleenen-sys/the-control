@@ -53,6 +53,8 @@ export function reveal(dir, { unmarked = false, root = false, repo = REPO } = {}
   const key = JSON.parse(readFileSync(join(dir, 'key.json'), 'utf8'));
   const schedule = JSON.parse(readFileSync(join(dir, 'schedule.json'), 'utf8'));
   const manifest = JSON.parse(readFileSync(join(dir, 'manifest.json'), 'utf8'));
+  const placed = existsSync(join(dir, PLACE_FILE)) ? JSON.parse(readFileSync(join(dir, PLACE_FILE), 'utf8')) : null;
+  if (placed && placed.root && !root) throw new Error('This run is already revealed at the top of the repo. Add --root to rebuild it there. Without it the reveal would move, and the check would stop covering control/, treatment/ and results.md.');
   writeFileSync(join(dir, PLACE_FILE), `${JSON.stringify({ root })}\n`);
   const place = revealPlace(dir, repo);
   for (const name of REVEALED_DIRS) rmSync(join(place.base, name), { recursive: true, force: true });

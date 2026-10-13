@@ -1,6 +1,6 @@
 # After the run
 
-Everything on this page was done after the key was revealed. None of it changes `results.md`, which is built from the logs and the marks and is checked against them. It is here so a reader can see what was looked at afterwards and what was left alone.
+Everything on this page was done after the key was revealed. None of it changes `results.md`, which is built from the logs and the marks and is checked against them. It is here so a reader can see what was looked at afterwards and what was left alone. `verify/check.mjs` covers the sealed run and does not cover the logs and marks behind this page; they are in the repo to be read and recounted.
 
 ## A person marked the seven answers the markers did not all pass
 
@@ -95,7 +95,7 @@ The command printed "Reproduces: YES". That is steps only; a re-run does not mar
 
 This is the only question in this entry on which the documents alone gave a wrong figure. It is one question asked once, the answers were checked against the documents by the person who asked and by us and were not put through the markers, and in the sealed run the documents alone were marked right on all 30 answers, changed rules included. So it is one case, not a finding. The folder's `rules.md` tells the model to check whether a changes document replaces a section; here that is the step the documents-only session skipped.
 
-Their raw logs and what they sent are in `after-the-run/outsider/`. It was the same day and the same version of the tool. Not tried: another day, another version of the tool, another operating system.
+Their raw logs and what they sent are in `after-the-run/outsider/`. It was the same day (the evening of the 12th here; the logs are stamped the 13th in UTC) and the same version of the tool. Not tried: another day, another version of the tool, another operating system.
 
 ## How the marking was run
 

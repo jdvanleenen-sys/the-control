@@ -26,4 +26,5 @@ runCli(() => {
   for (const notice of notices(rows)) console.log(`Notice: ${notice}`);
   for (const [arm, label] of OPEN_ARMS) console.log(`\n## ${label}\n\n${rows.find((r) => r.arm === arm).answer.trim()}`);
   console.log(`\nRaw logs and the question as sent: runs/ask-${stamp}/ (not tracked by git; delete when done)`);
+  if (rows.every((r) => r.faults.length > 0)) { console.error('Every session was left out for a fault in the set-up, so nothing above is an answer. The fault is named in the table.'); process.exitCode = 1; }
 });

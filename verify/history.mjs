@@ -28,6 +28,9 @@ const ANALYSIS_CODE = ['lib', 'verify/analyse.mjs', 'verify/results.mjs', 'verif
 // Pages that tell people how the run is done and marked. Where they exist, they have to be on
 // record before the first log, so nobody can say the steps were written to fit the run.
 const WRITTEN_FIRST = ['RUN.md', 'PREREGISTRATION.md', 'MARKING.md'];
+// How the run was to be made and how answers are marked. RUN.md is not here: it was edited after
+// the run to help visitors, and DEVIATIONS.md lists each edit.
+const NEVER_CHANGED = ['PREREGISTRATION.md', 'MARKING.md'];
 
 const changedLater = (repo, path) => git(repo, ['log', '--diff-filter=MD', '--format=%H', '--', path]).length > 0;
 
@@ -65,6 +68,7 @@ function repoFailures(repo, at) {
   }
   if (at('runs') !== null && at('questions.md') >= at('runs')) failures.push('questions.md was not committed before the first run file');
   if (changedLater(repo, 'questions.md')) failures.push('questions.md was changed after it was first committed');
+  for (const page of NEVER_CHANGED) if (at(page) !== null && changedLater(repo, page)) failures.push(`${page} was changed after it was first committed`);
   return failures;
 }
 
@@ -81,6 +85,11 @@ function runFailures(repo, order, at, run) {
   if (key !== null && (at(`${base}/tables-coded.md`) === null || at(`${base}/tables-coded.md`) >= key)) failures.push('the coded tables were not committed before the key');
   if (key !== null && logs !== null && key <= logs) failures.push('the key was committed with or before the logs');
   if (changedLater(repo, `${base}/logs`)) failures.push('a raw log was changed or removed after it was first committed');
+  // Marks are made with the arm hidden, so they come before the key and are never touched again.
+  for (const marks of git(repo, ['ls-files', base]).filter((path) => /\/marks-[a-z]+\.csv$/.test(path))) {
+    if (changedLater(repo, marks)) failures.push(`${marks} was changed or removed after it was first committed`);
+    if (key !== null && at(marks) >= key) failures.push(`${marks} was not committed before the key`);
+  }
   if (logs !== null) failures.push(...undocumentedFixes(repo, order, logs));
   return failures.map((failure) => `${run}: ${failure}`);
 }

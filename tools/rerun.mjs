@@ -7,7 +7,7 @@
 // difference). Step counts for single questions do move by a step between runs.
 
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { basename, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { option, runCli, sealedRunOrDefault } from '../lib/cli.mjs';
 import { ARM_DOCS_ONLY, ARM_EMPTY, ARM_FULL, EFFORT, MODEL, QUESTIONS_FILE, runDir } from '../lib/config.mjs';
@@ -40,7 +40,7 @@ function main() {
   const questions = loadQuestions(QUESTIONS_FILE);
   const ids = questions.map((q) => q.id);
   const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const name = `${option('name')}-rerun-${stamp}`;
+  const name = `${basename(dir)}-rerun-${stamp}`;
   const rows = runOpenArms(questions, { runs: Number(option('runs', '1')), outDir: runDir(name), say: console.log });
   const clean = (arm) => rows.filter((r) => r.arm === arm && r.faults.length === 0);
   const mine = compareByQuestion(ids, clean(ARM_FULL), clean(ARM_DOCS_ONLY), 'steps');

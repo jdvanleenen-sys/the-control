@@ -1,7 +1,7 @@
 # How to run it
 
 Written before the runs it describes. Follow it top to bottom; you should not need anything
-that is not on this page. It was edited in eight places after the run, to help a visitor; `DEVIATIONS.md`
+that is not on this page. It was edited in ten places after the run, to help a visitor; `DEVIATIONS.md`
 says which.
 
 ## What you need
@@ -101,7 +101,7 @@ arm were left out for a fault in the set-up, and how many were kept and flagged 
 model did something unusual, such as a refused call. Git ignores that folder; delete it when
 you are done.
 
-The tools remove the folders they stage arms in when they finish.
+The tools remove the folders they stage arms in when they finish, unless they stop on an error.
 
 ## 4. Ask your own question (3 sessions)
 
@@ -124,7 +124,7 @@ ask them again in a chat with no project. Three things to know:
   names are unique.
 - A Project loads the files for you. There is no log of steps, so only the answers can be
   compared: right or not, and how long.
-- Turn web search off for the chat with no project. This repo is public, and a search could
+- Turn web search off, in the project and in the chat with no project. This repo is public, and a search could
   find the expected answers.
 
 ## 5. Try to break it

@@ -2,7 +2,7 @@
 // transcript and results file is exactly what the raw logs produce. Exits 1 and prints each
 // failure if anything is off.
 //
-//   node verify/check.mjs --name pass1
+//   node verify/check.mjs [--name sealed]
 
 import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
