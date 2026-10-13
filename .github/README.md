@@ -18,7 +18,7 @@ The most surprising line in [`results.md`](/results.md): "The folder reached few
 
 ## What we checked afterwards
 
-- **The lost marks.** Each answer that lost a mark had the right yes or no and the right figure, and left out a detail the answer key wanted. On ten held-back questions the loss did not repeat: 30 of 30 both ways.
+- **The lost marks.** Each answer that lost a mark had the right yes or no and the right figure, and left out a detail the answer key wanted. On ten held-back questions the loss did not repeat: 30 of 30 both ways. On three re-runs graded blind afterwards it did, on the same three questions: 29, 30 and 24 of 30 against 30 every time.
 - **Someone else ran it.** Jordan Shaw, a community member with no part in the build, re-ran it on their own machine: 2.40 steps against 5.60. On one question of their own, asked once, the folder gave the right figure and the documents alone gave an out-of-date one.
 - **Which part did what.** The map alone got nearly all the saving in steps. Nearly all the lost marks were in set-ups with the rules or the examples loaded. That is a pointer and not a proof: all but the full folder were marked by the model under test only.
 - **The follow-up.** One line was added to the rules on a separate copy and the test was run again. The marks came back to 30 of 30. The text did not fall, so the verdict stands. The folder in this repo is the one that was tested.

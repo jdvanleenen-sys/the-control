@@ -85,7 +85,7 @@ Jordan Shaw, a member of the same online community with no part in building this
 - Committed run: fewer steps with the folder on 10 of 10 questions, 2.37 per session against 5.03.
 - Their re-run: fewer steps with the folder on 10 of 10 questions, 2.40 against 5.60.
 
-The command printed "Reproduces: YES". That is steps only; a re-run does not mark answers.
+The command printed "Reproduces: YES". That is steps only; the re-run command does not mark answers. These answers were marked afterwards, in "The re-runs, marked" below.
 
 **A question they wrote themselves.** A Main Hall booking for 18 July 2026, cancelled in writing on 1 July 2026: what share of the hire charge is refunded, and is the £30 booking deposit returned? The documents give 25%, with the deposit kept: `hall-refunds.md` section 2.2 says 50% for 14 to 27 days' notice, and `hall-changes.md` section 6 replaces that with 25% from 1 June 2026.
 
@@ -93,7 +93,7 @@ The command printed "Reproduces: YES". That is steps only; a re-run does not mar
 - The documents alone answered 50%, in 4 steps. Its own answer says it read `hall-refunds.md` and `hall-bookings.md`; it did not open `hall-changes.md`.
 - With nothing, the model said it did not have the rules.
 
-This is the only question in this entry, among those that were checked, on which the documents alone gave a wrong figure. The answers from the re-runs were not marked. It is one question asked once, the answers were checked against the documents by the person who asked and by us and were not put through the markers, and in the sealed run the documents alone were marked right on all 30 answers, changed rules included. So it is one case, not a finding. The folder's `rules.md` tells the model to check whether a changes document replaces a section; here that is the step the documents-only session skipped.
+This is the only question in this entry, among those that were checked, on which the documents alone gave a wrong figure. It is one question asked once, the answers were checked against the documents by the person who asked and by us and were not put through the markers, and in the sealed run the documents alone were marked right on all 30 answers, changed rules included. So it is one case, not a finding. The folder's `rules.md` tells the model to check whether a changes document replaces a section; here that is the step the documents-only session skipped.
 
 Their raw logs and what they sent are in `after-the-run/outsider/`. It was the same day (the evening of the 12th here; the logs are stamped the 13th in UTC) and the same version of the tool. Not tried: another day, another version of the tool, another operating system.
 
@@ -108,9 +108,25 @@ The verdict rests on three things: steps, right answers, and the text put in fro
 | Outside runner (`after-the-run/outsider/rerun/`) | 2.40 against 5.60 | 9,288 against 7,934 |
 | By the builder, after the tool changes below (`after-the-run/rerun-after-changes/`) | 2.20 against 5.40 | 9,311 against 8,093 |
 
-In every re-run the folder took fewer steps on 10 of 10 questions and put more text in front of the model. So two of the three things the verdict rests on came out the same way each time. The third did not get tested: no re-run was marked.
+In every re-run the folder took fewer steps on 10 of 10 questions and put more text in front of the model. So two of the three things the verdict rests on came out the same way each time. The third, right answers, is in the next section.
 
 The re-run command now prints the text line itself, beside the steps, so a visitor sees both. It is not part of "Reproduces", which keeps the meaning the pre-registration gave it. The last row is the run that tested that change: 30 sessions, none left out, and one session with nothing loaded kept and flagged because the model tried a tool call that was refused.
+
+## The re-runs, marked
+
+No re-run had been marked, so the third thing the verdict rests on had not been tested on any of them. On Tuesday 2026-10-13 the 60 answers of the full folder and the documents alone from the three re-runs above were marked the same way as the sealed run: shuffled, with the set-up hidden, twice by the model under test and once by Gemini 3.8 Flash. What would be marked and what we expected were committed first, in `after-the-run/rerun-marks/prediction.md`.
+
+| Marked right, of 30 | First pass | Second pass | Gemini |
+|---|---|---|---|
+| Documents alone | 30 | 30 | 30 |
+| Full folder | 29 | 30 | 24 |
+| Full folder, in the sealed run | 28 | 23 | 23 |
+
+All four things expected came out as written. The documents alone were right on every answer. The folder was marked below 30 by two of the three markings. Every mark it lost, seven across the three markings, was on Q3, Q4 or Q7, the questions it lost on in the sealed run. That holds on the outside runner's answers too: 10, 10 and 8 of 10.
+
+So the direction repeated and the size did not settle. The model under test found one lost mark and then none; Gemini found six. How much the folder loses depends on who marks, which is the limit the sealed run already had. No marking put the folder above the documents alone.
+
+`after-the-run/rerun-marks/what-was-found.md` has every lost mark by question and re-run, the sheets, the marks and the key.
 
 ## The checks on Linux and macOS
 
