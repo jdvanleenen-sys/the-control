@@ -11,7 +11,7 @@ This repo is a folder and a test of whether the folder earns its place.
 - By a rule fixed before any document existed, the instruction files did not earn their place over the documents alone.
 - Against the brief's own control, no folder at all, the folder wins as it must: 23 to 28 of 30 against 0 of 30. The documents do that work.
 
-What was checked afterwards is in `after-the-run.md`: ten held-out questions, where the loss of marks did not repeat, a re-run on a second machine, a re-run by an outside person on their own machine with a question they wrote themselves, and the re-runs marked blind afterwards. `folder-change/README.md` has the follow-up: one line was added to the rules on a separate copy, and run beside the unchanged folder it did not raise the marks.
+What was checked afterwards is in `after-the-run.md`: ten held-out questions, where the loss of marks did not repeat, a re-run on a second machine, a re-run by an outside person on their own machine with a question they wrote themselves, and the re-runs marked afterwards with the set-up hidden. `folder-change/README.md` has the follow-up: one line was added to the rules on a separate copy, and run beside the unchanged folder it did not raise the marks.
 
 ## What is compared
 
