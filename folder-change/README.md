@@ -1,6 +1,6 @@
 # The follow-up: one line, tested on a copy
 
-**Corrected on Tuesday 2026-10-13.** This page first read its result as the lost marks coming back because of the added line. A side-by-side run the next day does not support that. With the unchanged folder and the changed one run at the same time and marked on one sheet, the unchanged folder was marked right on 30, 30 and 30 of 30 and the changed one on 29, 29 and 30. The line is not shown to help. `side-by-side/what-was-found.md` has it. The figures below are as they were measured; three sentences that read more into them have been changed and say so.
+**Corrected on Tuesday 2026-10-13.** This page first read its result as the lost marks coming back because of the added line. A side-by-side run the next day does not support that. With the unchanged folder and the changed one run at the same time and marked on one sheet, the unchanged folder was marked right on 30, 30 and 30 of 30 and the changed one on 29, 29 and 30. The line is not shown to help. `side-by-side/what-was-found.md` has it. The figures below are as they were measured; three sentences that read more into them have been changed.
 
 This is a follow-up, done after the sealed run and its verdict. It does not replace them. `results.md` and the verdict in it stand exactly as they were.
 

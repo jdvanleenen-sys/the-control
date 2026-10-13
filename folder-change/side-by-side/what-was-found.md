@@ -1,6 +1,6 @@
 # The unchanged folder beside the changed one: what was found
 
-Done on Tuesday 2026-10-13, after `prediction.md` in this folder was committed. Two copies of this repo at commit 8c7aff3, one with the folder as tested and one with the one added line in `rules.md`, each ran the ten exam questions three times in three set-ups, started two seconds apart. 180 sessions, none left out for a fault and none flagged. All the answers went on one shuffled sheet and were marked twice by the model under test and once by Gemini 3.8 Flash.
+Done on Tuesday 2026-10-13, after `prediction.md` in this folder was committed. Two copies of this repo at commit 8c7aff3, one with the folder as tested and one with the one added line in `rules.md`, each ran the ten exam questions three times in three set-ups, started two seconds apart. 180 sessions, none left out for a fault and none flagged. All the answers went on one shuffled sheet and were marked twice by the model under test and once by Gemini 3.8 Flash. Each pass by the model was four sessions, each given a quarter of the sheet, 45 answers.
 
 ## The added line did not raise the marks
 
@@ -11,7 +11,7 @@ Done on Tuesday 2026-10-13, after `prediction.md` in this folder was committed. 
 | Documents alone, beside the unchanged folder | 30 | 30 | 30 |
 | Documents alone, beside the changed folder | 30 | 30 | 30 |
 
-The unchanged folder lost no mark on any marking, so there was nothing for the line to bring back. The one answer marked wrong was the changed folder's, on Q7 in its third run, by both passes of the model under test. Gemini passed it.
+The unchanged folder lost no mark on any marking, so in the marks there was nothing for the line to bring back. The one answer marked wrong was the changed folder's, on Q7 in its third run, by both passes of the model under test. Gemini passed it.
 
 ## What the line did do
 
@@ -38,7 +38,7 @@ It made the answers about 19 words longer and left the steps where they were.
 
 ## What it shows
 
-Run like for like, the one added line is not shown to help. The earlier follow-up in this folder set the changed folder's 30 of 30 against the original folder's 28, 23 and 23 from the sealed run and read the difference as the marks coming back. Most or all of that difference was between batches and markings, not between the two folders.
+Run like for like, the one added line is not shown to help. The earlier follow-up in this folder set the changed folder's 30 of 30 against the original folder's 28, 23 and 23 from the sealed run and read the difference as the marks coming back. That difference is no bigger than batches and markings alone have produced, so it cannot be put down to the line.
 
 It also shows how unsteady the loss of marks is. The same unchanged folder, on the same ten questions and the same answer key, has now been marked right on:
 
@@ -48,12 +48,14 @@ It also shows how unsteady the loss of marks is. The same unchanged folder, on t
 | Three re-runs, marked together (`after-the-run/rerun-marks/`) | 29 | 30 | 24 |
 | This run | 30 | 30 | 30 |
 
-The documents alone were marked right on 30 of 30 every time. So the folder has never been marked above the documents alone and has been marked below them on five of these nine markings. Whether it loses marks, and how many, has varied from one batch of sessions to the next and from one marker to the next.
+The documents alone were marked right on 30 of 30 every time. So the folder has never been marked above the documents alone and has been marked below them on five of these nine markings. Whether it loses marks, and how many, has varied from one batch of sessions to the next and from one marker to the next. The answers leave out the same kind of detail in every batch; what has varied most is whether a marker fails them for it.
 
 ## What it does not show
 
-- **Why this batch lost nothing.** The answers are in `logs/` to read. We have not found the reason and do not offer one.
-- **That the markers were as strict as before.** Gemini marked all 120 answers on its sheet correct. An hour earlier, on a sheet of 60, it had failed six folder answers on Q3, Q4 and Q7. This sheet was twice as long. We cannot tell a real difference in the answers from a difference in how closely a longer sheet was marked, and no answer was sent back to be marked again.
+- **That the answers were any fuller than before.** They were not, on the two questions we checked by a search of the text. The key for Q7 asks for the 15-minute overrun and the key for Q4 for the £4 member price. Of the six answers each folder gave to those two questions, the detail is missing from three of the unchanged folder's (Q7 runs 1 and 3, Q4 run 3) and three of the changed folder's (Q7 runs 2 and 3, Q4 run 3). The documents alone gave it every time. Of those six answers that left it out, the markers failed one, the changed folder's Q7 in run 3, and passed five. So the 30 against 29 is the markers treating the same omission two ways, and "nothing to bring back" is true of the marks and not of the answers. That search is not a marking, and Q3 was not searched.
+- **That the line does what it was written to do.** It asks for what would otherwise apply and the difference. The changed folder left that out as often as the unchanged one on those two questions.
+- **That the markers were as strict as before.** Gemini marked all 120 answers on its sheet correct. About half an hour earlier, on a sheet of 60, it had failed six folder answers on Q3, Q4 and Q7. This sheet was twice as long. No answer was sent back to be marked again.
+- **That each marking session counted its own work right.** Every session was shown the heading of the whole sheet, which says 180 answers, while holding 45. Several closed by reporting a count that differs from the lines it wrote. The marks files hold a line for every answer, and the check on that passed.
 - **Anything about the held-out questions,** which were left out of this run.
 - **It is no part of the verdict.** The sealed run, its marks and its verdict are as they were. The folder still puts more text in front of the model than the documents alone in every run.
 

@@ -51,9 +51,9 @@ Leaving the folder alone left a question open: would the line do what this page 
 
 By the rule fixed before the first run the changed folder still does not earn its place, because the text still rises. The line is fitted to the questions it was tested on, so this is a follow-up and not a second verdict. `results.md` is unchanged.
 
-**The line is not shown to help.** That run had no unchanged folder beside it. On Tuesday 2026-10-13 the two were run at the same time, on the ten exam questions, and marked on one sheet, with what we expected committed first. The unchanged folder was marked right on 30, 30 and 30 of 30. The changed folder was marked right on 29, 29 and 30. The line made answers about 19 words longer and did not raise the marks; in this batch there were no lost marks to raise. `folder-change/side-by-side/what-was-found.md` has it, with what it does not show: Gemini marked all 120 answers on that sheet correct, an hour after failing six on a shorter one.
+**The line is not shown to help.** That run had no unchanged folder beside it. On Tuesday 2026-10-13 the two were run at the same time, on the ten exam questions, and marked on one sheet, with what we expected committed first. The unchanged folder was marked right on 30, 30 and 30 of 30. The changed folder was marked right on 29, 29 and 30. The line made answers about 19 words longer and did not raise the marks; in this batch there were no lost marks to raise. `folder-change/side-by-side/what-was-found.md` has it, with what it does not show: Gemini marked all 120 answers on that sheet correct, about half an hour after failing six on a shorter one. And the answers were no fuller than before: on Q4 and Q7 both folders left out the detail the key asks for in three answers of six, and the markers failed one of those six and passed five.
 
-So the unchanged folder, on the same ten questions, has been marked right on 28, 23 and 23 of 30 in the sealed run, on 29, 30 and 24 in three re-runs, and on 30, 30 and 30 here. The documents alone were at 30 every time. The folder has never been marked above the documents alone, and whether it is marked below them has varied from batch to batch and from marker to marker.
+So the unchanged folder, on the same ten questions, has been marked right on 28, 23 and 23 of 30 in the sealed run, on 29, 30 and 24 in three re-runs, and on 30, 30 and 30 here. The documents alone were at 30 every time. The folder has never been marked above the documents alone, and whether it is marked below them has varied from batch to batch and from marker to marker. What the folder's answers leave out has not varied much. Whether a marker fails them for it has.
 
 ## The re-run a visitor is invited to do
 
@@ -171,7 +171,7 @@ The ten questions the draw did not pick, asked three times each in the full fold
 
 The folder took fewer steps on 10 of 10 held-out questions, and lost no marks on any of them. The two passes by the model under test agree on all 90 answers.
 
-So the loss on right answers did not repeat. On the exam it came from three questions, Q3, Q4 and Q7, whose keys ask for a detail the question does not. The ten held-out questions came from the same pool by the same draw, and none of them cost the folder a mark. The fewer steps held on all twenty questions. The fewer right answers held on three of the twenty.
+So the loss on right answers did not repeat. On the exam it came from three questions, Q3, Q4 and Q7, whose keys ask for a detail the question does not. (A later batch of the exam questions also lost no marks; see "The one labelled change" above. So this comparison does not by itself show that the questions were the reason.) The ten held-out questions came from the same pool by the same draw, and none of them cost the folder a mark. The fewer steps held on all twenty questions. The fewer right answers held on three of the twenty.
 
 Two cautions. These marks were made after the exam's result was known, though the markers were not told it. And the markers could still tell the set-ups apart: Gemini's guesses were right on 5 of 60, which is as telling as 55 of 60 with the labels the other way round.
 
