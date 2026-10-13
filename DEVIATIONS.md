@@ -2,6 +2,15 @@
 
 What was done differently from the plan, and what was corrected after the run, newest first where it concerns the results page.
 
+## Tuesday 2026-10-13, after the entry was posted: three additions and one correction
+
+None of this touches the sealed run, its marks or the verdict.
+
+- **The offline checks on Linux and macOS.** GitHub's machines now run the four checks on Linux, macOS and Windows each time the repo changes. `after-the-run.md` has it.
+- **The re-runs were marked.** The answers of three re-runs were marked blind, against expectations committed first. `after-the-run/rerun-marks/` has it.
+- **The unchanged folder was run beside the changed one,** against expectations committed first. Two of the six did not hold: the changed folder was not marked right more often. `folder-change/side-by-side/` has it.
+- **A correction that follows from that.** `folder-change/README.md`, the landing page, the guide and the summary had said the one added line brought the lost marks back. They now say it is not shown to help. The figures of the first follow-up are unchanged; the reading of them is withdrawn.
+
 ## Monday 2026-10-12, after the verdict: a follow-up on a separate copy, two stopped runs, and a second machine
 
 None of this touches the sealed run, its marks or the verdict.

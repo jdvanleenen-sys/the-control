@@ -51,6 +51,10 @@ Leaving the folder alone left a question open: would the line do what this page 
 
 By the rule fixed before the first run the changed folder still does not earn its place, because the text still rises. The line is fitted to the questions it was tested on, so this is a follow-up and not a second verdict. `results.md` is unchanged.
 
+**The line is not shown to help.** That run had no unchanged folder beside it. On Tuesday 2026-10-13 the two were run at the same time, on the ten exam questions, and marked on one sheet, with what we expected committed first. The unchanged folder was marked right on 30, 30 and 30 of 30. The changed folder was marked right on 29, 29 and 30. The line made answers about 19 words longer and did not raise the marks; in this batch there were no lost marks to raise. `folder-change/side-by-side/what-was-found.md` has it, with what it does not show: Gemini marked all 120 answers on that sheet correct, an hour after failing six on a shorter one.
+
+So the unchanged folder, on the same ten questions, has been marked right on 28, 23 and 23 of 30 in the sealed run, on 29, 30 and 24 in three re-runs, and on 30, 30 and 30 here. The documents alone were at 30 every time. The folder has never been marked above the documents alone, and whether it is marked below them has varied from batch to batch and from marker to marker.
+
 ## The re-run a visitor is invited to do
 
 Done once from a fresh clone of this repo, on the same day and machine, with `node tools/rerun.mjs --name sealed`: 30 sessions.

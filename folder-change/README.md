@@ -1,5 +1,7 @@
 # The follow-up: one line, tested on a copy
 
+**Corrected on Tuesday 2026-10-13.** This page first read its result as the lost marks coming back because of the added line. A side-by-side run the next day does not support that. With the unchanged folder and the changed one run at the same time and marked on one sheet, the unchanged folder was marked right on 30, 30 and 30 of 30 and the changed one on 29, 29 and 30. The line is not shown to help. `side-by-side/what-was-found.md` has it. The figures below are as they were measured; three sentences that read more into them have been changed and say so.
+
 This is a follow-up, done after the sealed run and its verdict. It does not replace them. `results.md` and the verdict in it stand exactly as they were.
 
 The pre-registration allows one labelled change to the folder after the results, with its own re-run of the three core set-ups, reported beside the first run and never merged into it. This is that change.
@@ -50,15 +52,15 @@ The characters, tokens, seconds and answer words in this table are counted from 
 
 ## What it shows
 
-- **The lost marks came back.** With the added line the folder was marked right on 30 of 30 exam answers by all three gradings. Answers grew by about 16 words (73.4 to 89.6) and stayed well under the length of the documents-only answers.
+- **The changed folder lost no marks in this run.** With the added line the folder was marked right on 30 of 30 exam answers by all three gradings. This page first called that the lost marks coming back. The side-by-side run shows the unchanged folder doing the same in its own batch, so the line is not shown to be the reason. Answers grew by about 16 words (73.4 to 89.6) and stayed well under the length of the documents-only answers.
 - **The steps did not move.** 2.33 per session, fewer than the documents alone on 10 of 10 questions.
 - **Nothing broke on the held-out questions.** 30 of 30 on all three gradings, fewer steps on 10 of 10.
-- **By the rule fixed before the first run, the changed folder still does not earn its place.** Steps clearly fell and no grading counted fewer right answers, but the folder still puts more text in front of the model than the documents alone: 9,579 characters against 7,665. The change brought back the marks the control showed lost. It did not touch the cost the control also found.
+- **By the rule fixed before the first run, the changed folder still does not earn its place.** Steps clearly fell and no grading counted fewer right answers, but the folder still puts more text in front of the model than the documents alone: 9,579 characters against 7,665. It did not touch the cost the control found.
 
 ## What it does not show
 
 - **The line was written after seeing which answers lost marks,** and it is tested on those same ten questions. It is fitted to them. The held-out questions are the only check that it did no harm elsewhere, and the original folder had already scored 30 of 30 on those.
-- **The unchanged folder was not run again beside it.** The changed folder's marks are set against the original folder's marks from the sealed run, which was a different batch of sessions, marked at a different time. So this shows that the changed folder scored 30 of 30 here. It does not show that the added line alone is the reason.
+- **The unchanged folder was not run beside it in this run.** The changed folder's marks are set against the original folder's marks from the sealed run, which was a different batch of sessions, marked at a different time. So this shows that the changed folder scored 30 of 30 here. It does not show that the added line is the reason, and the side-by-side run made afterwards found that it is not shown to be.
 - **It is one re-run on one day.** The original folder's marks moved between gradings; these did not, but that is three gradings of one set of answers.
 - **The markers could tell the set-ups apart.** Gemini's guesses were right on 6 of 60 and 0 of 60, which separates the two as surely as 54 and 60 would. The two passes by the model under test guessed right on 39 of 60 and 36 of 57 for the exam, and 35 and 31 of 60 for the held-out questions.
 - **The documents-only figures here are from this re-run,** not the sealed run. They differ a little: 5.20 steps against 5.03, and 7,665 characters against 7,191.
@@ -80,5 +82,6 @@ That is 29 words, and it took `rules.md` to 239 words by the folder check's coun
 | `folder-change/heldout/` | The same for the held-out questions, with every answer beside the expected one in `report.md` |
 | `folder-change/marking/` | The scripts that built the sheets and ran the marking passes, and the record of each marking session |
 | `folder-change/false-start/` | The twelve logs from the stopped first attempt |
+| `folder-change/side-by-side/` | The run made the next day with the unchanged folder beside the changed one: what was expected, what was found, the 180 logs, the sheets and the marks |
 
 The re-run was made from a separate copy of this repo with the one line added, so the folder at the top of this repo is still the folder the sealed run tested, and `node verify/check.mjs` still confirms it.
