@@ -72,7 +72,30 @@ The command printed "Reproduces: YES", with no session left out. What it printed
 
 The offline checks were run there as well, at commit 93195b0: `verify/check.mjs`, `verify/history.mjs` and `verify/folder.mjs` passed, and 172 of 172 self-test cases passed. What they printed is in `after-the-run/second-machine/checks-printed.txt`.
 
-It was the same Claude account, the same day and the same version of the tool, run by the person who built this entry. Not tried: another account, another day, another version of the tool, a person with no part in the build.
+It was the same Claude account, the same day and the same version of the tool, run by the person who built this entry. Not tried on that machine: another account, another day, another version of the tool. The next section is a run by a person with no part in the build.
+
+## A re-run by someone who did not build it
+
+A member of the same online community, with no part in building this entry, ran it on their own Windows machine with their own installation of Claude Code (2.1.296, Node 22.23.2), from a fresh clone of the public repo at commit 48c0db8. They were asked to change nothing and to send back whatever happened.
+
+**The first attempt stopped at step one.** Their Claude Code was installed only as the VS Code extension, so there was no `claude` command, and `RUN.md` said to set `CLAUDE_BIN` without saying where the extension keeps the program. They stopped and reported it. `RUN.md` was amended, and they started again from the amended page.
+
+**The re-run.** `node tools/rerun.mjs --name sealed`, 30 sessions, none left out for a fault.
+
+- Committed run: fewer steps with the folder on 10 of 10 questions, 2.37 per session against 5.03.
+- Their re-run: fewer steps with the folder on 10 of 10 questions, 2.40 against 5.60.
+
+The command printed "Reproduces: YES". That is steps only; a re-run does not mark answers.
+
+**A question they wrote themselves.** A Main Hall booking for 18 July 2026, cancelled in writing on 1 July 2026: what share of the hire charge is refunded, and is the £30 booking deposit returned? The documents give 25%, with the deposit kept: `hall-refunds.md` section 2.2 says 50% for 14 to 27 days' notice, and `hall-changes.md` section 6 replaces that with 25% from 1 June 2026.
+
+- The full folder answered 25%, in 2 steps, and cited the change.
+- The documents alone answered 50%, in 4 steps. Its own answer says it read `hall-refunds.md` and `hall-bookings.md`; it did not open `hall-changes.md`.
+- With nothing, the model said it did not have the rules.
+
+This is the only question in this entry on which the documents alone gave a wrong figure. It is one question asked once, the answers were checked against the documents by the person who asked and by us and were not put through the markers, and in the sealed run the documents alone were marked right on all 30 answers, changed rules included. So it is one case, not a finding. The folder's `rules.md` tells the model to check whether a changes document replaces a section; here that is the step the documents-only session skipped.
+
+Their raw logs and what they sent are in `after-the-run/outsider/`. It was the same day and the same version of the tool. Not tried: another day, another version of the tool, another operating system.
 
 ## How the marking was run
 

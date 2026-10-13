@@ -1,0 +1,131 @@
+What an outside person sent back after running this repo on their own machine, Monday 2026-10-12 (the runs are stamped 2026-10-13, 00:19 to 00:23 UTC). It is their reply as they wrote it. Two things are left out: the first line, which named the two people, and the last two lines, which named the zip file they attached. The raw logs they sent are beside this file, in `rerun/` and `ask/`.
+
+Operating system: Windows 11 Home, build 10.0.26300
+Git 2.55.0.windows.3, Node v22.23.2
+
+Step 1 version number: 2.1.296 (Claude Code)
+  (found by your two lines; it is the VS Code extension's bundled claude.exe)
+
+Repo cloned at commit 48c0db8 (2026-10-12, "run page: where the VS Code extension keeps Claude Code...").
+
+Everything below is copied as printed, from one PowerShell window, unedited.
+Nothing was fixed or changed. Both commands exited 0.
+
+Step 4 question is mine. My own working from reference/hall/: 1 July to 18 July 2026 is 17 days,
+in the 14-27 band; hall-changes.md section 6 makes that 25% (not 50%) because the booking
+officer received the cancellation on/after 1 June 2026; the GBP 30 booking deposit is kept.
+Of the two arms with documents, Full package answered 25% (right); Documents only answered 50%
+(wrong: it read hall-refunds.md but never opened hall-changes.md).
+
+----------------------------------------------------------------------
+=== STEP 1 ===
+2.1.296 (Claude Code)
+=== STEP 2 ===
+Cloning into 'the-control'...
+HEAD 48c0db8 2026-10-12 run page: where the VS Code extension keeps Claude Code, after the first outside runner stopped at step one for want of it; noted in DEVIATIONS.md and the results page regenerated
+=== STEP 3 ===
+run 1 Q1 Full package: 2 steps
+run 1 Q1 Empty: 2 steps
+run 1 Q1 Documents only: 5 steps
+run 1 Q2 Documents only: 5 steps
+run 1 Q2 Full package: 2 steps
+run 1 Q2 Empty: 2 steps
+run 1 Q3 Full package: 2 steps
+run 1 Q3 Empty: 2 steps
+run 1 Q3 Documents only: 4 steps
+run 1 Q4 Documents only: 8 steps
+run 1 Q4 Empty: 2 steps
+run 1 Q4 Full package: 4 steps
+run 1 Q5 Documents only: 6 steps
+run 1 Q5 Full package: 2 steps
+run 1 Q5 Empty: 2 steps
+run 1 Q6 Documents only: 7 steps
+run 1 Q6 Full package: 2 steps
+run 1 Q6 Empty: 2 steps
+run 1 Q7 Empty: 2 steps
+run 1 Q7 Documents only: 4 steps
+run 1 Q7 Full package: 2 steps
+run 1 Q8 Documents only: 5 steps
+run 1 Q8 Full package: 2 steps
+run 1 Q8 Empty: 2 steps
+run 1 Q9 Full package: 4 steps
+run 1 Q9 Documents only: 7 steps
+run 1 Q9 Empty: 2 steps
+run 1 Q10 Documents only: 5 steps
+run 1 Q10 Full package: 2 steps
+run 1 Q10 Empty: 2 steps
+
+# Re-run against the committed run
+
+Model: claude-sonnet-5-5, effort medium. Mean steps per session, by question.
+
+| Question | Committed: full | Committed: documents | Re-run: full | Re-run: documents |
+|---|---|---|---|---|
+| Q1 | 2.00 | 5.00 | 2.00 | 5.00 |
+| Q2 | 2.00 | 5.33 | 2.00 | 5.00 |
+| Q3 | 2.00 | 4.00 | 2.00 | 4.00 |
+| Q4 | 4.00 | 6.00 | 4.00 | 8.00 |
+| Q5 | 2.33 | 6.00 | 2.00 | 6.00 |
+| Q6 | 2.00 | 4.33 | 2.00 | 7.00 |
+| Q7 | 2.00 | 3.67 | 2.00 | 4.00 |
+| Q8 | 2.00 | 5.00 | 2.00 | 5.00 |
+| Q9 | 3.33 | 7.00 | 4.00 | 7.00 |
+| Q10 | 2.00 | 4.00 | 2.00 | 5.00 |
+
+Empty arm, mean steps: committed 2.00, re-run 2.00.
+
+Committed outcome: fewer steps with the folder. With the folder loaded first, the model took fewer steps on 10 of 10 questions (2.37 per session against 5.03).
+Re-run outcome: fewer steps with the folder. With the folder loaded first, the model took fewer steps on 10 of 10 questions (2.40 per session against 5.60).
+
+Reproduces: YES. Reproduces means the same rule lands on the same one of three outcomes. Single questions can differ by a step or two between runs. This compares steps only. Right answers are not re-marked: to check them, read your answers in the folder named below, and ours under control/ and treatment/, against questions.md.
+
+Steps show how the model got to an answer, not whether the answer is right. Read the answers.
+Notice: Full package: 0 of 10 sessions left out for a fault in the set-up, 0 kept and flagged
+Notice: Documents only: 0 of 10 sessions left out for a fault in the set-up, 0 kept and flagged
+Notice: Empty: 0 of 10 sessions left out for a fault in the set-up, 0 kept and flagged
+
+Raw logs, and a readable transcript of every session with its answer: runs/sealed-rerun-2026-10-13T00-19-58-957Z/logs/ (not tracked by git; delete when done)
+step 3 exit code: 0
+=== STEP 4 ===
+Question: Under the Quillbrook Village Hall rules: A hirer has an accepted Main Hall booking for Saturday 18 July 2026 and has paid everything due. The booking officer receives their written cancellation on 1 July 2026. What percentage of the room hire charge is refunded, and is the £30 booking deposit returned?
+Model: claude-sonnet-5-5, effort medium
+
+| Arm | Steps | Documents opened | Searches | Tokens in | Seconds | Answer words | Faults |
+|---|---|---|---|---|---|---|---|
+| Full package | 2 | 2 | 0 | 15991 | 4.1 | 100 | none |
+| Documents only | 4 | 2 | 1 | 17687 | 7.5 | 162 | none |
+| Empty | 2 | 0 | 1 | 9791 | 4.2 | 107 | none |
+
+Steps show how the model got to an answer, not whether the answer is right. Read the answers.
+
+## Full package
+
+**25% of the room hire charge is refunded, and the £30 booking deposit is not returned.**
+
+- **Percentage:** 1 July to 18 July 2026 is 17 calendar days, which falls in the 14 to 27 day band. The changes register replaces the 50% rate in hall-refunds.md 2.2 with 25%. The controlling date is when the booking officer receives the cancellation (1 July 2026), which is after the 1 June 2026 effective date (hall-changes.md, section 6; hall-refunds.md, sections 1.4 and 2.4).
+- **Deposit:** The £30 booking deposit is non-refundable in every hirer cancellation (hall-refunds.md, sections 2.5 and 2.6; hall-changes.md, section 6.4).
+
+## Documents only
+
+**50% of the room hire charge is refunded, and the £30 booking deposit is not returned.**
+
+- **Notice period:** 1 July to 18 July 2026 is 17 calendar days. Rule 1.4 of `hall-refunds.md` makes the date the booking officer receives the written request the cancellation date, so 1 July is the date that counts.
+- **Refund band:** 17 days falls in the 14 to 27 day band, which gives a 50% refund (rule 2.2). That percentage applies to the room, kitchen and equipment hire charges (rule 2.4).
+- **Deposit:** The £30 booking deposit is non-refundable in every hirer cancellation (rule 2.5), and the refunds under 2.1 and 2.2 exclude it (rule 2.6).
+- **Nothing left to pay:** The hirer has paid everything due, so rule 2.7 on unpaid balances doesn't come into it.
+
+If the hirer also paid a damage deposit, it is returned in full after a hirer cancellation (rule 4.5). I read only `hall-refunds.md` and `hall-bookings.md`, not the fees file.
+
+## Empty
+
+I can't answer this yet because I don't have the Quillbrook Village Hall rules. The working directory (`C:\tc\open-FV4U\w3`) is empty, and a search for "Quillbrook" found nothing.
+
+The refund percentage and deposit treatment will depend on the cancellation clause. That clause probably sets refund tiers by notice period, and it may say whether the deposit is refundable or counts towards the charge. I don't want to guess at those terms.
+
+Could you paste the rules text or tell me where the file is? Once I have it, I'll work out the notice period from 1 July to 18 July 2026 (17 days) and apply the relevant tier.
+
+Raw logs and the question as sent: runs/ask-2026-10-13T00-23-22-317Z/ (not tracked by git; delete when done)
+step 4 exit code: 0
+=== RUNS FOLDERS ===
+ask-2026-10-13T00-23-22-317Z
+sealed-rerun-2026-10-13T00-19-58-957Z

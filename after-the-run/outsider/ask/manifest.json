@@ -1,0 +1,71 @@
+{
+  "started": "2026-10-13T00:23:22.342Z",
+  "model": "claude-sonnet-5-5",
+  "effort": "medium",
+  "version": "2.1.296",
+  "runs": 1,
+  "seed": "1791851002317",
+  "questions": [
+    {
+      "id": "own",
+      "prompt": "Under the Quillbrook Village Hall rules: A hirer has an accepted Main Hall booking for Saturday 18 July 2026 and has paid everything due. The booking officer receives their written cancellation on 1 July 2026. What percentage of the room hire charge is refunded, and is the £30 booking deposit returned?"
+    }
+  ],
+  "staged": {
+    "Full package": {
+      "digest": "2e9da2242c087e4e5673f221d178fe06660e37e1ad1ab68263a49a32be1d2e0a",
+      "files": [
+        "CLAUDE.md",
+        "examples.md",
+        "identity.md",
+        "README.md",
+        "reference/film/film-changes.md",
+        "reference/film/film-conduct.md",
+        "reference/film/film-equipment.md",
+        "reference/film/film-fees-archive.md",
+        "reference/film/film-fees.md",
+        "reference/film/film-membership.md",
+        "reference/film/film-quick-guide.md",
+        "reference/film/film-refunds.md",
+        "reference/film/film-screenings.md",
+        "reference/hall/hall-bookings.md",
+        "reference/hall/hall-changes.md",
+        "reference/hall/hall-conduct.md",
+        "reference/hall/hall-fees-archive.md",
+        "reference/hall/hall-fees.md",
+        "reference/hall/hall-quick-guide.md",
+        "reference/hall/hall-refunds.md",
+        "reference/hall/hall-safety.md",
+        "reference/hall/hall-trustees.md",
+        "rules.md"
+      ]
+    },
+    "Documents only": {
+      "digest": "6406f96e6936b3772a807e7e35959e8331d7fb0d267690ce9f83624c3badf289",
+      "files": [
+        "reference/film/film-changes.md",
+        "reference/film/film-conduct.md",
+        "reference/film/film-equipment.md",
+        "reference/film/film-fees-archive.md",
+        "reference/film/film-fees.md",
+        "reference/film/film-membership.md",
+        "reference/film/film-quick-guide.md",
+        "reference/film/film-refunds.md",
+        "reference/film/film-screenings.md",
+        "reference/hall/hall-bookings.md",
+        "reference/hall/hall-changes.md",
+        "reference/hall/hall-conduct.md",
+        "reference/hall/hall-fees-archive.md",
+        "reference/hall/hall-fees.md",
+        "reference/hall/hall-quick-guide.md",
+        "reference/hall/hall-refunds.md",
+        "reference/hall/hall-safety.md",
+        "reference/hall/hall-trustees.md"
+      ]
+    },
+    "Empty": {
+      "digest": "af71a223bd018cb30a526bbc34b3cfb2b60068727de19c94947adb83905fee2d",
+      "files": []
+    }
+  }
+}
