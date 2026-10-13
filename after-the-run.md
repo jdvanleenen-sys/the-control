@@ -16,7 +16,7 @@ Seven of the full folder's 30 answers were marked wrong by at least one of the t
 | Q7, run 2 | incorrect | incorrect | incorrect | incorrect |
 | Q7, run 3 | incorrect | incorrect | incorrect | incorrect |
 
-His seven marks are in `after-the-run/person-marks.csv`. He marked only answers that a marker had failed, so his marks could only raise the folder's count, never lower it. If the other 23 answers stand as marked, his count for the folder is 27 of 30. By every marker the folder has fewer right answers than the documents alone, so the verdict does not turn on who marked.
+His seven marks are in `after-the-run/person-marks.csv`. He marked only answers that a marker had failed, so his marks could only raise the folder's count, never lower it. If the other 23 answers stand as marked, his count for the folder is 27 of 30. In the sealed run, by every marker the folder has fewer right answers than the documents alone, so the verdict does not turn on who marked.
 
 What the seven have in common. Each gives the same yes or no and the same figure as the expected answer. Each leaves out something the "Correct requires" line asks for: on Q3 the ordinary procedure the exception departs from, on Q4 the £4 member price, on Q7 that 21:45 is 15 minutes over. The markers split on whether leaving that out makes an answer wrong. The person passed Q3 and Q4 and failed Q7.
 
@@ -124,7 +124,7 @@ No re-run had been marked, so the third thing the verdict rests on had not been 
 
 All four things expected came out as written. The documents alone were right on every answer. The folder was marked below 30 by two of the three markings. Every mark it lost, seven across the three markings, was on Q3, Q4 or Q7, the questions it lost on in the sealed run. That holds on the outside runner's answers too: 10, 10 and 8 of 10.
 
-So the direction repeated and the size did not settle. The model under test found one lost mark and then none; Gemini found six. How much the folder loses depends on who marks, which is the limit the sealed run already had. No marking put the folder above the documents alone.
+So the direction repeated by two of the three markings, one of them by a single mark, and the size did not settle. The model under test found one lost mark and then none; Gemini found six, and all of the lost marks on Q3 and Q4 are Gemini's. How much the folder loses depends on who marks, which is the limit the sealed run already had. The documents alone were at 30 of 30 on every marking, so the folder could at best have tied, and on one marking it did.
 
 `after-the-run/rerun-marks/what-was-found.md` has every lost mark by question and re-run, the sheets, the marks and the key.
 
