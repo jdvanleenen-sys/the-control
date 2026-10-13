@@ -142,11 +142,11 @@ Steps and text are counted from the logs by a script and came out the same way i
 | Three re-runs, together | 24 of 30 | 30 of 30 |
 | Side by side, the unchanged folder | 26 of 30 | 30 of 30 and 30 of 30 |
 
-Across the sixteen mixes of the four instruction files in the sealed run, the four with neither `rules.md` nor `examples.md` loaded hold every fact in 28 or 29 of 30 answers, and the twelve with either loaded hold every fact in 21 to 25. The two groups do not overlap. The map costs no facts; the files that shape the answer do.
+Across the sixteen mixes of the four instruction files in the sealed run, the four with neither `rules.md` nor `examples.md` loaded hold every fact in 28 or 29 of 30 answers, and the twelve with either loaded hold every fact in 21 to 25. The two groups do not overlap. Loading the map makes no difference to the count on average; loading the files that shape the answer does.
 
-Six of the seven things expected came out as written. The one that did not: a documents-only answer in the first follow-up left out a fact, and all three markers had passed it. In the re-runs the count agrees with Gemini's marking answer for answer.
+Six of the seven things expected came out as written. The one that did not: a documents-only answer in the first follow-up left out a fact, and all three markers had passed it. In the re-runs the count agrees with Gemini's marking answer for answer; side by side it does not, where Gemini passed every answer the count finds short.
 
-It is not a mark: it does not read an answer's conclusion, its patterns are choices, and it was written after the run. It changes nothing in the verdict. `after-the-run/key-facts/what-was-found.md` has the full table and the limits.
+It is not a mark: it does not read an answer's conclusion, its patterns are choices, and it was written after the run. One choice matters: on Q7 it wants the 15 minutes said, and most answers it counts short there give both times and not the difference. Read the other way the full folder is at 24 of 30 in the sealed run and not 21, and the two groups of set-ups still do not overlap. It changes nothing in the verdict. `after-the-run/key-facts/what-was-found.md` has the full table and the limits.
 
 ## The checks on Linux and macOS
 
