@@ -58,6 +58,7 @@ The characters, tokens, seconds and answer words in this table are counted from 
 ## What it does not show
 
 - **The line was written after seeing which answers lost marks,** and it is tested on those same ten questions. It is fitted to them. The held-out questions are the only check that it did no harm elsewhere, and the original folder had already scored 30 of 30 on those.
+- **The unchanged folder was not run again beside it.** The changed folder's marks are set against the original folder's marks from the sealed run, which was a different batch of sessions, marked at a different time. So this shows that the changed folder scored 30 of 30 here. It does not show that the added line alone is the reason.
 - **It is one re-run on one day.** The original folder's marks moved between gradings; these did not, but that is three gradings of one set of answers.
 - **The markers could tell the set-ups apart.** Gemini's guesses were right on 6 of 60 and 0 of 60, which separates the two as surely as 54 and 60 would. The two passes by the model under test guessed right on 39 of 60 and 36 of 57 for the exam, and 35 and 31 of 60 for the held-out questions.
 - **The documents-only figures here are from this re-run,** not the sealed run. They differ a little: 5.20 steps against 5.03, and 7,665 characters against 7,191.
