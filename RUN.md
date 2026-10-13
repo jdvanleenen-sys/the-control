@@ -1,7 +1,7 @@
 # How to run it
 
 Written before the runs it describes. Follow it top to bottom; you should not need anything
-that is not on this page. It was edited in seven places after the run, to help a visitor; `DEVIATIONS.md`
+that is not on this page. It was edited in eight places after the run, to help a visitor; `DEVIATIONS.md`
 says which.
 
 ## What you need
@@ -9,6 +9,14 @@ says which.
 - Node 20 or later, and git.
 - Claude Code, signed in. If `claude` is not on your path, set `CLAUDE_BIN` to the program's
   full path. On Windows that has to be `claude.exe`; a `.cmd` launcher will not start.
+  If you only have Claude Code as the VS Code extension, there is no `claude` command, but the
+  extension holds the program. In PowerShell, this finds it and sets `CLAUDE_BIN` for that window:
+
+  ```
+  $env:CLAUDE_BIN = (Get-ChildItem "$env:USERPROFILE\.vscode\extensions\anthropic.claude-code-*\resources\native-binary\claude.exe" | Sort-Object LastWriteTime | Select-Object -Last 1).FullName
+  & $env:CLAUDE_BIN --version
+  ```
+
 - A session inherits only a short list of variables from your shell (`ENV_ALLOWED` in
   `lib/config.mjs`). An API key, Bedrock or Vertex settings, a proxy or a custom config
   folder set in the shell are dropped, so sign in to Claude Code itself.
