@@ -52,6 +52,8 @@ node verify/history.mjs
 
 These two cover the sealed run: in `runs/sealed/` its logs, tables, key and marks (not the marking sheets or the session records under `marking/`), and `control/`, `treatment/`, `results.md`, `questions.md` and the folder. They do not cover what came after it: `after-the-run/`, `folder-change/`, `runs/heldout/`, `claude-project/`, the summary and the pages that describe the run. For those, the raw logs are there to read and recount.
 
+`node tools/key-facts.mjs` needs no session either: it counts, by a search of the text, how many answers hold every fact the answer key asks for, and prints the same thing every time.
+
 GitHub runs these two, the folder check and the self-tests on Linux, macOS and Windows each time the repo changes; the results are under the repo's Actions tab. That covers the checks, not the re-run: every re-run so far was on Windows.
 
 The history shows the order of the commits. It cannot show when they were made: this repo was built locally and pushed only after the run.

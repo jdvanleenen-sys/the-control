@@ -190,19 +190,19 @@
   <p class="sub">The folder does two jobs: the map helps the AI find the answer, and the rules and examples shape how it writes the answer. The four instruction files were loaded in every mix, 16 set-ups with the full folder as one of them, so the two jobs can be told apart. Here is each file loaded alone.</p>
   <div class="card">
     <table class="parts">
-      <thead><tr><th>Loaded before the question</th><th>Steps per question</th><th>Marked right, of 30</th></tr></thead>
+      <thead><tr><th>Loaded before the question</th><th>Steps per question</th><th>Answers with every fact the key asks for, of 30</th></tr></thead>
       <tbody>
-      <tr><td><b>Nothing loaded</b></td><td><div class="line"><div class="bar n" style="width:70.0%"></div><span class="val">6.07</span></div></td><td class="val">29 and 29</td></tr>
-      <tr><td><b>The map alone</b><span class="chips"><span>map</span></span></td><td><div class="line"><div class="bar f" style="width:28.8%"></div><span class="val">2.50</span></div></td><td class="val">30 and 29</td></tr>
-      <tr><td><b>The role alone</b><span class="chips"><span>role</span></span></td><td><div class="line"><div class="bar f" style="width:53.0%"></div><span class="val">4.60</span></div></td><td class="val">30 and 30</td></tr>
-      <tr><td><b>The rules alone</b><span class="chips"><span>rules</span></span></td><td><div class="line"><div class="bar f" style="width:42.7%"></div><span class="val">3.70</span></div></td><td class="val">30 and 27</td></tr>
-      <tr><td><b>The examples alone</b><span class="chips"><span>examples</span></span></td><td><div class="line"><div class="bar f" style="width:53.0%"></div><span class="val">4.60</span></div></td><td class="val">28 and 28</td></tr>
-      <tr><td><b>All four</b><span class="chips"><span>map</span><span>role</span><span>rules</span><span>examples</span></span></td><td><div class="line"><div class="bar f" style="width:27.3%"></div><span class="val">2.37</span></div></td><td class="val">28 and 23</td></tr>
+      <tr><td><b>Nothing loaded</b></td><td><div class="line"><div class="bar n" style="width:70.0%"></div><span class="val">6.07</span></div></td><td class="val">29</td></tr>
+      <tr><td><b>The map alone</b><span class="chips"><span>map</span></span></td><td><div class="line"><div class="bar f" style="width:28.8%"></div><span class="val">2.50</span></div></td><td class="val">28</td></tr>
+      <tr><td><b>The role alone</b><span class="chips"><span>role</span></span></td><td><div class="line"><div class="bar f" style="width:53.0%"></div><span class="val">4.60</span></div></td><td class="val">29</td></tr>
+      <tr><td><b>The rules alone</b><span class="chips"><span>rules</span></span></td><td><div class="line"><div class="bar f" style="width:42.7%"></div><span class="val">3.70</span></div></td><td class="val">22</td></tr>
+      <tr><td><b>The examples alone</b><span class="chips"><span>examples</span></span></td><td><div class="line"><div class="bar f" style="width:53.0%"></div><span class="val">4.60</span></div></td><td class="val">24</td></tr>
+      <tr><td><b>All four</b><span class="chips"><span>map</span><span>role</span><span>rules</span><span>examples</span></span></td><td><div class="line"><div class="bar f" style="width:27.3%"></div><span class="val">2.37</span></div></td><td class="val">21</td></tr>
       </tbody>
     </table>
   </div>
-  <p style="margin-top:12px">The map does the finding: alone it gets nearly all of the saving in steps. In the sealed run the marks went with the other job. The 4 set-ups with neither the rules nor the examples loaded lost at most 1 answer of 30. All 12 with either one loaded lost 2 or more on at least one grading.</p>
-  <p class="sub">A pointer, not a proof. Apart from the full folder, these set-ups were graded twice by Claude and not by Gemini, and the two gradings differ, which is why each row shows two numbers. In these rows the four instruction files sat in the folder even when they were not loaded, so "nothing loaded" is 6.07 steps and not the 5.03 of the documents alone.</p>
+  <p style="margin-top:12px">The map does the finding: alone it gets nearly all of the saving in steps. The facts went with the other job. The 4 set-ups with neither the rules nor the examples loaded gave every fact in 28 or 29 of 30 answers. All 12 with either one loaded gave every fact in 21 to 25. The documents alone: 30.</p>
+  <p class="sub">The last column is counted by a script that searches each answer for the facts the answer key asks for, so it gives the same number every time. It was written after the run and is not a grade. In these rows the four instruction files sat in the folder even when they were not loaded, so "nothing loaded" is 6.07 steps and not the 5.03 of the documents alone.</p>
   <h2>The follow-up: one line, tested on a copy</h2>
   <p class="sub">After the verdict, one line was added to a copy of the folder's rules: "Say what would otherwise apply, and the difference." It was run alone, and then the next day beside the unchanged folder, both graded on one sheet.</p>
   <div class="grid3">
@@ -210,7 +210,7 @@
     <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="#C67A3C" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M11 11l12 12M23 11L11 23"/></svg><div><b>Side by side, it did no better</b><span>Unchanged folder 30, 30 and 30 of 30. Changed folder 29, 29 and 30. Steps the same: 2.40 each.</span></div></div>
     <div class="card rule"><svg class="mark" viewBox="0 0 34 34" fill="none" stroke="#C67A3C" stroke-width="3"><circle cx="17" cy="17" r="14"/><path d="M11 11l12 12M23 11L11 23"/></svg><div><b>The text is still more</b><span>9,643 against 7,395 side by side. By the same rule, still not earned.</span></div></div>
   </div>
-  <p style="margin-top:12px">So the line is not shown to help: it made answers about 19 words longer and did not raise the marks. In that last run the unchanged folder lost none: it left out the wanted detail less often than in the first run, and the graders passed the answers that still did. Across three batches the same folder has been graded 23 to 28, then 24 to 30, then 30 of 30, with the documents alone at 30 each time. The first verdict stands.</p>
+  <p style="margin-top:12px">So the line is not shown to help: it made answers about 19 words longer and did not raise the marks. In that last run the unchanged folder lost none: it left out the wanted detail less often than in the first run, and the graders passed the answers that still did. Across three batches the same folder has been graded 23 to 28, then 24 to 30, then 30 of 30. Counted by the script it gave every fact in 21, 24 and 26 of 30, with the documents alone at 30 each time. The first verdict stands.</p>
 
   <div class="grid2" style="margin-top:28px">
     <div class="card"><strong>What held up</strong>

@@ -53,7 +53,7 @@ By the rule fixed before the first run the changed folder still does not earn it
 
 **The line is not shown to help.** That run had no unchanged folder beside it. On Tuesday 2026-10-13 the two were run at the same time, on the ten exam questions, and marked on one sheet, with what we expected committed first. The unchanged folder was marked right on 30, 30 and 30 of 30. The changed folder was marked right on 29, 29 and 30. The line made answers about 19 words longer and did not raise the marks; in this batch there were no lost marks to raise. `folder-change/side-by-side/what-was-found.md` has it, with what it does not show: Gemini marked all 120 answers on that sheet correct, about half an hour after failing six on a shorter one. And in that run the two folders' answers were as full as each other: on Q4 and Q7 each left out the detail the key asks for in three answers of six, and the markers failed one of those six and passed five.
 
-So the unchanged folder, on the same ten questions, has been marked right on 28, 23 and 23 of 30 in the sealed run, on 29, 30 and 24 in three re-runs, and on 30, 30 and 30 here. The documents alone were at 30 every time. The folder has never been marked above the documents alone, and whether it is marked below them has varied from batch to batch and from marker to marker. Two things have varied. A search of the text for the detail the key asks for on Q4 (the £4 member price) and Q7 (the 15-minute overrun) finds it missing from 6 of the folder's 6 answers in the sealed run, 3 of 6 in the three re-runs, and 3 of 6 in the side-by-side run for each folder. The documents alone gave it in every answer in every batch. That search is not a marking, and Q3 was not searched. So the folder left the detail out less often after the sealed run, and the markers have also differed on whether to fail an answer for leaving it out.
+So the unchanged folder, on the same ten questions, has been marked right on 28, 23 and 23 of 30 in the sealed run, on 29, 30 and 24 in three re-runs, and on 30, 30 and 30 here. The documents alone were at 30 every time. The folder has never been marked above the documents alone, and whether it is marked below them has varied from batch to batch and from marker to marker. Two things have varied: how often the folder leaves out a fact the key asks for, and whether a marker fails an answer for it. "The facts the key asks for, counted" below takes the marker out of it.
 
 ## The re-run a visitor is invited to do
 
@@ -131,6 +131,22 @@ All four things expected came out as written. The documents alone were right on 
 So the direction repeated by two of the three markings, one of them by a single mark, and the size did not settle. The model under test found one lost mark and then none; Gemini found six, and all of the lost marks on Q3 and Q4 are Gemini's. How much the folder loses depends on who marks, which is the limit the sealed run already had. The documents alone were at 30 of 30 on every marking, so the folder could at best have tied, and on one marking it did.
 
 `after-the-run/rerun-marks/what-was-found.md` has every lost mark by question and re-run, the sheets, the marks and the key.
+
+## The facts the key asks for, counted
+
+Steps and text are counted from the logs by a script and came out the same way in every re-run. Right answers are judged by a marker and did not. So a count was added that needs no marker: `node tools/key-facts.mjs` searches each answer for the things its question's "Correct requires" line says the answer must give. It prints the same thing every time. The patterns and what we expected were committed before it was run on anything but the two set-ups used to check it, the documents alone (30 of 30) and the empty set-up (0 of 30).
+
+| Answers holding every fact the key asks for | Full folder | Documents alone |
+|---|---|---|
+| The sealed run | 21 of 30 | 30 of 30 |
+| Three re-runs, together | 24 of 30 | 30 of 30 |
+| Side by side, the unchanged folder | 26 of 30 | 30 of 30 and 30 of 30 |
+
+Across the sixteen mixes of the four instruction files in the sealed run, the four with neither `rules.md` nor `examples.md` loaded hold every fact in 28 or 29 of 30 answers, and the twelve with either loaded hold every fact in 21 to 25. The two groups do not overlap. The map costs no facts; the files that shape the answer do.
+
+Six of the seven things expected came out as written. The one that did not: a documents-only answer in the first follow-up left out a fact, and all three markers had passed it. In the re-runs the count agrees with Gemini's marking answer for answer.
+
+It is not a mark: it does not read an answer's conclusion, its patterns are choices, and it was written after the run. It changes nothing in the verdict. `after-the-run/key-facts/what-was-found.md` has the full table and the limits.
 
 ## The checks on Linux and macOS
 

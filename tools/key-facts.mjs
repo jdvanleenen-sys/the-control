@@ -88,8 +88,15 @@ export function report({ validateOnly = false } = {}) {
     ['Side by side', 'folder-change/side-by-side/logs', { 'Unchanged folder': 'unchanged', 'Changed folder': 'changed', 'Documents only, beside unchanged': 'docsA', 'Documents only, beside changed': 'docsB' }],
   ];
   out.push('## The later batches', '', ...HEAD);
-  for (const [name, dir, arms] of later) for (const [label, folder] of Object.entries(arms)) out.push(line(`${name}: ${label}`, readArm(join(REPO, dir, folder))));
-  out.push('');
+  const short = [];
+  for (const [name, dir, arms] of later) {
+    for (const [label, folder] of Object.entries(arms)) {
+      const rows = readArm(join(REPO, dir, folder));
+      out.push(line(`${name}: ${label}`, rows));
+      for (const row of rows.filter((r) => r.missing.length > 0)) short.push(`- ${name}: ${label}, ${row.question} in ${row.run}: ${row.missing.join('; ')}`);
+    }
+  }
+  out.push('', 'The answers that fall short in the later batches:', '', ...short, '');
   return out.join('\n');
 }
 
