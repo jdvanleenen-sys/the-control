@@ -86,7 +86,8 @@ function runFailures(repo, order, at, run) {
   if (key !== null && logs !== null && key <= logs) failures.push('the key was committed with or before the logs');
   if (changedLater(repo, `${base}/logs`)) failures.push('a raw log was changed or removed after it was first committed');
   // Marks are made with the arm hidden, so they come before the key and are never touched again.
-  for (const marks of git(repo, ['ls-files', base]).filter((path) => /\/marks-[a-z]+\.csv$/.test(path))) {
+  const everAdded = [...new Set(git(repo, ['log', '--diff-filter=A', '--name-only', '--format=', '--', base]))];
+  for (const marks of everAdded.filter((path) => /\/marks-[a-z]+\.csv$/.test(path))) {
     if (changedLater(repo, marks)) failures.push(`${marks} was changed or removed after it was first committed`);
     if (key !== null && at(marks) >= key) failures.push(`${marks} was not committed before the key`);
   }

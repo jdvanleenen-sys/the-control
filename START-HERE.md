@@ -50,7 +50,7 @@ node verify/check.mjs
 node verify/history.mjs
 ```
 
-These two cover the sealed run: `runs/sealed/`, `control/`, `treatment/`, `results.md`, `questions.md` and the folder. They do not cover what came after it: `after-the-run/`, `folder-change/`, `runs/heldout/`, `claude-project/`, the summary and the pages that describe the run. For those, the raw logs are there to read and recount.
+These two cover the sealed run: in `runs/sealed/` its logs, tables, key and marks (not the marking sheets or the session records under `marking/`), and `control/`, `treatment/`, `results.md`, `questions.md` and the folder. They do not cover what came after it: `after-the-run/`, `folder-change/`, `runs/heldout/`, `claude-project/`, the summary and the pages that describe the run. For those, the raw logs are there to read and recount.
 
 The history shows the order of the commits. It cannot show when they were made: this repo was built locally and pushed only after the run.
 

@@ -20,7 +20,7 @@ runCli(() => {
   console.log('|---|---|---|---|---|---|---|---|');
   for (const [arm, label] of OPEN_ARMS) {
     const row = rows.find((r) => r.arm === arm);
-    console.log(`| ${label} | ${row.steps} | ${row.documentsOpened} | ${row.searches} | ${row.tokensIn} | ${row.seconds} | ${row.words} | ${row.faults.join('; ') || 'none'} |`);
+    console.log(`| ${label} | ${row.steps} | ${row.documentsOpened} | ${row.searches} | ${row.tokensIn ?? '-'} | ${row.seconds ?? '-'} | ${row.words} | ${row.faults.join('; ') || 'none'} |`);
   }
   console.log(`\n${STEPS_CAUTION}`);
   for (const notice of notices(rows)) console.log(`Notice: ${notice}`);

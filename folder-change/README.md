@@ -50,7 +50,7 @@ The characters, tokens, seconds and answer words in this table are counted from 
 
 ## What it shows
 
-- **The lost marks came back.** With the added line the folder was marked right on 30 of 30 exam answers by all three gradings. Answers grew by about 16 words and stayed well under the length of the documents-only answers.
+- **The lost marks came back.** With the added line the folder was marked right on 30 of 30 exam answers by all three gradings. Answers grew by about 16 words (73.4 to 89.6) and stayed well under the length of the documents-only answers.
 - **The steps did not move.** 2.33 per session, fewer than the documents alone on 10 of 10 questions.
 - **Nothing broke on the held-out questions.** 30 of 30 on all three gradings, fewer steps on 10 of 10.
 - **By the rule fixed before the first run, the changed folder still does not earn its place.** Steps clearly fell and no grading counted fewer right answers, but the folder still puts more text in front of the model than the documents alone: 9,579 characters against 7,665. The change brought back the marks the control showed lost. It did not touch the cost the control also found.

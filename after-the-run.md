@@ -93,7 +93,7 @@ The command printed "Reproduces: YES". That is steps only; a re-run does not mar
 - The documents alone answered 50%, in 4 steps. Its own answer says it read `hall-refunds.md` and `hall-bookings.md`; it did not open `hall-changes.md`.
 - With nothing, the model said it did not have the rules.
 
-This is the only question in this entry on which the documents alone gave a wrong figure. It is one question asked once, the answers were checked against the documents by the person who asked and by us and were not put through the markers, and in the sealed run the documents alone were marked right on all 30 answers, changed rules included. So it is one case, not a finding. The folder's `rules.md` tells the model to check whether a changes document replaces a section; here that is the step the documents-only session skipped.
+This is the only question in this entry, among those that were checked, on which the documents alone gave a wrong figure. The answers from the re-runs were not marked. It is one question asked once, the answers were checked against the documents by the person who asked and by us and were not put through the markers, and in the sealed run the documents alone were marked right on all 30 answers, changed rules included. So it is one case, not a finding. The folder's `rules.md` tells the model to check whether a changes document replaces a section; here that is the step the documents-only session skipped.
 
 Their raw logs and what they sent are in `after-the-run/outsider/`. It was the same day (the evening of the 12th here; the logs are stamped the 13th in UTC) and the same version of the tool. Not tried: another day, another version of the tool, another operating system.
 
