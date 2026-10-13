@@ -76,7 +76,7 @@ It was the same Claude account, the same day and the same version of the tool, r
 
 ## A re-run by someone who did not build it
 
-A member of the same online community, with no part in building this entry, ran it on their own Windows machine with their own installation of Claude Code (2.1.296, Node 22.23.2), from a fresh clone of the public repo at commit 48c0db8. They were asked to change nothing and to send back whatever happened.
+Jordan Shaw, a member of the same online community with no part in building this entry, ran it on their own Windows machine with their own installation of Claude Code (2.1.296, Node 22.23.2), from a fresh clone of the public repo at commit 48c0db8. They were asked to change nothing and to send back whatever happened.
 
 **The first attempt stopped at step one.** Their Claude Code was installed only as the VS Code extension, so there was no `claude` command, and `RUN.md` said to set `CLAUDE_BIN` without saying where the extension keeps the program. They stopped and reported it. `RUN.md` was amended, and they started again from the amended page.
 
