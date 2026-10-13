@@ -37,7 +37,7 @@ node tools/ask.mjs "Under the Quillbrook Village Hall rules: your question"
 
 The other organisation is the Fenwray Film Society.
 
-**2. Run it all again.** Thirty sessions, about four minutes. It prints your numbers beside ours and says whether the headline came out the same way.
+**2. Run it all again.** Thirty sessions, about four minutes. It prints your steps beside ours and says whether the headline came out the same way. It also prints the text put in front of the model, yours and ours. It does not mark answers.
 
 ```
 node tools/rerun.mjs --name sealed

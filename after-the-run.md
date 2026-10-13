@@ -97,6 +97,21 @@ This is the only question in this entry on which the documents alone gave a wron
 
 Their raw logs and what they sent are in `after-the-run/outsider/`. It was the same day (the evening of the 12th here; the logs are stamped the 13th in UTC) and the same version of the tool. Not tried: another day, another version of the tool, another operating system.
 
+## Whether more than the steps reproduced
+
+The verdict rests on three things: steps, right answers, and the text put in front of the model. The re-run command compares steps, and "Reproduces: YES" means steps and nothing more. An outside read of this repo put that first among its weaknesses. So the text was counted from the raw logs of every re-run whose logs are in this repo, the same way `results.md` counts it.
+
+| Re-run | Steps, folder against documents alone | Text in characters, folder against documents alone |
+|---|---|---|
+| The sealed run | 2.37 against 5.03 | 9,689 against 7,191 |
+| Fresh clone, by the builder (`after-the-run/rerun/`) | 2.50 against 5.10 | 9,802 against 7,547 |
+| Outside runner (`after-the-run/outsider/rerun/`) | 2.40 against 5.60 | 9,288 against 7,934 |
+| By the builder, after the tool changes below (`after-the-run/rerun-after-changes/`) | 2.20 against 5.40 | 9,311 against 8,093 |
+
+In every re-run the folder took fewer steps on 10 of 10 questions and put more text in front of the model. So two of the three things the verdict rests on came out the same way each time. The third did not get tested: no re-run was marked.
+
+The re-run command now prints the text line itself, beside the steps, so a visitor sees both. It is not part of "Reproduces", which keeps the meaning the pre-registration gave it. The last row is the run that tested that change: 30 sessions, none left out, and one session with nothing loaded kept and flagged because the model tried a tool call that was refused.
+
 ## How the marking was run
 
 Each of the two full passes was split over four sessions of the model under test, started together by `runs/sealed/marking/mark.mjs`. Each session had a quarter of the sheet, `MARKING.md` and the documents, and wrote its own marks. The record of each session and the marks it wrote are in `runs/sealed/marking/`. The eight sessions took about two minutes. The marking sheets replace the path of the folder a session ran in with `[working folder]`, so a marker cannot read a set-up's code off an answer; nothing else in an answer is changed.

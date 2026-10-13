@@ -15,6 +15,7 @@ import { faultSummary, notices, runOpenArms, STEPS_CAUTION } from '../lib/mini.m
 import { loadQuestions } from '../lib/questions.mjs';
 import { compareByQuestion, fixed, headlineSentence, mean, outcome } from '../lib/stats.mjs';
 import { headlineTally, loadRows } from '../verify/analyse.mjs';
+import { loadedChars } from '../verify/results.mjs';
 
 const OUTCOME_WORDS = { fewer: 'fewer steps with the folder', more: 'more steps with the folder', unclear: 'no clear difference' };
 const MEANING = 'Reproduces means the same rule lands on the same one of three outcomes. Single questions can differ by a step or two between runs. This compares steps only. Right answers are not re-marked: to check them, read your answers in the folder named below, and ours under control/ and treatment/, against questions.md.';
@@ -32,6 +33,16 @@ export function report(committed, mine, emptyCommitted, emptyMine, extra = []) {
   ].join('\n');
 }
 
+// The second thing the verdict rests on, beside the first: the text put in front of the model.
+// It is printed for the reader and is no part of "Reproduces", which is about steps.
+export function textLine(committedFull, committedDocs, mineFull, mineDocs) {
+  const loaded = loadedChars(ARM_FULL);
+  const fetched = (rows) => mean(rows.map((r) => r.charsFetched));
+  if ([committedFull, committedDocs, mineFull, mineDocs].some((rows) => rows.length === 0)) return null;
+  const side = (full, docs) => `${Math.round(loaded + fetched(full))} characters with the folder (${loaded} loaded first and ${Math.round(fetched(full))} fetched) against ${Math.round(fetched(docs))} with the documents alone`;
+  return `Text put in front of the model per session. Committed run: ${side(committedFull, committedDocs)}. Re-run: ${side(mineFull, mineDocs)}. This is shown beside the steps and is not part of "Reproduces".`;
+}
+
 function main() {
   const dir = sealedRunOrDefault('Example: node tools/rerun.mjs --name sealed');
   if (!existsSync(join(dir, 'key.json'))) throw new Error('That run has no key here. A re-run can only be compared with a run whose key has been revealed.');
@@ -45,7 +56,9 @@ function main() {
   const clean = (arm) => rows.filter((r) => r.arm === arm && r.faults.length === 0);
   const mine = compareByQuestion(ids, clean(ARM_FULL), clean(ARM_DOCS_ONLY), 'steps');
   const committedEmpty = mean(committedRows.filter((r) => key.arms[r.code] === ARM_EMPTY && r.faults.length === 0).map((r) => r.steps));
-  const text = report(headlineTally(committedRows, key, ids), mine, committedEmpty, mean(clean(ARM_EMPTY).map((r) => r.steps)), [...faultSummary(rows), ...notices(rows)]);
+  const committedClean = (arm) => committedRows.filter((r) => key.arms[r.code] === arm && r.faults.length === 0);
+  const textNote = textLine(committedClean(ARM_FULL), committedClean(ARM_DOCS_ONLY), clean(ARM_FULL), clean(ARM_DOCS_ONLY));
+  const text = report(headlineTally(committedRows, key, ids), mine, committedEmpty, mean(clean(ARM_EMPTY).map((r) => r.steps)), [...faultSummary(rows), ...notices(rows), ...(textNote ? [textNote] : [])]);
   writeFileSync(join(runDir(name), 'rerun.md'), text);
   console.log(`\n${text}\nRaw logs, and a readable transcript of every session with its answer: runs/${name}/logs/ (not tracked by git; delete when done)`);
   if (!text.includes('Reproduces: YES')) process.exitCode = 1;
