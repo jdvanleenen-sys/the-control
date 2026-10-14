@@ -4,6 +4,8 @@ An entry for Weekly Comp #14.
 
 **The folder** answers questions about the rules of two made-up organisations: a film society and a village hall. It holds their 18 documents, a map saying what each document covers, and instructions on how to look things up and how to answer.
 
+The test is of the folder's instructions, not of its subject: the documents are identical in every set-up. They are made up on purpose, so the model cannot answer from what it already knows; with nothing in front of it, it scored 0 of 30. The same scripts ran rehearsals on other made-up document sets before this one ([`PILOTS.md`](/PILOTS.md)).
+
 **The test** asked ten questions three ways: with nothing, with the documents alone, and with the documents and the folder's instructions. The questions were written by ChatGPT, checked by Gemini and drawn at random, before the instructions were committed. The rule for judging the folder was written before any of it.
 
 ## What happened
